@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style1.css">
+    <link rel="stylesheet" href="./globalStyle.css">
+    <script src="https://kit.fontawesome.com/8fe5e0fdfe.js" crossorigin="anonymous"></script>
+    <title>Timer</title>
+</head>
+
+<body>
+    <nav class="nav-container">
+        <i class="fa-solid fa-clock fa-2xl"></i>
+        <ul class="nav-list">
+            <li class="nav-item"><a href="./index1.html">Timer</a></li>
+            <li class="nav-item"><a href="./index2.html">World clock</a></li>
+            <li class="nav-item"><a href="./index3.html">Tasks</a></li>
+        </ul>
+    </nav>
+
+    <div class="timer-container">
+        <div class="timer">
+            <div class="timer-screen">
+                <input type="text" placeholder="--:--" oninput="formatTime(this)">
+            </div>
+            <div class="timer-buttons">
+                <button class="btn-start" onclick="handleStart()">Start</button>
+                <button class="btn-stop" onclick="handleStop()">Stop</button>
+            </div>
+        </div>
+    </div>
+
+    <div>timer</div>
+    <script src="script1.js"></script>
+</body>
+
+</html>

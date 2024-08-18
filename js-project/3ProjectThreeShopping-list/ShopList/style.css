@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Poppins:ital,wght@1,300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+body {
+    font-family: 'Mr Dafoe', cursive;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #000000, #ffee04);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-wrapper {
+    width: 100%;
+    max-width: 550px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 40px 30px 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+    background-color: #edeef0;
+}
+
+
+
+h2 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 12px;
+    font-size: 18px;
+}
+
+.btn-add {
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: #030700;
+    color: #fff;
+    font-size: 20px;
+    padding: 15px 50px;
+    border-radius: 30px;
+    transition: all 0.25s ease;
+}
+
+.btn-add:hover {
+    background-color: #51a510;
+}
+
+.list-container {
+    width: 100%;
+}
+
+.list-item {
+    font-size: 20px;
+    padding: 12px 34px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    list-style: none;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.list-item:hover {
+    border-bottom: 2px solid #c9c9c9;
+}
+
+.list-item.checked {
+    color: #555;
+    text-decoration: line-through;
+    text-decoration-color: rgb(134, 34, 34);
+}
+
+.list-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid rgb(134, 34, 34);
+}
+
+.list-item.checked::before {
+    background-color: rgb(134, 34, 34);
+}
+
+.btn-delete {
+    font-weight: bold;
+    transition: all 0.2s ease;
+    position: absolute;
+    right: 10px;
+    font-size: 24px;
+}
+
+.btn-delete:hover {
+    color: rgb(134, 34, 34);
+}
+
+.btn-delete-all {
+    background-color: rgb(134, 34, 34);
+    width: 200px;
+    font-size: 24px;
+    border: none;
+    margin-top: 30px;
+    padding: 5px;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-delete-all:hover {
+    background-color: #fff;
+    color: rgb(134, 34, 34);
+}
+
+.none {
+    display: none;
+}

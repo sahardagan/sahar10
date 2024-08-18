@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="./style/global.css" rel="stylesheet"/>
+<script defer="" src="scripts.js"></script>
+<title>Sahar Portfolio</title>
+</head>
+<body>
+<nav class="nav-container">
+<div class="logo-container">
+<img alt="logo" class="logo-image" src="images/SR.jpeg"/>
+<h3 class="logo-title">Sahar Dagan</h3>
+</div>
+<ul class="nav-items">
+<li class="nav-item"><a href="#contact-area">צור קשר</a></li>
+<li class="nav-item"><a href="#projects-section">שירותים</a></li>
+<li class="nav-item"><a href="#about-section">אודות</a></li>
+<li class="nav-item"><a href="#main-section">ראשי</a></li>
+</ul>
+<div class="nav-burger">
+<div class="line"></div>
+<div class="line"></div>
+<div class="line"></div>
+</div>
+<ul class="sidebar-list">
+<li class="sidebar-item"><a href="#main-section">ראשי</a></li>
+<li class="sidebar-item"><a href="#about-section">אודות</a></li>
+<li class="sidebar-item"><a href="#projects-section">שירותים</a></li>
+<li class="sidebar-item"><a href="#contact-area">צור קשר</a></li>
+</ul>
+</nav>
+<button id="changeBackgroundButton">White Mode</button>
+<script src="script2.js"></script>
+<header class="main-header-container" id="main-section">
+<div class="overlay"></div>
+<div class="content">
+<p class="header-text"><span id="animated-text">זה תיק העבודות שלי בו אני מציג עבודות אישיות שלי בפיתוח
+                    בתחום ה-full
+                    stack. הפרוייקטים כוללים פיתוח בקוד מלא צד לקוח וצד שרת.</span></p>
+</div>
+<script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var element = document.getElementById('animated-text');
+                var text = element.innerText;
+                element.innerHTML = ''; // מנקה את הטקסט המקורי
+
+                var index = 0;
+                function type() {
+                    if (index < text.length) {
+                        element.innerHTML += text[index];
+                        index++;
+                        setTimeout(type, 50); // עיכוב של 100 מילישניות בין כל אות
+                    } else {
+                        setTimeout(function () {
+                            element.innerHTML = '';
+                            index = 0;
+                            type();
+                        }, 1000); // עיכוב של שנייה לפני שמתחילים מחדש
+                    }
+                }
+
+                type();
+            });
+        </script>
+</header>
+<section id="icons-section">
+<img alt="" class="single-icon" src="./images/api.jpg"/>
+<img alt="" class="single-icon" src="./images/BootStrap.jpeg"/>
+<img alt="" class="single-icon" src="./images/CSS.png"/>
+<img alt="" class="single-icon" src="./images/ES6Red.png"/>
+<img alt="" class="single-icon" src="./images/HTML.jpeg"/>
+<img alt="" class="single-icon" src="./images/JS.png"/>
+<img alt="" class="single-icon" src="./images/node.jpeg"/>
+<img alt="" class="single-icon" src="./images/OOP.png"/>
+<img alt="" class="single-icon" src="./images/REACT.png"/>
+<img alt="" class="single-icon" src="./images/SASS.jpeg"/>
+<img alt="" class="single-icon" src="./images/TYPESCRIPT.jpeg"/>
+</section>
+<section id="about-section">
+<img alt="תמונת פרופיל" class="profile-image" src="images/SR.jpeg"/>
+<h1 class="about-title">קצת עלי</h1>
+<a class="cv-btn" href="#">להורדת קורות חיים</a>
+</section>
+<!-- חלון הפופאפ -->
+<div class="modal" id="myModal">
+    <div class="modal-content">
+        <span class="close">×</span>
+        <h2 class="about-me-title">אודותיי</h2>
+        <p id="about-me-p">
+            שמי סהר דגן, ואני מומחה בבניית אתרים בהתאמה אישית עם ניסיון רב ביצירת אתרים מותאמים ללקוח שמביאים תוצאות. אני פועל
+            מכפר-סבא ומתמחה בפלטפורמות כגון Elementor ובשפות תכנות כמו JavaScript, HTML, CSS, Bootstrap, SASS, ו-TypeScript.
+        </p>
+        <p id="about-me-p">
+            הניסיון שלי כולל עבודה עם מגוון רחב של לקוחות, מאתרי תדמית קטנים ועד לאתרי מסחר אלקטרוני מורכבים. אני גאה להציג כאן
+            פרויקטים נבחרים שמדגימים את היכולות שלי לספק פתרונות דיגיטליים איכותיים ומותאמים אישית.
+        </p>
+        <p id="about-me-p">
+            אם אתם מחפשים מישהו שיוכל ליצור לכם אתר מקצועי וייחודי שמתאים בדיוק לצרכים שלכם, אני מזמין אתכם להשאיר פרטים ואני
+            אשמח ליצור קשר ולדבר על הפרויקט הבא שלכם.
+        </p>
+    </div>
+</div>
+<script src="scripts.js"></script>
+<section id="projects-section">
+<h1 class="projects-title">עבודות נבחרות</h1>
+<p class="projects-text">לורם איפסום או בקיצור ליפסום, הוא מלל מקובל וחסר משמעות המשמש “ממלא מקום” בעת עריכה,
+            בתחום.</p>
+<div class="cards-list">
+<div class="single-card">
+<div class="card-image-container">
+<img alt="" class="card-image" src="images/1.jpg"/>
+<div class="button-container">
+<a class="bottom-btn" href="projects/1projectOne/projectOne.html">
+                            לעמוד הפרויקט&gt;&gt;
+                        </a>
+<a class="bottom-btn" href="projects/1projectOne/download.zip">
+                            להורדת הפרויקט&gt;&gt;
+                        </a>
+</div>
+</div>
+</div>
+<div class="single-card">
+<div class="card-image-container">
+<img alt="" class="card-image" src="images/2.jpg"/>
+<div class="button-container">
+<a class="bottom-btn" href="projects/2projectTwo/projectTwo.html">
+                            לעמוד הפרויקט&gt;&gt;
+                        </a>
+<a class="bottom-btn" href="projects/2projectTwo/download.zip">
+                            להורדת הפרויקט&gt;&gt;
+                        </a>
+</div>
+</div>
+</div>
+<div class="single-card">
+<div class="card-image-container">
+<img alt="" class="card-image" src="images/3.jpg"/>
+<div class="button-container">
+<a class="bottom-btn" href="projects/3projectThree/projectThree.html">
+                            לעמוד הפרויקט&gt;&gt;
+                        </a>
+<a class="bottom-btn" href="projects/3projectThree/download.zip">
+                            להורדת הפרויקט&gt;&gt;
+                        </a>
+</div>
+</div>
+</div>
+<div class="single-card">
+<div class="card-image-container">
+<img alt="" class="card-image" src="images/4.jpg"/>
+<div class="button-container">
+<a class="bottom-btn" href="projects/4projectFour/projectFour.html">
+                            לעמוד הפרויקט&gt;&gt;
+                        </a>
+<a class="bottom-btn" href="projects/4projectFour/download.zip">
+                            להורדת הפרויקט&gt;&gt;
+                        </a>
+</div>
+</div>
+</div>
+<div class="single-card">
+<div class="card-image-container">
+<img alt="" class="card-image" src="images/5.jpg"/>
+<div class="button-container">
+<a class="bottom-btn" href="projects/5projectFive/projectFive.html">
+                            לעמוד הפרויקט&gt;&gt;
+                        </a>
+<a class="bottom-btn" href="projects/5projectFive/download.zip">
+                            להורדת הפרויקט&gt;&gt;
+                        </a>
+</div>
+</div>
+</div>
+<div class="single-card">
+<div class="card-image-container">
+<img alt="" class="card-image" src="images/6.jpg"/>
+<div class="button-container">
+<a class="bottom-btn" href="projects/6projectSix/projectSix.html">
+                            לעמוד הפרויקט&gt;&gt;
+                        </a>
+<a class="bottom-btn" href="projects/6projectSix/download.zip">
+                            להורדת הפרויקט&gt;&gt;
+                        </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="projects-section">
+<h1 class="projects-title">עבודות נבחרות</h1>
+<p class="projects-text">לורם איפסום או בקיצור ליפסום, הוא מלל מקובל וחסר משמעות המשמש “ממלא מקום” בעת עריכה,
+            בתחום.</p>
+<div class="cards-list">
+<div class="single-card">
+<div class="card-image-container">
+<img alt="" class="card-image" src="js-project/2ProjectTwoSaimon/Saimon/הורדה.jpeg"/>
+<div class="button-container">
+<a class="bottom-btn" href="js-project/2ProjectTwoSaimon/Saimon/index.html">
+                            לעמוד הפרויקט&gt;&gt;
+                        </a>
+<a class="bottom-btn" href="js-project/2ProjectTwoSaimon/Saimon/download.zip">
+                            להורדת הפרויקט&gt;&gt;
+                        </a>
+</div>
+</div>
+<div class="bottom-area">
+<h3 class="bottom-title">Saimon Game</h3>
+</div>
+</div>
+<div class="single-card">
+<div class="card-image-container">
+<img alt="" class="card-image" src="js-project/4ProjectFourTic-tac-toe/Tic-tac-tic/הורדה (1).png"/>
+<div class="button-container">
+<a class="bottom-btn" href="js-project/4ProjectFourTic-tac-toe/Tic-tac-tic/index.html">
+                            לעמוד הפרויקט&gt;&gt;
+                        </a>
+<a class="bottom-btn" href="js-project/4ProjectFourTic-tac-toe/Tic-tac-tic/download.zip">
+                            להורדת הפרויקט&gt;&gt;
+                        </a>
+</div>
+</div>
+<div class="bottom-area">
+<h3 class="bottom-title">TIC Tac Toe</h3>
+</div>
+</div>
+<div class="single-card">
+<div class="card-image-container">
+<img alt="" class="card-image" src="js-project/1ProjectOneClock/ClockPage/הורדה.jpeg"/>
+<div class="button-container">
+<a class="bottom-btn" href="js-project/1ProjectOneClock/ClockPage/index1.html">
+                            לעמוד הפרויקט&gt;&gt;
+                        </a>
+<a class="bottom-btn" href="js-project/1ProjectOneClock/ClockPage/download.zip">
+                            להורדת הפרויקט&gt;&gt;
+                        </a>
+</div>
+</div>
+<div class="bottom-area">
+<h3 class="bottom-title">Clock</h3>
+</div>
+</div>
+<div class="single-card">
+<div class="card-image-container">
+<img alt="" class="card-image" src="js-project/3ProjectThreeShopping-list/ShopList/הורדה.png" style="width: 420px; border-style: groove;"/>
+<div class="button-container">
+<a class="bottom-btn" href="js-project/3ProjectThreeShopping-list/ShopList/index.html">
+                            לעמוד הפרויקט&gt;&gt;
+                        </a>
+<a class="bottom-btn" href="js-project/3ProjectThreeShopping-list/ShopList/download.zip">
+                            להורדת הפרויקט&gt;&gt;
+                        </a>
+</div>
+</div>
+<div class="bottom-area">
+<h3 class="bottom-title">Shop list</h3>
+</div>
+</div>
+<div class="single-card">
+<div class="card-image-container">
+<img alt="" class="card-image" src="images/5.jpg"/>
+<div class="button-container">
+<a class="bottom-btn" href="projects/5projectFive/middleFive.html">
+                            לעמוד הפרויקט&gt;&gt;
+                        </a>
+<a class="bottom-btn" href="projects/5projectFive/download.zip">
+                            להורדת הפרויקט&gt;&gt;
+                        </a>
+</div>
+</div>
+<div class="bottom-area">
+<h3 class="bottom-title">שם הפרויקט</h3>
+</div>
+</div>
+<div class="single-card">
+<div class="card-image-container">
+<img alt="" class="card-image" src="images/6.jpg"/>
+<div class="button-container">
+<a class="bottom-btn" href="projects/6projectSix/middleSix.html">
+                            לעמוד הפרויקט&gt;&gt;
+                        </a>
+<a class="bottom-btn" href="projects/6projectSix/download.zip">
+                            להורדת הפרויקט&gt;&gt;
+                        </a>
+</div>
+</div>
+<div class="bottom-area">
+<h3 class="bottom-title">שם הפרויקט</h3>
+</div>
+</div>
+</div>
+</section>
+<section id="contact-area">
+<div class="image-container">
+<img alt="" class="image-contact" src="images/Rectangle 41.png"/>
+</div>
+<div class="contact-container">
+<h1 class="contact-title">צור קשר</h1>
+<p class="contact-text">לורם איפסום או בקיצור ליפסום, הוא מלל מקובל וחסר משמעות המשמש “ממלא מקום” בעת עריכ.
+            </p>
+<div class="contact-info-area">
+<div class="contact-input-wrapper">
+<label class="label-text">שם מלא</label>
+<input class="text-area" dir="rtl"/>
+</div>
+<div class="contact-input-wrapper">
+<label class="label-text">דוא"ל</label>
+<input class="text-area" dir="rtl"/>
+</div>
+<div class="contact-input-wrapper">
+<label class="label-text">טלפון</label>
+<input class="text-area" dir="rtl"/>
+</div>
+<div class="contact-input-wrapper">
+<label class="label-text">תוכן הודעה</label>
+<!-- <input class="text-message"> -->
+<textarea class="text-message" cols="30" dir="rtl" rows="10"></textarea>
+</div>
+<a class="sending-btn" href="#">שליחה</a>
+</div>
+</div>
+</section>
+<section class="image-area">
+<div class="image-item">
+<img alt="Image 1" src="images/Icon material-location-on.svg"/>
+<p>שנקין 5, ת״א</p>
+</div>
+<div class="image-item">
+<img alt="Image 1" src="images/Icon simple-email.svg"/>
+<p>israeli@gmail.com</p>
+</div>
+<div class="image-item">
+<img alt="Image 1" src="images/Icon simple-whatsapp.svg"/>
+<p>050.111.1111</p>
+</div>
+<div class="image-item">
+<img alt="Image 1" src="images/Icon simple-whatsapp-1.svg"/>
+<p>050.111.1111</p>
+</div>
+<div class="image-item">
+<img alt="Image 1" src="images/Icon awesome-linkedin-in.svg"/>
+<p>ישראל ישראלי</p>
+</div>
+<div class="image-item">
+<img alt="Image 1" src="images/Icon awesome-facebook-f.svg"/>
+<p>#ISRAEL_ISRAELI</p>
+</div>
+</section>
+<section id="Copyright-area">
+<p class="left-copyright">sahar dagan</p>
+<p class="right-copyright">כל הזכויות שמורות</p>
+</section>
+<script>
+        const navBurger = document.querySelector(".nav-burger");
+        const sideBar = document.querySelector(".sidebar-list");
+
+        navBurger.addEventListener("click", function () {
+            navBurger.classList.toggle("open");
+            sideBar.classList.toggle("open");
+        })
+    </script>
+</body>
+</html>
