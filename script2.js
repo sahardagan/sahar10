@@ -1,4 +1,4 @@
-// script.js
+/* // script.js
 let isWhiteBackground = false;
 
 document.getElementById('changeBackgroundButton').addEventListener('click', function () {
@@ -26,3 +26,4 @@ document.getElementById('changeBackgroundButton').addEventListener('click', func
     isWhiteBackground = !isWhiteBackground;
 });
 
+ */
