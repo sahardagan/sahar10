@@ -1298,7 +1298,7 @@ font-size: 30px;
         display: flex;
         flex-direction: column;
     } 
-        .types-countainer {
+        .types-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         /* ניתן לשנות את הערך כדי לשלוט במרווח בין הפריטים */
