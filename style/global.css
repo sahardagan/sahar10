@@ -911,6 +911,7 @@ font-size: 30px;
             flex-direction: column;
             align-items: center;
             padding: 78px 0 0px 0;
+            margin-bottom:282px ;
         }
 
     /* nav */
@@ -988,16 +989,21 @@ font-size: 30px;
 
     /* projects */
     .cards-list {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 1fr);
         gap: 10px;
         margin: 70px 0;
     }
 
     .single-card {
-        width: 75px;
-        height: 75px;
+                width: 150px;
+        height: 150px;
+padding-bottom: 20px;
     }
+
+                .card-image {
+                    height: 150px;
+                }
 }
 
 @media(max-width: 550px) {
@@ -1042,10 +1048,6 @@ font-size: 30px;
 
     /* projects */
 
-    .card-image{
-        height: 75px;
-        height: 75px;
-    }
 
     .projects-title {
         font-size: 25px;
