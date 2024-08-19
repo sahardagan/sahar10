@@ -1238,10 +1238,10 @@ font-size: 30px;
 
 
 
-/* .image-page{
+.image-page{
     width: 150px;
     height: 150px;
-} */
+}
 
 /* סגנון לפופאפ */
 /* סגנון לפופאפ */
@@ -1375,4 +1375,13 @@ font-size: 30px;
     .types {
         padding: 44px 20px 0 24px;
     }
+}
+
+
+#types-of-sites{
+        display: flex;
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 }
