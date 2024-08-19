@@ -1366,6 +1366,9 @@ font-size: 30px;
         justify-content: center;
         align-items: center;
     }
+        .types {
+            padding: 44px 20px 0 24px;
+        }
 }
 
 @media screen and (max-width: 480px) {
