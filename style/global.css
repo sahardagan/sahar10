@@ -338,7 +338,7 @@ font-size: 30px;
     /* גבול לדמיון של מקלדת */
 }
 
-.types-countainer {
+.types-container {
     display: flex;
     flex-direction: row-reverse;
 }

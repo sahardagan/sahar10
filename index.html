@@ -68,200 +68,142 @@
 </div>
 <script src="scripts.js"></script>
 <section id="types-of-sites">
-    <div class="types-countainer">
+    <div class="types-container">
         <div class="types">
             <img class="image-page" src="images/web-page.png" alt="web page">
             <h1>עמודי נחיתה</h1>
             <button id="popupButton">למחירון דף נחיתה</button>
         </div>
-        
+
         <!-- פופאפ -->
         <div id="popupModal" class="popup-modal">
             <div class="popup-content">
                 <span class="close-button">&times;</span>
-                <p>העלות להקמת דף נחיתה משתנה בהתאם למספר גורמים חשובים כמו אורך הדף, מורכבות התוכן, ניסיון בונה הדף, והאם נבחר להשתמש
-                בתבניות או בעיצוב מאפס.
-                
-                טווח המחירים: עבור דף נחיתה בסיסי, המחיר נע בין 750 ל-3,000 ש"ח. ברוב המקרים, המחיר לדף נחיתה סטנדרטי עומד סביב 2,000
-                ש"ח. אם מדובר בדף מורכב יותר, המחירים יכולים להגיע ל-4,000 ש"ח ואף יותר, במיוחד כאשר יש צורך בעיצוב ייחודי מאפס.
-                
-                מורכבות הדף: ככל שהדף כולל יותר אלמנטים כמו טקסט, תמונות וסרטונים, כך העלות שלו עולה.
-                
-                ניסיון ועיצוב: אם בוחרים בדפי נחיתה המבוססים על תבניות קיימות, המחיר יהיה נמוך יותר. עם זאת, דפים בעיצוב ייחודי שנבנים
-                על ידי אנשי מקצוע מנוסים עשויים לעלות יותר, אך הם מציעים איכות והתאמה מדויקת לצרכים שלך.
-                
-                בסך הכל, העלות הממוצעת לדף נחיתה נעה בין 1,500 ל-4,000 ש"ח, בהתאם לדרישות הספציפיות שלך.</p>
+                <p>העלות להקמת דף נחיתה משתנה בהתאם למספר גורמים חשובים כמו אורך הדף, מורכבות התוכן, ניסיון בונה הדף,
+                    והאם נבחר להשתמש בתבניות או בעיצוב מאפס.
+                    טווח המחירים: עבור דף נחיתה בסיסי, המחיר נע בין 750 ל-3,000 ש"ח. ברוב המקרים, המחיר לדף נחיתה
+                    סטנדרטי עומד סביב 2,000 ש"ח. אם מדובר בדף מורכב יותר, המחירים יכולים להגיע ל-4,000 ש"ח ואף יותר,
+                    במיוחד כאשר יש צורך בעיצוב ייחודי מאפס.
+                    מורכבות הדף: ככל שהדף כולל יותר אלמנטים כמו טקסט, תמונות וסרטונים, כך העלות שלו עולה.
+                    ניסיון ועיצוב: אם בוחרים בדפי נחיתה המבוססים על תבניות קיימות, המחיר יהיה נמוך יותר. עם זאת, דפים
+                    בעיצוב ייחודי שנבנים על ידי אנשי מקצוע מנוסים עשויים לעלות יותר, אך הם מציעים איכות והתאמה מדויקת
+                    לצרכים שלך.
+                    בסך הכל, העלות הממוצעת לדף נחיתה נעה בין 1,500 ל-4,000 ש"ח, בהתאם לדרישות הספציפיות שלך.</p>
             </div>
         </div>
-        <script>
-            // קבלת האלמנטים
-                var modal = document.getElementById("popupModal");
-                var btn = document.getElementById("popupButton");
-                var span = document.getElementsByClassName("close-button")[0];
 
-                // כאשר לוחצים על הכפתור, פתח את הפופאפ
-                btn.onclick = function () {
-                    modal.style.display = "block";
-                }
-
-                // כאשר לוחצים על ה-X, סגור את הפופאפ
-                span.onclick = function () {
-                    modal.style.display = "none";
-                }
-
-                // כאשר לוחצים בכל מקום מחוץ לפופאפ, סגור אותו
-                window.onclick = function (event) {
-                    if (event.target == modal) {
-                        modal.style.display = "none";
-                    }
-                }
-
-        </script>
-    <div class="types">
-        <img class="image-page" src="/images/online-shopping.png" alt="page2"/>
-        <h1>חנות אינטרנטית</h1>
-        <button id="popupButton2">למחירון חנות אינטרנטית</button>
-    </div>
-    
-    <!-- פופאפ -->
-    <div id="popupModal2" class="popup-modal">
-        <div class="popup-content">
-            <span class="close-button2">&times;</span>
-            <p>מחיר בסיסי: הקמת חנות פשוטה עם מספר מצומצם של מוצרים (למשל עד 50 מוצרים) יכולה להתחיל מ-7,500 ש"ח ולהגיע עד
-                12,000 ש"ח. זה כולל שימוש בתבניות עיצוב מוכנות, שיכולות להוזיל את העלות הכוללת.
-    
-                מערכות ניהול: ישנן אפשרויות זולות יותר על בסיס מערכות ניהול כמו WooCommerce או Wix. לדוגמה, חנות בסיסית
-                ב-Wix יכולה לעלות בין 70 ל-170 ש"ח לחודש. אם תרצה להשתמש במערכות ניהול מתקדמות יותר או להתאים אישית את
-                החנות, העלויות יכולות לעלות בהתאם.
-    
-                עלויות תחזוקה שוטפות: תחזוקה חודשית כוללת עלויות שרת אחסון וכתובת דומיין, שנעות בין כמה עשרות שקלים למאות
-                שקלים בחודש, תלוי בצרכים הספציפיים של החנות.
-    
-                לסיכום, המחיר של הקמת חנות אינטרנטית נע בין כמה אלפי שקלים למעל 10,000 ש"ח, תלוי במורכבות ובדרישות המיוחדות
-                של העסק שלך.</p>
-        </div>
-    </div>
-<script>
-    // קבלת האלמנטים
-        var modal2 = document.getElementById("popupModal2");
-        var btn2 = document.getElementById("popupButton2");
-        var span2 = document.getElementsByClassName("close-button2")[0];
-
-        // כאשר לוחצים על הכפתור, פתח את הפופאפ
-        btn2.onclick = function () {
-            modal2.style.display = "block";
-        }
-
-        // כאשר לוחצים על ה-X, סגור את הפופאפ
-        span2.onclick = function () {
-            modal2.style.display = "none";
-        }
-
-        // כאשר לוחצים בכל מקום מחוץ לפופאפ, סגור אותו
-        window.onclick = function (event) {
-            if (event.target == modal2) {
-                modal2.style.display = "none";
-            }
-        }
-
-</script>
         <div class="types">
-            <img class="image-page" src="/images/picture.png" alt="page3"/>
+            <img class="image-page" src="images/online-shopping.png" alt="page2" />
+            <h1>חנות אינטרנטית</h1>
+            <button id="popupButton2">למחירון חנות אינטרנטית</button>
+        </div>
+
+        <!-- פופאפ -->
+        <div id="popupModal2" class="popup-modal">
+            <div class="popup-content">
+                <span class="close-button2">&times;</span>
+                <p>מחיר בסיסי: הקמת חנות פשוטה עם מספר מצומצם של מוצרים (למשל עד 50 מוצרים) יכולה להתחיל מ-7,500 ש"ח
+                    ולהגיע עד 12,000 ש"ח. זה כולל שימוש בתבניות עיצוב מוכנות, שיכולות להוזיל את העלות הכוללת.
+                    מערכות ניהול: ישנן אפשרויות זולות יותר על בסיס מערכות ניהול כמו WooCommerce או Wix. לדוגמה, חנות
+                    בסיסית ב-Wix יכולה לעלות בין 70 ל-170 ש"ח לחודש. אם תרצה להשתמש במערכות ניהול מתקדמות יותר או להתאים
+                    אישית את החנות, העלויות יכולות לעלות בהתאם.
+                    עלויות תחזוקה שוטפות: תחזוקה חודשית כוללת עלויות שרת אחסון וכתובת דומיין, שנעות בין כמה עשרות שקלים
+                    למאות שקלים בחודש, תלוי בצרכים הספציפיים של החנות.
+                    לסיכום, המחיר של הקמת חנות אינטרנטית נע בין כמה אלפי שקלים למעל 10,000 ש"ח, תלוי במורכבות ובדרישות
+                    המיוחדות של העסק שלך.</p>
+            </div>
+        </div>
+
+        <div class="types">
+            <img class="image-page" src="images/picture.png" alt="page3" />
             <h1>אתרי תדמית</h1>
             <button id="popupButton3">למחירון אתרי תדמית</button>
         </div>
-        
+
         <!-- פופאפ -->
         <div id="popupModal3" class="popup-modal">
             <div class="popup-content">
                 <span class="close-button3">&times;</span>
                 <p>העלות לבניית אתר תדמית משתנה בהתאם למורכבות האתר, מספר העמודים, והפונקציות הנדרשות.
-        
-                    אתר תדמית בסיסי: אם אתם זקוקים לאתר תדמית בסיסי, עם מספר עמודים ותכונות פשוטות, המחיר יכול לנוע בין 2,000
-                    ל-10,000 ש"ח.
-        
-                    אתר תדמית מתקדם: לאתר תדמית מתקדם, עם עיצוב ייחודי, יותר עמודים ותכונות מתקדמות, המחירים יכולים לנוע בין
-                    10,000 ל-20,000 ש"ח ואף יותר, אם יש צורך בהתאמות מיוחדות או פונקציות מורכבות.
-        
-                    תחזוקה שוטפת: עלויות התחזוקה השוטפת של האתר כוללות אחסון דומיין ושירותי אירוח, והן נעות בין 25 ל-100 ש"ח
-                    לחודש, בהתאם לגודל האתר וכמות המשתמשים בו.
-        
-                    לסיכום, המחיר של בניית אתר תדמית נע בין כמה אלפי שקלים ועד מעל 20,000 ש"ח, תלוי בדרישות ובצרכים המיוחדים של
-                    העסק שלכם.</p>
+                    אתר תדמית בסיסי: אם אתם זקוקים לאתר תדמית בסיסי, עם מספר עמודים ותכונות פשוטות, המחיר יכול לנוע בין
+                    2,000 ל-10,000 ש"ח.
+                    אתר תדמית מתקדם: לאתר תדמית מתקדם, עם עיצוב ייחודי, יותר עמודים ותכונות מתקדמות, המחירים יכולים לנוע
+                    בין 10,000 ל-20,000 ש"ח ואף יותר, אם יש צורך בהתאמות מיוחדות או פונקציות מורכבות.
+                    תחזוקה שוטפת: עלויות תחזוקה שוטפות משתנות בהתאם לשירותים המוצעים, כאשר תחזוקה בסיסית כוללת עדכונים
+                    שוטפים ותמיכה טכנית.</p>
             </div>
         </div>
-        <script>
-            // קבלת האלמנטים
-                var modal3 = document.getElementById("popupModal3");
-                var btn3 = document.getElementById("popupButton3");
-                var span3 = document.getElementsByClassName("close-button3")[0];
-
-                // כאשר לוחצים על הכפתור, פתח את הפופאפ
-                btn3.onclick = function () {
-                    modal3.style.display = "block";
-                }
-
-                // כאשר לוחצים על ה-X, סגור את הפופאפ
-                span3.onclick = function () {
-                    modal3.style.display = "none";
-                }
-
-                // כאשר לוחצים בכל מקום מחוץ לפופאפ, סגור אותו
-                window.onclick = function (event) {
-                    if (event.target == modal3) {
-                        modal3.style.display = "none";
-                    }
-                }
-
-        </script>
-        <div class="types">
-            <img class="image-page" src="/images/forum.png" alt="page4"/>
-            <h1>בלוגים ופורומים</h1>
-            <button id="popupButton4">למחירון בלוגים ופורומים</button>
-        </div>
-        
-        <!-- פופאפ -->
-        <div id="popupModal4" class="popup-modal">
-            <div class="popup-content">
-                <span class="close-button4">&times;</span>
-                <p>העלות להקמת בלוג משתנה בהתאם למורכבות האתר ולפונקציות הנדרשות.
-        
-                    בלוג בסיסי: עבור בלוג בסיסי המבוסס על תבנית פשוטה עם מספר עמודים עיקריים ועיצוב סטנדרטי, המחיר נע בין 1,500
-                    ל-2,500 ש"ח.
-        
-                    בלוג מתקדם יותר: אם אתם מחפשים בלוג עם עיצוב מותאם אישית או פונקציות מתקדמות כמו אינטגרציה עם רשתות חברתיות
-                    או מערכות אחרות, המחיר יכול לנוע בין 4,000 ל-6,000 ש"ח ואף יותר, בהתאם לצרכים המיוחדים שלכם.
-        
-                    תחזוקה שוטפת: חשוב לזכור כי עלויות התחזוקה השוטפות כוללות אחסון דומיין ושירותי אירוח, המחירים נעים בין 25
-                    ל-100 ש"ח לחודש, בהתאם לנפח התעבורה ולדרישות הבלוג.</p>
-            </div>
-        </div>
-<script>
-    // קבלת האלמנטים
-        var modal4 = document.getElementById("popupModal4");
-        var btn4 = document.getElementById("popupButton4");
-        var span4 = document.getElementsByClassName("close-button4")[0];
-
-        // כאשר לוחצים על הכפתור, פתח את הפופאפ
-        btn4.onclick = function () {
-            modal4.style.display = "block";
-        }
-
-        // כאשר לוחצים על ה-X, סגור את הפופאפ
-        span4.onclick = function () {
-            modal4.style.display = "none";
-        }
-
-        // כאשר לוחצים בכל מקום מחוץ לפופאפ, סגור אותו
-        window.onclick = function (event) {
-            if (event.target == modal4) {
-                modal4.style.display = "none";
-            }
-        }
-
-</script>
     </div>
 </section>
+
+<script>
+    // קבלת האלמנטים של הפופאפ הראשון
+    var modal = document.getElementById("popupModal");
+    var btn = document.getElementById("popupButton");
+    var span = document.getElementsByClassName("close-button")[0];
+
+    // כאשר לוחצים על הכפתור, פתח את הפופאפ
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    // כאשר לוחצים על ה-X, סגור את הפופאפ
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // כאשר לוחצים בכל מקום מחוץ לפופאפ, סגור אותו
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // קבלת האלמנטים של הפופאפ השני
+    var modal2 = document.getElementById("popupModal2");
+    var btn2 = document.getElementById("popupButton2");
+    var span2 = document.getElementsByClassName("close-button2")[0];
+
+    // כאשר לוחצים על הכפתור, פתח את הפופאפ
+    btn2.onclick = function () {
+        modal2.style.display = "block";
+    }
+
+    // כאשר לוחצים על ה-X, סגור את הפופאפ
+    span2.onclick = function () {
+        modal2.style.display = "none";
+    }
+
+    // כאשר לוחצים בכל מקום מחוץ לפופאפ, סגור אותו
+    window.onclick = function (event) {
+        if (event.target == modal2) {
+            modal2.style.display = "none";
+        }
+    }
+
+    // קבלת האלמנטים של הפופאפ השלישי
+    var modal3 = document.getElementById("popupModal3");
+    var btn3 = document.getElementById("popupButton3");
+    var span3 = document.getElementsByClassName("close-button3")[0];
+
+    // כאשר לוחצים על הכפתור, פתח את הפופאפ
+    btn3.onclick = function () {
+        modal3.style.display = "block";
+    }
+
+    // כאשר לוחצים על ה-X, סגור את הפופאפ
+    span3.onclick = function () {
+        modal3.style.display = "none";
+    }
+
+    // כאשר לוחצים בכל מקום מחוץ לפופאפ, סגור אותו
+    window.onclick = function (event) {
+        if (event.target == modal3) {
+            modal3.style.display = "none";
+        }
+    }
+</script>
+
 <section id="projects-section">
 <h1 class="projects-title">עבודות נבחרות</h1>
 <p class="projects-text">לורם איפסום או בקיצור ליפסום, הוא מלל מקובל וחסר משמעות המשמש “ממלא מקום” בעת עריכה,
