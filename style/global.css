@@ -338,6 +338,11 @@ font-size: 30px;
     /* גבול לדמיון של מקלדת */
 }
 
+.types-countainer {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
 /* אנימציה של קרט ימינה (כמו מכונת כתיבה) */
 @keyframes typing {
     from {
@@ -1231,10 +1236,7 @@ font-size: 30px;
 }
 
 
-.types-countainer{
-    display: flex;
-        flex-direction: row-reverse;
-}
+
 
 .image-page{
     width: 150px;
@@ -1295,17 +1297,17 @@ font-size: 30px;
     #about-section {
         display: flex;
         flex-direction: column;
+    } 
+        .types-countainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* ניתן לשנות את הערך כדי לשלוט במרווח בין הפריטים */
     }
 
-        .types-countainer {
-            display: flex;
-            flex-direction: column;
-        }
-
-                .profile-image {
-                    width: 200px;
-                    height: 200px;
-                }
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
 
                 
 .about-div{
@@ -1346,5 +1348,28 @@ font-size: 30px;
     .close-button {
         font-size: 24px;
         /* הקטנת גודל כפתור הסגירה למסכים קטנים */
+    }
+}
+
+/* סגנון למכשירים גדולים (מסכים גדולים) */
+@media (min-width: 768px) {
+    #icons-section {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* סגנון למכשירים קטנים (מסכים קטנים) */
+@media (max-width: 767px) {
+    #icons-section {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .types {
+        padding: 44px 20px 0 24px;
     }
 }
