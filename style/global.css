@@ -1238,7 +1238,7 @@ font-size: 30px;
 
 
 
-.image-page-10-{
+.image-page{
     width: 150px;
     height: 150px;
 }
@@ -1380,8 +1380,8 @@ font-size: 30px;
 
 #types-of-sites{
         display: flex;
-            width: 100%;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
