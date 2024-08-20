@@ -67,7 +67,7 @@ body {
 
 .logo-title {
     font-style: italic;
-    color: #000000;
+    color: #122F59;
     /* צבע לבן רך */
     font-size: 24px;
     /* גודל פונט מוגבר */
@@ -137,17 +137,37 @@ header {
 }
 
 button {
-    padding: 10px;
+    padding: 10px 20px;
     margin: 5px;
     cursor: pointer;
-    background-color: #007bff;
+    background-color: #1ABC9C;
     color: white;
-    border: none;
+    border: 2px solid #1ABC9C;
     border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 button:hover {
-    background-color: #9e0000;
+    background-color: white;
+    color: #1ABC9C;
+    border-color: white;
+}
+
+/* Media queries להתאמה למסכים קטנים */
+@media (max-width: 768px) {
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    button {
+        padding: 6px 12px;
+        font-size: 12px;
+        margin: 4px;
+    }
 }
 
 .accessibility-menu {
@@ -519,10 +539,12 @@ font-size: 30px;
 
 .projects-title {
     font-size: 36px;
-    color: white;
+    color: #122F59;
+    padding-bottom: 30px;
 }
 
 .projects-text {
+    direction: rtl;
     font-size: 20px;
     color:#122F59;
     text-align: center;
@@ -979,7 +1001,7 @@ font-size: 30px;
     }
 
     .nav-burger .line {
-        background-color: #000000;
+        background-color: #122F59 ;
         width: 30px;
         margin: 3px;
         height: 4px;
@@ -1273,6 +1295,23 @@ padding-bottom: 20px;
     height: 150px;
 }
 
+
+/* Media queries להתאמה למסכים קטנים */
+@media (max-width: 768px) {
+    .image-page {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-page {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+
 /* סגנון לפופאפ */
 /* סגנון לפופאפ */
 .popup-modal {
@@ -1430,3 +1469,18 @@ padding-bottom: 20px;
                         }
 }
 
+.types h1 {
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .types h1 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .types h1 {
+        font-size: 16px;
+    }
+}
