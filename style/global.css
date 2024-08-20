@@ -524,7 +524,7 @@ font-size: 30px;
 
 .projects-text {
     font-size: 20px;
-    color: white;
+    color:#122F59;
     text-align: center;
     max-width: 576px;
     padding: 0 10px;
@@ -1067,10 +1067,10 @@ padding-bottom: 20px;
     }
 
 
-    .bottom-btn {
-        font-size: 4px;
-        width: 25px;
-    }
+           .bottom-btn {
+               font-size: 8px;
+               width: 61px;
+           }
 
     #bg-video {
         position: absolute;
