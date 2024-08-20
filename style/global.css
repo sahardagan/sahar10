@@ -569,12 +569,42 @@ font-size: 30px;
 }
 
 .bottom-btn {
-    background-color: #007bff;
+    background-color: #4CAF50;
+    /* צבע רקע ירוק */
     color: white;
-    padding: 10px 15px;
+    /* צבע טקסט */
+    padding: 12px 20px;
+    /* מרווחים פנימיים */
     text-decoration: none;
-    border-radius: 5px;
+    /* ביטול קו תחתון */
+    border-radius: 25px;
+    /* פינות מעוגלות יותר */
     text-align: center;
+    /* יישור טקסט במרכז */
+    font-weight: bold;
+    /* טקסט מודגש */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    /* הצללה לכפתור */
+    transition: all 0.3s ease;
+    /* אנימציה לשינויים */
+}
+
+.bottom-btn:hover {
+    background-color: #45a049;
+    /* שינוי צבע הרקע במעבר עכבר */
+    transform: translateY(-3px);
+    /* הרמת הכפתור במעבר עכבר */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    /* הצללה חזקה יותר במעבר עכבר */
+}
+
+.bottom-btn:active {
+    background-color: #3e8e41;
+    /* שינוי צבע בעת לחיצה */
+    transform: translateY(1px);
+    /* הזזת הכפתור למטה בעת לחיצה */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    /* הצללה פחותה בעת לחיצה */
 }
 
 .bottom-title {
@@ -635,8 +665,6 @@ font-size: 30px;
 }
 
 .bottom-btn {
-    background-color: var(--third-color);
-    color: var(--forth-color);
     width: 153px;
     border-radius: 15px;
     border: none;

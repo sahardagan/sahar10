@@ -95,123 +95,115 @@ p {
     margin: 18px 75px;
 }
 
+/* עיצוב ברירת מחדל - מסכים רחבים */
+.contact-area {
+    top: 157px;
+    left: 200px;
+    width: 569px;
+    height: 643px;
+}
 
-@media (max-width:900px) {
+/* מסכים בינוניים - טאבלטים */
+@media screen and (max-width: 1024px) {
     .contact-area {
-        width: 800px;
-        height: 1130px;
-        left: 845px;
+        top: 120px;
+        left: 100px;
+        width: 80%;
+        height: auto;
     }
 
     .contact-title {
-        padding: 185px 0px 21px 0;
-        line-height: 100px;
-        letter-spacing: 5px;
-        text-align: center;
-        font-size: 90px;
-    }
-
-    p {
-        font-size: 35px;
-        padding: 27px 88px 44px 88px;
-        line-height: 45px;
-        text-align: center;
-    }
-
-    .contact-input-wrapper {
-        padding: 10px 103px;
-    }
-
-    .label-text {
         font-size: 32px;
-        padding: 20px 0;
-    }
-
-    .text-area {
-        width: 580px;
-    }
-
-    .sending-btn {
-        width: 175px;
-        height: 60px;
-        margin: 18px 103px;
-    }
-}
-
-
-@media (max-width:580px) {
-    .contact-area {
-        width: 902px;
-        height: 1313px;
-        left: 845px;
-    }
-
-    .contact-title {
-        font-size: 104px;
-        padding: 190px 0px 21px 0;
+        padding: 60px 60px 16px 0;
     }
 
     p {
-        font-size: 44px;
-        padding: 27px 88px 44px 88px;
-        text-align: center;
+        font-size: 18px;
+        padding: 0 50px 30px 50px;
     }
 
     .contact-input-wrapper {
-        padding: 10px 116px;
+        padding: 0 50px;
     }
 
     .text-area {
-        width: 678px;
-        height: 60px;
+        width: 100%;
+        height: 45px;
     }
 
     .sending-btn {
-        margin: 18px 116px;
-        font-size: 35px;
+        width: 150px;
+        height: 45px;
+        margin: 18px 50px;
     }
 }
 
-
-@media (max-width:430px) {
-
+/* מסכים קטנים - טלפונים ניידים */
+@media screen and (max-width: 768px) {
     .contact-area {
-        top: 272px;
-        left: 872px;
+        top: 100px;
+        left: 20px;
+        width: 90%;
+        height: auto;
     }
 
     .contact-title {
-        display: none;
-    }
-
-    .media-contact-title {
-        display: table;
-        color: #FFFFFF;
-        line-height: 80px;
-        text-align: center;
-        font-size: 70px;
-        padding: 101px 243px 33px 0;
+        font-size: 28px;
+        padding: 50px 30px 14px 0;
     }
 
     p {
-        line-height: 67px;
+        font-size: 16px;
+        padding: 0 30px 25px 30px;
     }
 
     .contact-input-wrapper {
-        padding: 35px 116px;
-    }
-
-    .label-text {
-        font-size: 40px;
+        padding: 0 30px;
     }
 
     .text-area {
-        height: 75px;
+        width: 100%;
+        height: 40px;
     }
 
     .sending-btn {
-        font-size: 44px;
-        width: 220px;
-        height: 100px;
+        width: 140px;
+        height: 40px;
+        margin: 15px 30px;
+    }
+}
+
+/* מסכים קטנים במיוחד - טלפונים ניידים קטנים */
+@media screen and (max-width: 480px) {
+    .contact-area {
+        top: 80px;
+        left: 10px;
+        width: 95%;
+        height: auto;
+    }
+
+    .contact-title {
+        font-size: 24px;
+        padding: 40px 20px 12px 0;
+    }
+
+    p {
+        font-size: 14px;
+        padding: 0 20px 20px 20px;
+    }
+
+    .contact-input-wrapper {
+        padding: 0 20px;
+    }
+
+    .text-area {
+        width: 100%;
+        height: 35px;
+    }
+
+    .sending-btn {
+        width: 130px;
+        height: 35px;
+        margin: 12px 20px;
     }
 }
