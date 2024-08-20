@@ -68,3 +68,65 @@ button {
 }
 
 input {}
+
+/* ברירת מחדל (גדלים גדולים) */
+.timer {
+    width: 450px;
+    height: 300px;
+}
+
+.timer-screen input {
+    font-size: 50px;
+}
+
+button {
+    font-size: 30px;
+}
+
+/* מסכים בגודל בינוני (למשל טאבלטים) */
+@media screen and (max-width: 1024px) {
+    .timer {
+        width: 350px;
+        height: 250px;
+    }
+
+    .timer-screen input {
+        font-size: 40px;
+    }
+
+    button {
+        font-size: 25px;
+    }
+}
+
+/* מסכים בגודל קטן (למשל סמארטפונים) */
+@media screen and (max-width: 768px) {
+    .timer {
+        width: 280px;
+        height: 200px;
+    }
+
+    .timer-screen input {
+        font-size: 30px;
+    }
+
+    button {
+        font-size: 20px;
+    }
+}
+
+/* מסכים מאוד קטנים (למשל טלפונים ישנים או מסכים קטנים במיוחד) */
+@media screen and (max-width: 480px) {
+    .timer {
+        width: 220px;
+        height: 160px;
+    }
+
+    .timer-screen input {
+        font-size: 25px;
+    }
+
+    button {
+        font-size: 18px;
+    }
+}
