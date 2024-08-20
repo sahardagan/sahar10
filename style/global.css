@@ -591,7 +591,7 @@ font-size: 30px;
 }
 
 .bottom-btn {
-    background-color: #4CAF50;
+    background-color: #1ABC9C;
     /* צבע רקע ירוק */
     color: white;
     /* צבע טקסט */
@@ -1119,7 +1119,7 @@ padding-bottom: 20px;
 
            .bottom-btn {
                font-size: 8px;
-               width: 61px;
+               width: 100px;
            }
 
     #bg-video {
