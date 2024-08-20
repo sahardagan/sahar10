@@ -154,3 +154,82 @@
         transform: scale(1.2);
     }
 }
+
+/* מסכים בגודל בינוני (למשל טאבלטים) */
+@media screen and (max-width: 1024px) {
+    .title-wrapper {
+        font-size: 80px;
+    }
+
+    .board-square {
+        width: 200px;
+        height: 200px;
+    }
+
+    .inner-circle {
+        width: 180px;
+        height: 180px;
+    }
+
+    .btn-start {
+        font-size: 25px;
+    }
+
+    .level,
+    .turn-indication {
+        font-size: 18px;
+    }
+}
+
+/* מסכים בגודל קטן (למשל סמארטפונים) */
+@media screen and (max-width: 768px) {
+    .title-wrapper {
+        font-size: 60px;
+    }
+
+    .board-square {
+        width: 150px;
+        height: 150px;
+    }
+
+    .inner-circle {
+        width: 130px;
+        height: 130px;
+    }
+
+    .btn-start {
+        font-size: 20px;
+    }
+
+    .level,
+    .turn-indication {
+        font-size: 16px;
+    }
+}
+
+/* מסכים מאוד קטנים (למשל טלפונים ישנים או מסכים קטנים במיוחד) */
+@media screen and (max-width: 480px) {
+    .title-wrapper {
+        font-size: 40px;
+    }
+
+    .board-square {
+        width: 100px;
+        height: 100px;
+    }
+
+    .inner-circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .btn-start {
+        font-size: 15px;
+        padding: 3px;
+    }
+
+    .level,
+    .turn-indication {
+        font-size: 14px;
+    }
+}
