@@ -37,12 +37,12 @@ body {
 /* NAV */
 
 .nav-container {
-    background-color: white;
+    background-color: #111223;
     /* צבע רקע כהה מודרני */
     z-index: 3;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 20px 10px;
     /* ריווח פנימי מותאם יותר */
@@ -67,7 +67,7 @@ body {
 
 .logo-title {
     font-style: italic;
-    color: #122F59;
+    color: white;
     /* צבע לבן רך */
     font-size: 24px;
     /* גודל פונט מוגבר */
@@ -89,7 +89,7 @@ body {
 }
 
 .nav-item a {
-    color: #000000;
+    color: white;
     /* צבע טקסט בהיר */
     text-decoration: none;
 }
@@ -138,7 +138,7 @@ header {
 
 button {
     padding: 10px 20px;
-    margin: 5px;
+    margin: 40px;
     cursor: pointer;
     background-color: #1ABC9C;
     color: white;
@@ -156,6 +156,10 @@ button:hover {
 
 /* Media queries להתאמה למסכים קטנים */
 @media (max-width: 768px) {
+.nav-container{
+    justify-content: space-between;
+}
+    
     button {
         padding: 8px 16px;
         font-size: 14px;
@@ -166,8 +170,12 @@ button:hover {
     button {
         padding: 6px 12px;
         font-size: 12px;
-        margin: 4px;
     }
+        .logo-container {
+            padding: 0px 56px;
+            display: flex;
+            align-items: center;
+        }
 }
 
 .accessibility-menu {
@@ -288,30 +296,129 @@ button:hover {
 
 /* about me  */
 
-.about-div{
+.about-div {
     margin: -108px 0px 0 0;
-            width: 25%;
-        display: flex;
-            flex-direction: column;
-            text-align: end;
-            direction: revert;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+    direction: revert;
 }
 
-.about-h1{
-color: #122F59;
-font-size: 30px;
+.about-h1 {
+    color: #122F59;
+    font-size: 30px;
 }
 
-.about-p2{
+.hand-wave {
+    display: inline-block;
+    font-size: 2rem;
+    /* גודל האימוג'י */
+    animation: wave 1.5s infinite;
+    /* אנימציה של תנועה אינסופית */
+}
+
+@keyframes wave {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(15deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.highlight {
+    font-size: 55px;
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #000000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.about-p2 {
     font-size: 25px;
-        color: #122F59;
-        padding: 15px 0 15px 0;
+    color: #122F59;
+    padding: 15px 0;
 }
 
-.about-p{
+.about-p {
     font-size: 21px;
-    color: #122F59
+    color: #122F59;
 }
+
+/* התאמות למסכים קטנים יותר */
+@media screen and (max-width: 768px) {
+    .about-div {
+        margin: -80px 0px 0 0;
+        width: 50%;
+        text-align: center;
+        direction: ltr;
+    }
+
+    .about-h1 {
+        font-size: 22px;
+    }
+
+    .hand-wave {
+        font-size: 1.8rem;
+    }
+
+    .highlight {
+        font-size: 45px;
+    }
+
+    .about-p2 {
+        font-size: 22px;
+    }
+
+    .about-p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-div {
+        margin: -50px 0px 0 0;
+        width: 75%;
+        text-align: start;
+        direction: ltr;
+    }
+
+    .about-h1 {
+        font-size: 20px;
+    }
+
+    .hand-wave {
+        font-size: 1.5rem;
+    }
+
+    .highlight {
+        font-size: 25px;
+    }
+
+    .about-p2 {
+        font-size: 18px;
+    }
+
+    .about-p {
+       display: none;
+    }
+}
+
+.highlight2{
+    font-size: 19px;
+}
+
+
 
 .about-me-title {
     text-align: center;
@@ -410,13 +517,14 @@ font-size: 30px;
 
 #about-section {
     background-color: white;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
+    height: auto;
+    width: 70%;
     text-align: center;
-    align-items: center;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
+        justify-content: space-between;
+    align-items: center;
+    padding: 20px;
 }
 
 .profile-image {
@@ -425,6 +533,73 @@ font-size: 30px;
     cursor: pointer;
     border-radius: 50%;
     margin-top: 35px;
+}
+
+.tools-section {
+    margin-top: 20px;
+    /* מרווח בין התמונה לאייקונים */
+    width: 100%;
+}
+
+.tools-title {
+    display: none;
+    color: #111223;
+    font-size: 24px;
+    /* כותרת גדולה יותר */
+    margin-bottom: 10px;
+    /* מרווח בין הכותרת לאייקונים */
+}
+
+.tools-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    /* הגדרת עמודות באורך מינימלי של 100px, ולמלא את השורות */
+    gap: 1px;
+    /* מרווח בין האייקונים */
+    justify-content: center;
+    /* למרכז את הגריד במרכז */
+}
+
+.tool-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    /* רוחב קבוע לכל אייקון */
+    height: 100px;
+    /* גובה קבוע לכל אייקון */
+}
+
+.tool-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* התאם את התמונה לתוך האייקון בלי לעוות אותה */
+}
+
+/* התאמות למסכים קטנים יותר */
+@media screen and (max-width: 768px) {
+    .tools-container {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 2px;
+    }
+
+    .tool-icon {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .tools-container {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+        }
+
+    .tool-icon {
+        width: 60px;
+        height: 60px;
+    }
 }
 
 .modal {
@@ -476,8 +651,8 @@ font-size: 30px;
 }
 
 .profile-image {
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 433px;
 }
 
 .about-title {
@@ -584,6 +759,99 @@ font-size: 30px;
     transition: opacity 0.3s ease-in-out;
     /* Smooth transition for appearance */
 }
+
+.button-container1 {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.button-container1 button {
+    background-color: #003366;
+    /* צבע רקע כחול */
+    color: #FFFFFF;
+    /* צבע טקסט לבן */
+    border: none;
+    /* ללא גבולות */
+    padding: 10px 20px;
+    /* רווח פנימי */
+    margin: 42px 0 0 34px;
+    /* מרווח סביב הכפתור */
+    font-size: 16px;
+    /* גודל גופן */
+    cursor: pointer;
+    /* סמן קליק לעכבר */
+    border-radius: 5px;
+    /* קצוות מעוגלים */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    /* שינוי חלק של צבע, גובה הצללה ושינוי גודל */
+}
+
+.button-container1 button:hover {
+    background-color: #122F59;
+    /* צבע רקע בעת ריחוף */
+    transform: scale(1.05);
+    /* הגדלת הכפתור בעת ריחוף */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* הצללה נוספת בעת ריחוף */
+}
+
+.button-container1 button:active {
+    transform: scale(0.98);
+    /* הקטנת הכפתור בעת לחיצה */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* הצללה קטנה יותר בעת לחיצה */
+}
+
+
+
+.popup-modal {
+    display: none;
+    /* הסתר את הפופאפ באופן ברירת מחדל */
+    position: fixed;
+    /* מיקום קבוע */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* רקע שקוף כהה */
+    justify-content: center;
+    /* יישור מרכזי */
+    align-items: center;
+    /* יישור מרכזי */
+    z-index: 1000;
+    /* מעל כל התוכן */
+}
+
+.popup-content {
+    background-color: #FFFFFF;
+    /* צבע רקע לבן */
+    padding: 20px;
+    /* רווח פנימי */
+    border-radius: 10px;
+    /* קצוות מעוגלים */
+    width: 80%;
+    max-width: 500px;
+    /* רוחב מקסימלי */
+    position: relative;
+    /* מיקום יחסי */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    /* סמן קליק לעכבר */
+}
+
+.close-button:hover {
+    color: #FF0000;
+    /* צבע אדום בעת ריחוף */
+}
+
+
 
 .card-image-container:hover .button-container {
     opacity: 1;
@@ -1001,7 +1269,7 @@ font-size: 30px;
     }
 
     .nav-burger .line {
-        background-color: #122F59 ;
+        background-color: white ;
         width: 30px;
         margin: 3px;
         height: 4px;
@@ -1312,6 +1580,8 @@ padding-bottom: 20px;
 }
 
 
+
+
 /* סגנון לפופאפ */
 /* סגנון לפופאפ */
 .popup-modal {
@@ -1335,11 +1605,21 @@ padding-bottom: 20px;
     width: 80%;
 }
 
-.close-button {
+.close-button,
+.close-button2,
+.close-button3 {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
+}
+
+.close-button:hover,
+.close-button2:hover,
+.close-button3:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .close-button:hover,
@@ -1360,12 +1640,47 @@ padding-bottom: 20px;
     /* Custom styles if needed */
 }
 
+#contactPopup .popup-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* רווח בין שדות */
+}
+
+#contactPopup .popup-content label {
+    font-weight: bold;
+}
+
+#contactPopup .popup-content input,
+#contactPopup .popup-content textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#contactPopup .popup-content button {
+    background-color: #4CAF50;
+    /* צבע רקע של הכפתור */
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#contactPopup .popup-content button:hover {
+    background-color: #45a049;
+    /* צבע הרקע של הכפתור בעת ריחוף */
+}
+
 /* רספונסיביות למסכים בינוניים */
 @media screen and (max-width: 768px) {
 
     #about-section {
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
     } 
         .types-container {
         display: grid;
@@ -1442,7 +1757,7 @@ padding-bottom: 20px;
 
 @media screen and (max-width: 480px) {
     .types {
-        padding: 44px 20px 0 24px;
+            padding: 44px 10px 0 10px;
     }
 }
 

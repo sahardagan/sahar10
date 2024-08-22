@@ -10,63 +10,158 @@
 </head>
 <body>
 <nav class="nav-container">
-<div class="logo-container">
-<img alt="logo" class="logo-image" src="images/SR.jpeg"/>
-<h3 class="logo-title">Sahar Dagan</h3>
-</div>
-<ul class="nav-items">
-<li class="nav-item"><a href="#contact-area">צור קשר</a></li>
-<li class="nav-item"><a href="#projects-section">שירותים</a></li>
-<li class="nav-item"><a href="#about-section">אודות</a></li>
-<li class="nav-item"><a href="#main-section">ראשי</a></li>
-</ul>
-<div class="nav-burger">
-<div class="line"></div>
-<div class="line"></div>
-<div class="line"></div>
-</div>
-<ul class="sidebar-list">
-<li class="sidebar-item"><a href="#main-section">ראשי</a></li>
-<li class="sidebar-item"><a href="#about-section">אודות</a></li>
-<li class="sidebar-item"><a href="#projects-section">שירותים</a></li>
-<li class="sidebar-item"><a href="#contact-area">צור קשר</a></li>
-</ul>
+  <div class="logo-container">
+    <h3 class="logo-title">סהר דגן</h3>
+    <button class="contact-button" onclick="openPopup()">דברו איתי</button>
+    <!-- פופאפ ליצירת קשר -->
+    <div id="contactPopup" class="popup-modal">
+        <div class="popup-content">
+            <span class="close-button">&times;</span>
+            <h2>צור קשר</h2>
+            <form id="contactForm">
+                <label for="name">שם:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">אימייל:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">הודעה:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">שלח</button>
+            </form>
+        </div>
+    </div> <!-- כפתור חדש -->
+  </div>
+  
+  <ul class="nav-items">
+    <li class="nav-item"><a href="#contact-area">צור קשר</a></li>
+    <li class="nav-item"><a href="#projects-section">שירותים</a></li>
+    <li class="nav-item"><a href="#about-section">אודות</a></li>
+    <li class="nav-item"><a href="#main-section">ראשי</a></li>
+  </ul>
+  <div class="nav-burger">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+  <ul class="sidebar-list">
+    <li class="sidebar-item"><a href="#main-section">ראשי</a></li>
+    <li class="sidebar-item"><a href="#about-section">אודות</a></li>
+    <li class="sidebar-item"><a href="#projects-section">שירותים</a></li>
+    <li class="sidebar-item"><a href="#contact-area">צור קשר</a></li>
+  </ul>
 </nav>
 
+
 <section id="about-section">
-<img alt="תמונת פרופיל" class="profile-image" src="images/sahar-profile-image.jpg"/>
-<h1 class="about-title">קצת עלי</h1>
-<div class="about-div">
-<h1 class="about-h1">בונה אתרים מקצועי לשירותך</h1>
-<p class="about-p2">
-מחפשים מפתח אתרים שיכול להרים את העסק שלכם לשלב הבא? אתם במקום הנכון.</p>
-<p class="about-p">
-אני מתמחה ביצירת אתרי אינטרנט איכותיים,
-רספונסיביים ומהירים, עם עיצוב מותאם אישית שמותאם בדיוק לצרכים שלכם. החל מ-750 ₪, אתם מקבלים אתר מותאם אישית, מהיר ועם
-פונקציות מתקדמות שישדרגו את הנוכחות שלכם ברשת.
-</p>
-</div>
+    <div class="left-said">
+        <img alt="תמונת פרופיל" class="profile-image" src="images/sahar-profile-image.jpg" />
+        <!-- אייקונים של תוכנות -->
+        <div class="tools-section">
+            <h2 class="tools-title">הטכנולוגיות שאני עובד איתן</h2>
+            <div class="tools-container">
+                <div class="tool-icon">
+                    <img src="images/wordpress-icon.png" alt="WordPress" />
+                </div>
+                <div class="tool-icon">
+                    <img src="images/elementor-icon.png" alt="Elementor" />
+                </div>
+                <div class="tool-icon">
+                    <img src="images/javascript-icon.png" alt="JavaScript" />
+                </div>
+                <div class="tool-icon">
+                    <img src="images/react-redux-icon.png" alt="React & Redux" />
+                </div>
+                <div class="tool-icon">
+                    <img src="images/sass-icon.png" alt="Sass" />
+                </div>
+                <div class="tool-icon">
+                    <img src="images/bootstrap-icon.png" alt="Bootstrap" />
+                </div>
+                <div class="tool-icon">
+                    <img src="images/mysql-icon.png" alt="MySQL" />
+                </div>
+                <div class="tool-icon">
+                    <img src="images/nodejs-icon.png" alt="Node.js" />
+                </div>
+                <div class="tool-icon">
+                    <img src="images/mongodb-icon.png" alt="MongoDB" />
+                </div>
+                <div class="tool-icon">
+                    <img src="images/typescript-icon.png" alt="TypeScript" />
+                </div>
+                <!-- הוסף אייקון נוסף לפי הצורך -->
+            </div>
+        </div>
+    </div>
+    <h1 class="about-title">קצת עלי</h1>
+    <div class="about-div">
+    <h1 class="about-h1">
+       <span class="hand-wave">👋</span> שלום<br>
+        שמי סהר ואני <span class="highlight">בונה אתרים</span> <span class="highlight2">מקצועי לשירותך</span>
+    </h1>
+
+        <img src="images/" alt="">
+        <p class="about-p2">
+            מחפשים מפתח אתרים שיכול להרים את העסק שלכם לשלב הבא? אתם במקום הנכון.
+        </p>
+        <p class="about-p">
+            אני מתמחה ביצירת אתרי אינטרנט איכותיים, רספונסיביים ומהירים, עם עיצוב מותאם אישית שמותאם בדיוק לצרכים שלכם.
+        </p>
+        <!-- כפתורים -->
+        <div class="button-container1">
+            <button id="contactButton">צור קשר</button>
+            <button id="projectsButton">לצפייה בפרויקטים</button>
+        </div>
+    
+        <!-- פופאפ צור קשר -->
+        <div id="contactPopup" class="popup-modal">
+            <div class="popup-content">
+                <span class="close-button">&times;</span>
+                <h2>צור קשר</h2>
+                <form id="contactForm">
+                    <label for="name">שם:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">אימייל:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">הודעה:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <button type="submit">שלח</button>
+                </form>
+            </div>
+        </div> <!-- סוף פופאפ -->
+    </div>
+<script>
+    document.getElementById('contactButton').addEventListener('click', function () {
+        document.getElementById('contactPopup').style.display = 'flex';
+    });
+
+    document.querySelector('.close-button').addEventListener('click', function () {
+        document.getElementById('contactPopup').style.display = 'none';
+    });
+
+    document.getElementById('projectsButton').addEventListener('click', function () {
+        document.getElementById('projects-section').scrollIntoView({ behavior: 'smooth' });
+    });
+</script>
+
+
 </section>
+
 <!-- חלון הפופאפ -->
 <div class="modal" id="myModal">
     <div class="modal-content">
-        <span class="close">×</span>
+        <span class="close">&times;</span>
         <h2 class="about-me-title">אודותיי</h2>
-        <p id="about-me-p">
-            שמי סהר דגן, ואני מומחה בבניית אתרים בהתאמה אישית עם ניסיון רב ביצירת אתרים מותאמים ללקוח שמביאים תוצאות. אני פועל
-            מכפר-סבא ומתמחה בפלטפורמות כגון Elementor ובשפות תכנות כמו JavaScript, HTML, CSS, Bootstrap, SASS, ו-TypeScript.
-        </p>
-        <p id="about-me-p">
-            הניסיון שלי כולל עבודה עם מגוון רחב של לקוחות, מאתרי תדמית קטנים ועד לאתרי מסחר אלקטרוני מורכבים. אני גאה להציג כאן
-            פרויקטים נבחרים שמדגימים את היכולות שלי לספק פתרונות דיגיטליים איכותיים ומותאמים אישית.
-        </p>
-        <p id="about-me-p">
-            אם אתם מחפשים מישהו שיוכל ליצור לכם אתר מקצועי וייחודי שמתאים בדיוק לצרכים שלכם, אני מזמין אתכם להשאיר פרטים ואני
-            אשמח ליצור קשר ולדבר על הפרויקט הבא שלכם.
-        </p>
+        <p id="about-me-p">שמי סהר דגן, ואני מומחה בבניית אתרים בהתאמה אישית עם ניסיון רב ביצירת אתרים מותאמים ללקוח
+            שמביאים תוצאות. אני פועל מכפר-סבא ומתמחה בפלטפורמות כגון Elementor ובשפות תכנות כמו JavaScript, HTML, CSS,
+            Bootstrap, SASS, ו-TypeScript.</p>
+        <p id="about-me-p">הניסיון שלי כולל עבודה עם מגוון רחב של לקוחות, מאתרי תדמית קטנים ועד לאתרי מסחר אלקטרוני
+            מורכבים. אני גאה להציג כאן פרויקטים נבחרים שמדגימים את היכולות שלי לספק פתרונות דיגיטליים איכותיים ומותאמים
+            אישית.</p>
+        <p id="about-me-p">אם אתם מחפשים מישהו שיוכל ליצור לכם אתר מקצועי וייחודי שמתאים בדיוק לצרכים שלכם, אני מזמין
+            אתכם להשאיר פרטים ואני אשמח ליצור קשר ולדבר על הפרויקט הבא שלכם.</p>
     </div>
 </div>
-<script src="scripts.js"></script>
+
 <section id="types-of-sites">
     <div class="types-container">
         <div class="types">
@@ -80,15 +175,9 @@
             <div class="popup-content">
                 <span class="close-button">&times;</span>
                 <p>העלות להקמת דף נחיתה משתנה בהתאם למספר גורמים חשובים כמו אורך הדף, מורכבות התוכן, ניסיון בונה הדף,
-                    והאם נבחר להשתמש בתבניות או בעיצוב מאפס.
-                    טווח המחירים: עבור דף נחיתה בסיסי, המחיר נע בין 750 ל-3,000 ש"ח. ברוב המקרים, המחיר לדף נחיתה
-                    סטנדרטי עומד סביב 2,000 ש"ח. אם מדובר בדף מורכב יותר, המחירים יכולים להגיע ל-4,000 ש"ח ואף יותר,
-                    במיוחד כאשר יש צורך בעיצוב ייחודי מאפס.
-                    מורכבות הדף: ככל שהדף כולל יותר אלמנטים כמו טקסט, תמונות וסרטונים, כך העלות שלו עולה.
-                    ניסיון ועיצוב: אם בוחרים בדפי נחיתה המבוססים על תבניות קיימות, המחיר יהיה נמוך יותר. עם זאת, דפים
-                    בעיצוב ייחודי שנבנים על ידי אנשי מקצוע מנוסים עשויים לעלות יותר, אך הם מציעים איכות והתאמה מדויקת
-                    לצרכים שלך.
-                    בסך הכל, העלות הממוצעת לדף נחיתה נעה בין 1,500 ל-4,000 ש"ח, בהתאם לדרישות הספציפיות שלך.</p>
+                    והאם נבחר להשתמש בתבניות או בעיצוב מאפס. טווח המחירים: עבור דף נחיתה בסיסי, המחיר נע בין 750 ל-3,000
+                    ש"ח. ברוב המקרים, המחיר לדף נחיתה סטנדרטי עומד סביב 2,000 ש"ח. אם מדובר בדף מורכב יותר, המחירים
+                    יכולים להגיע ל-4,000 ש"ח ואף יותר, במיוחד כאשר יש צורך בעיצוב ייחודי מאפס.</p>
             </div>
         </div>
 
@@ -101,16 +190,9 @@
         <!-- פופאפ -->
         <div id="popupModal2" class="popup-modal">
             <div class="popup-content">
-                <span class="close-button2">&times;</span>
+                <span class="close-button">&times;</span>
                 <p>מחיר בסיסי: הקמת חנות פשוטה עם מספר מצומצם של מוצרים (למשל עד 50 מוצרים) יכולה להתחיל מ-7,500 ש"ח
-                    ולהגיע עד 12,000 ש"ח. זה כולל שימוש בתבניות עיצוב מוכנות, שיכולות להוזיל את העלות הכוללת.
-                    מערכות ניהול: ישנן אפשרויות זולות יותר על בסיס מערכות ניהול כמו WooCommerce או Wix. לדוגמה, חנות
-                    בסיסית ב-Wix יכולה לעלות בין 70 ל-170 ש"ח לחודש. אם תרצה להשתמש במערכות ניהול מתקדמות יותר או להתאים
-                    אישית את החנות, העלויות יכולות לעלות בהתאם.
-                    עלויות תחזוקה שוטפות: תחזוקה חודשית כוללת עלויות שרת אחסון וכתובת דומיין, שנעות בין כמה עשרות שקלים
-                    למאות שקלים בחודש, תלוי בצרכים הספציפיים של החנות.
-                    לסיכום, המחיר של הקמת חנות אינטרנטית נע בין כמה אלפי שקלים למעל 10,000 ש"ח, תלוי במורכבות ובדרישות
-                    המיוחדות של העסק שלך.</p>
+                    ולהגיע עד 12,000 ש"ח. זה כולל שימוש בתבניות עיצוב מוכנות, שיכולות להוזיל את העלות הכוללת.</p>
             </div>
         </div>
 
@@ -123,86 +205,51 @@
         <!-- פופאפ -->
         <div id="popupModal3" class="popup-modal">
             <div class="popup-content">
-                <span class="close-button3">&times;</span>
-                <p>העלות לבניית אתר תדמית משתנה בהתאם למורכבות האתר, מספר העמודים, והפונקציות הנדרשות.
-                    אתר תדמית בסיסי: אם אתם זקוקים לאתר תדמית בסיסי, עם מספר עמודים ותכונות פשוטות, המחיר יכול לנוע בין
-                    2,000 ל-10,000 ש"ח.
-                    אתר תדמית מתקדם: לאתר תדמית מתקדם, עם עיצוב ייחודי, יותר עמודים ותכונות מתקדמות, המחירים יכולים לנוע
-                    בין 10,000 ל-20,000 ש"ח ואף יותר, אם יש צורך בהתאמות מיוחדות או פונקציות מורכבות.
-                    תחזוקה שוטפת: עלויות תחזוקה שוטפות משתנות בהתאם לשירותים המוצעים, כאשר תחזוקה בסיסית כוללת עדכונים
-                    שוטפים ותמיכה טכנית.</p>
+                <span class="close-button">&times;</span>
+                <p>העלות לבניית אתר תדמית משתנה בהתאם למורכבות האתר, מספר העמודים, והפונקציות הנדרשות. אתר תדמית בסיסי:
+                    אם אתם זקוקים לאתר תדמית בסיסי, עם מספר עמודים ותכונות פשוטות, המחיר יכול לנוע בין 2,000 ל-10,000
+                    ש"ח.</p>
             </div>
         </div>
     </div>
 </section>
 
 <script>
-    // קבלת האלמנטים של הפופאפ הראשון
-    var modal = document.getElementById("popupModal");
-    var btn = document.getElementById("popupButton");
-    var span = document.getElementsByClassName("close-button")[0];
-
-    // כאשר לוחצים על הכפתור, פתח את הפופאפ
-    btn.onclick = function () {
-        modal.style.display = "block";
+    // טיפול בלחיצת כפתור לפתיחת פופאפ
+    document.getElementById("popupButton").onclick = function () {
+        document.getElementById("popupModal").style.display = "block";
     }
 
-    // כאשר לוחצים על ה-X, סגור את הפופאפ
-    span.onclick = function () {
-        modal.style.display = "none";
+    document.getElementById("popupButton2").onclick = function () {
+        document.getElementById("popupModal2").style.display = "block";
     }
 
-    // כאשר לוחצים בכל מקום מחוץ לפופאפ, סגור אותו
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
+    document.getElementById("popupButton3").onclick = function () {
+        document.getElementById("popupModal3").style.display = "block";
+    }
+
+    // טיפול בלחיצת כפתור לפתיחת פופאפ ליצירת קשר
+    function openPopup() {
+        document.getElementById("contactPopup").style.display = "block";
+    }
+
+    // טיפול בלחיצת X לסגירת פופאפ
+    var closeButtons = document.querySelectorAll(".close-button, .close-button2, .close-button3");
+    closeButtons.forEach(function (button) {
+        button.onclick = function () {
+            this.closest(".popup-modal").style.display = "none";
         }
-    }
+    });
 
-    // קבלת האלמנטים של הפופאפ השני
-    var modal2 = document.getElementById("popupModal2");
-    var btn2 = document.getElementById("popupButton2");
-    var span2 = document.getElementsByClassName("close-button2")[0];
-
-    // כאשר לוחצים על הכפתור, פתח את הפופאפ
-    btn2.onclick = function () {
-        modal2.style.display = "block";
-    }
-
-    // כאשר לוחצים על ה-X, סגור את הפופאפ
-    span2.onclick = function () {
-        modal2.style.display = "none";
-    }
-
-    // כאשר לוחצים בכל מקום מחוץ לפופאפ, סגור אותו
+    // סגירת פופאפ בלחיצה מחוץ לחלון הפופאפ
     window.onclick = function (event) {
-        if (event.target == modal2) {
-            modal2.style.display = "none";
-        }
-    }
-
-    // קבלת האלמנטים של הפופאפ השלישי
-    var modal3 = document.getElementById("popupModal3");
-    var btn3 = document.getElementById("popupButton3");
-    var span3 = document.getElementsByClassName("close-button3")[0];
-
-    // כאשר לוחצים על הכפתור, פתח את הפופאפ
-    btn3.onclick = function () {
-        modal3.style.display = "block";
-    }
-
-    // כאשר לוחצים על ה-X, סגור את הפופאפ
-    span3.onclick = function () {
-        modal3.style.display = "none";
-    }
-
-    // כאשר לוחצים בכל מקום מחוץ לפופאפ, סגור אותו
-    window.onclick = function (event) {
-        if (event.target == modal3) {
-            modal3.style.display = "none";
+        if (event.target.classList.contains("popup-modal")) {
+            event.target.style.display = "none";
         }
     }
 </script>
+
+
 
 <section id="projects-section">
 <h1 class="projects-title">הפרויקטים שלי</h1>
