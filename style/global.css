@@ -1280,7 +1280,7 @@ button:hover {
         flex-direction: column;
         align-items: center;
         list-style: none;
-        background-color: rgb(0, 0, 0, 0.7);
+        background-color:#111223;
         position: fixed;
         right: -100%;
         top: 80px;
