@@ -345,7 +345,7 @@ button:hover {
 }
 
 .about-p2 {
-    font-size: 25px;
+    font-size: 18px;
     color: #122F59;
     padding: 15px 0;
 }
@@ -394,16 +394,19 @@ button:hover {
     }
 
     .about-h1 {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .hand-wave {
         font-size: 1.5rem;
     }
 
-    .highlight {
-        font-size: 25px;
-    }
+        @media screen and (max-width: 480px) {
+            .highlight {
+                font-size: 31px;
+            }
+        }
+    
 
     .about-p2 {
         font-size: 18px;
@@ -416,6 +419,7 @@ button:hover {
 
 .highlight2{
     font-size: 19px;
+    display: none;
 }
 
 
@@ -763,27 +767,19 @@ button:hover {
 .button-container1 {
     display: flex;
     flex-direction: row-reverse;
+    justify-content: center;
 }
 
 .button-container1 button {
-    background-color: #003366;
-    /* צבע רקע כחול */
+    background-color: #39BC9B;
     color: #FFFFFF;
-    /* צבע טקסט לבן */
     border: none;
-    /* ללא גבולות */
-    padding: 10px 20px;
-    /* רווח פנימי */
-    margin: 42px 0 0 34px;
-    /* מרווח סביב הכפתור */
-    font-size: 16px;
-    /* גודל גופן */
+    padding: 2px 36px;
+    margin: 39px 0 0 26px;
+    font-size: 15px;
     cursor: pointer;
-    /* סמן קליק לעכבר */
-    border-radius: 5px;
-    /* קצוות מעוגלים */
+    border-radius: 35px;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    /* שינוי חלק של צבע, גובה הצללה ושינוי גודל */
 }
 
 .button-container1 button:hover {
