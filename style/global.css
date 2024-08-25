@@ -622,7 +622,6 @@ button:hover {
 }
 
 .tool-icon {
-    padding: 5px 10px;
     width: 75px;
     height: 38px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -680,7 +679,7 @@ button:hover {
         }
 
     .tool-icon {
-                padding: 0px 5px;
+               /*  padding: 0px 5px; */
                     width: 75px;
                     height: 38px;
                     box-shadow: 0 4px 6px rgb(0, 0, 0, 0.15);
