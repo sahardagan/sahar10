@@ -1796,3 +1796,24 @@ padding-bottom: 20px;
         font-size: 16px;
     }
 }
+
+
+@media (max-width: 390px){
+            .highlight {
+                    font-size: 30px;
+                }
+        .about-h1 {
+            font-size: 15px;
+        }
+
+                .logo-container {
+                    padding: 0;
+                    display: flex;
+                    align-items: center;
+                }
+                   .button-container1 button {
+                       padding: 2px 37px;
+                       margin: 35px 12px 1px 21px;
+                       font-size: 11px;
+                   }
+}
