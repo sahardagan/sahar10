@@ -577,6 +577,62 @@ button:hover {
     padding: 20px;
 }
 
+.smile-animation {
+    position: relative;
+    height: 320px;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-top: 35px;
+    overflow: hidden;
+    /* למניעת התפרצות התמונה מחוץ למסגרת */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    /* צל קל */
+}
+
+.smile-animation:hover {
+    transform: scale(1.05);
+    /* הגדלה קלה של הכפתור כאשר עכבר עובר */
+}
+
+.smile-animation img {
+    width: 350px;
+    height: 321px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    animation: smile-animation 5s infinite ease-in-out;
+    /* זמן אנימציה ארוך יותר ועם שינוי קל בטיימינג */
+}
+
+.smile-animation img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.smile-animation img:nth-child(2) {
+    animation-delay: 2.5s;
+}
+
+.smile-animation img:nth-child(3) {
+    animation-delay: 1.25s;
+}
+
+@keyframes smile-animation {
+
+    0%,
+    50%,
+    100% {
+        opacity: 0;
+    }
+
+    25%,
+    75% {
+        opacity: 1;
+    }
+}
+
 .profile-image {
     width: 138px;
     height: 138px;
