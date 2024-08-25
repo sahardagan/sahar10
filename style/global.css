@@ -395,6 +395,7 @@ button:hover {
 
     .about-h1 {
         font-size: 21px;
+        text-align: center;
     }
 
     .hand-wave {
@@ -410,6 +411,7 @@ button:hover {
 
     .about-p2 {
         font-size: 18px;
+        text-align: center;
     }
 
     .about-p {
@@ -1677,6 +1679,7 @@ padding-bottom: 20px;
     #about-section {
         display: flex;
         flex-direction: column-reverse;
+        align-items: center;
     } 
         .types-container {
         display: grid;
@@ -1795,6 +1798,10 @@ padding-bottom: 20px;
     .types h1 {
         font-size: 16px;
     }
+
+        .button-container2 button{
+            
+        }
 }
 
 
@@ -1831,8 +1838,8 @@ padding-bottom: 20px;
     background-color: #39BC9B;
     color: #FFFFFF;
     border: none;
-    margin: 32px -12px 0px 37px;
-    font-size: 14px;
+        margin: 32px -12px 0px 30px;
+            font-size: 13px;
     cursor: pointer;
     border-radius: 35px;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
