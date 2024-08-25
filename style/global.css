@@ -835,6 +835,7 @@ button:hover {
 .card-image {
     width: 100%;
     height: auto;
+    box-shadow: 0px 4px 6px rgb(0, 0, 0, 0.3);
 }
 
 .button-container {
