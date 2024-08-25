@@ -577,61 +577,7 @@ button:hover {
     padding: 20px;
 }
 
-.smile-animation {
-    position: relative;
-    height: 320px;
-    cursor: pointer;
-    border-radius: 50%;
-    margin-top: 35px;
-    overflow: hidden;
-    /* למניעת התפרצות התמונה מחוץ למסגרת */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-    /* צל קל */
-}
 
-.smile-animation:hover {
-    transform: scale(1.05);
-    /* הגדלה קלה של הכפתור כאשר עכבר עובר */
-}
-
-.smile-animation img {
-    width: 350px;
-    height: 321px;
-    cursor: pointer;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    animation: smile-animation 5s infinite ease-in-out;
-    /* זמן אנימציה ארוך יותר ועם שינוי קל בטיימינג */
-}
-
-.smile-animation img:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.smile-animation img:nth-child(2) {
-    animation-delay: 2.5s;
-}
-
-.smile-animation img:nth-child(3) {
-    animation-delay: 1.25s;
-}
-
-@keyframes smile-animation {
-
-    0%,
-    50%,
-    100% {
-        opacity: 0;
-    }
-
-    25%,
-    75% {
-        opacity: 1;
-    }
-}
 
 .profile-image {
     width: 138px;
@@ -667,13 +613,35 @@ button:hover {
 }
 
 .tool-icon {
+    padding: 5px 10px;
+    width: 75px;
+    height: 38px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    /* קצוות מעוגלים לתחושת תג */
+    background-color: #ffffff;
+    /* צבע רקע לבן או צבע אחר לפי הצורך */
+    color: #333333;
+    /* צבע טקסט */
+    text-align: center;
+    line-height: 38px;
+    /* ליישר את הטקסט במרכז */
+    font-size: 14px;
+    /* גודל טקסט מתאים */
+    border: 1px solid #dddddd;
+    /* גבול קל לתג */
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100px;
-    /* רוחב קבוע לכל אייקון */
-    height: 100px;
-    /* גובה קבוע לכל אייקון */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    /* מעבר חלק לשינויים */
+}
+
+.tool-icon:hover {
+    background-color: #f0f0f0;
+    /* צבע רקע בהובר */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* הצללה חזקה יותר בהובר */
 }
 
 .tool-icon img {
@@ -704,8 +672,8 @@ button:hover {
 
     .tool-icon {
                 padding: 0px 5px;
-                    width: 86px;
-                    height: 45px;
+                    width: 75px;
+                    height: 38px;
                     box-shadow: 0 4px 6px rgb(0, 0, 0, 0.15);
     }
 }
@@ -714,15 +682,15 @@ button:hover {
    
 
     .tool-icon {
-            width: 70px;
-                height: 34px;
+            width: 64px;
+                height: 30px;
     }
 }
 
 @media screen and (max-width: 350px) {
     .tool-icon {
-        width: 65px;
-        height: 28px;
+            width: 60px;
+                height: 29px;
     }
 }
 
@@ -1807,8 +1775,8 @@ padding-bottom: 20px;
     }
 
     .profile-image {
-        width: 200px;
-        height: 200px;
+            width: 265px;
+                height: 245px;
     }
 
                 
@@ -1851,6 +1819,18 @@ padding-bottom: 20px;
     .close-button {
         font-size: 24px;
         /* הקטנת גודל כפתור הסגירה למסכים קטנים */
+    }
+
+        .profile-image {
+                    width: 250px;
+                        height: 230px;
+        }
+}
+
+@media screen and (max-width: 400px) {
+    .profile-image {
+        width: 210px;
+        height: 195px;
     }
 }
 
