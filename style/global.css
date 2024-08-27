@@ -923,6 +923,7 @@ button:hover {
 }
 
 .box img{
+    height: 45%;
     width: 100%;
     border-radius: 10px;
     display: block;
@@ -932,7 +933,7 @@ button:hover {
 .overlay2{
     height: 0;
     width: 100%;
-    background:linear-gradient(transparent, #1c1c1c 38%);
+    background:linear-gradient(transparent, #1c1c1c 45%);
     border-radius: 10px;
     position: absolute;
     left: 0;
@@ -984,8 +985,8 @@ button:hover {
     }
 
     .box {
-        width: 300px;
-            height: 649px;
+            width: 300px;
+                height: 450px;
     }
 }
 
@@ -997,8 +998,8 @@ button:hover {
     }
 
     .box {
-            width: 280px;
-                height: 605px;
+                width: 280px;
+                    height: 430px;
     }
 }
 
@@ -1010,12 +1011,12 @@ button:hover {
     }
 
     .box {
-            width: 250px;
-                height: 541px;
+            width: 260px;
+                height: 410px;
     }
 
     .overlay2{
-        background: linear-gradient(transparent, #1c1c1c 36%);
+       /*  background: linear-gradient(transparent, #1c1c1c 36%); */
     }
 }
 
@@ -1027,13 +1028,20 @@ button:hover {
     }
 
     .box {
-            width: 219px;
-                height: 474px;
+            width: 240px;
+                height: 390px;
     }
 
-         .overlay2 {
-             background: linear-gradient(transparent, #1c1c1c 34%);
-         }
+                .overlay2 a{
+                        margin-top: 22px;
+                            color: #262626;
+                            text-decoration: none;
+                            font-size: 10px;
+                            background: #fff;
+                            border-radius: 50px;
+                            text-align: center;
+                            padding: 5px 15px;
+                }
 }
 
 /* גודל קטן מאוד - מסכים קטנים מאוד (למשל, מתחת ל-576px) */
@@ -1044,11 +1052,25 @@ button:hover {
     }
 
     .box {
+        width: 220px;
+            height: 370px;
     }
 
          .overlay2 {
-             background: linear-gradient(transparent, #1c1c1c 42%);
+           /*   background: linear-gradient(transparent, #1c1c1c 42%); */
          }
+
+                 .overlay2 h3 {
+                     font-weight: 500;
+                     margin-bottom: 5px;
+                     margin-top: 125%;
+                     font-family: bebas neue;
+                     font-size: 23px;
+                     letter-spacing: 2px;
+                 }
+        .overlay2 a{
+                font-size: 12px;
+        }
 }
 
 
