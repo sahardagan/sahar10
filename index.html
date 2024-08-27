@@ -376,6 +376,32 @@
         </div>
     </div>
 </div>
+<script>
+    // בודק אם ה-DOM נטען
+        document.addEventListener("DOMContentLoaded", function () {
+            // בוחר את כל הכרטיסים
+            const boxes = document.querySelectorAll('.box');
+
+            // יוצר את ה-Intersection Observer
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show-overlay');
+                    } else {
+                        entry.target.classList.remove('show-overlay');
+                    }
+                });
+            }, {
+                threshold: 1 // משנה את ה-threshold לפי הרצוי (0.5 מציין 50%)
+            });
+
+            // עובר על כל הכרטיסים ומוסיף אותם ל-Observer
+            boxes.forEach(box => {
+                observer.observe(box);
+            });
+        });
+
+</script>
 <section id="contact-area">
 <div class="image-container">
 <img alt="" class="image-contact" src="images/Rectangle 41.png"/>

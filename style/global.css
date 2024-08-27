@@ -1020,6 +1020,17 @@ button:hover {
     }
 }
 
+/* גודל קטן - טלפונים ניידים */
+@media screen and (max-width: 767px) {
+    .box:hover .overlay2 {
+        height: 100%;
+    }
+
+    .box.show-overlay .overlay2 {
+        height: 100%;
+    }
+}
+
 /* גודל קטן - טלפונים ניידים (למשל, 576px ומעלה) */
 @media screen and (min-width: 576px) and (max-width: 767px) {
     .box-area {
