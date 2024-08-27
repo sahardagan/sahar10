@@ -1856,8 +1856,8 @@ padding-bottom: 20px;
 
 
 .image-page{
-    width: 350px;
-        height: 350px;
+    width: 150px;
+        height: 150px;
 }
 
 @media (max-width: 1500px){
@@ -1871,15 +1871,15 @@ padding-bottom: 20px;
 /* Media queries להתאמה למסכים קטנים */
 @media (max-width: 768px) {
     .image-page {
-            width: 325px;
-                height: 325px;
+            width: 125px;
+                height: 125px;
     }
 }
 
 @media (max-width: 480px) {
     .image-page {
-            width: 319px;
-                height: 319px;
+            width: 100px;
+                height: 100px;
     }
 }
 
@@ -1989,8 +1989,9 @@ padding-bottom: 20px;
     } 
         .types-container {
         display: grid;
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         /* ניתן לשנות את הערך כדי לשלוט במרווח בין הפריטים */
+        gap: 50px;
     }
 
     .profile-image {
@@ -2016,6 +2017,7 @@ padding-bottom: 20px;
     }
 
     .types {
+        width: 90px;
         padding: 100px 100px 0 0px;
         /* הקטנת המרווחים */
     }
@@ -2075,17 +2077,20 @@ padding-bottom: 20px;
 
 @media screen and (max-width: 480px) {
     .types {
-            padding: 44px 10px 0 10px;
+            padding: 0;
     }
 }
 
 
 #types-of-sites{
+    margin: 40px;
+    padding: 50px 0;
         display: flex;
     width: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+        box-shadow: 1px -1px 3px rgb(3, 12, 27, 1);
 }
 
 
@@ -2114,7 +2119,7 @@ padding-bottom: 20px;
 
 @media (max-width: 480px) {
     .types h1 {
-        font-size: 16px;
+        font-size: 12px;
     }
 
         .button-container2 button{
@@ -2145,4 +2150,9 @@ padding-bottom: 20px;
                    
 }
 
-
+.types button{
+    border-radius: 15%;
+            padding: 0 32px;
+                font-size: 16px;
+                    margin: 10px;
+}
