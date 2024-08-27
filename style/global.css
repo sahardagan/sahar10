@@ -933,7 +933,7 @@ button:hover {
 .overlay2{
     height: 0;
     width: 100%;
-    background:linear-gradient(transparent, #1c1c1c 45%);
+    background:linear-gradient(transparent, #1c1c1c 46%);
     border-radius: 10px;
     position: absolute;
     left: 0;
@@ -943,7 +943,7 @@ button:hover {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 40px;
+    padding: 0 5px;
     text-align: center;
     font-size: 14px;
     transition: height 0.5s;
@@ -1073,13 +1073,14 @@ button:hover {
 
                  .overlay2 h3 {
                      font-weight: 500;
-                     margin-bottom: 5px;
-                     margin-top: 125%;
+                     margin-bottom: 20px;
+                     margin-top: 80%;
                      font-family: bebas neue;
-                     font-size: 23px;
-                     letter-spacing: 2px;
+                     font-size: 20px;
+                     letter-spacing: 0px;
                  }
         .overlay2 a{
+            margin-top: 25px;
                 font-size: 12px;
         }
 }
