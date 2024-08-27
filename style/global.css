@@ -1059,7 +1059,7 @@ button:hover {
 @media screen and (max-width: 575px) {
     .box-area {
         grid-template-columns: 1fr;
-        grid-gap: 40px;
+        grid-gap: 100px;
     }
 
     .box {
