@@ -933,7 +933,7 @@ button:hover {
 .overlay2{
     height: 0;
     width: 100%;
-    background:linear-gradient(transparent, #1c1c1c 46%);
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.1) 46%);
     border-radius: 10px;
     position: absolute;
     left: 0;
@@ -950,6 +950,7 @@ button:hover {
 }
 
 .overlay2 h3{
+    
     font-weight: 500;
     margin-bottom: 5px;
     margin-top: 80%;
@@ -960,10 +961,10 @@ button:hover {
 
 .overlay2 a{
     margin-top: 10px;
-    color: #262626;
+    color: #fff;
     text-decoration: none;
     font-size: 14px;
-    background: #fff;
+    background: #1ABC9C;
     border-radius: 50px;
     text-align: center;
     padding: 5px 15px;
@@ -1510,7 +1511,7 @@ button:hover {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 78px 0 0px 0;
+            padding: 25px 0 0px 0;
             margin-bottom:282px ;
         }
 
@@ -1593,7 +1594,7 @@ button:hover {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 1fr);
         gap: 10px;
-        margin: 70px 0;
+        margin: 25px 0;
     }
 
     .single-card {
@@ -1663,7 +1664,8 @@ padding-bottom: 20px;
 
 
     .projects-title {
-        font-size: 25px;
+        font-size: 22px;
+        text-align: center;
     }
 
     .projects-text {
