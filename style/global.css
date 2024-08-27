@@ -932,7 +932,7 @@ button:hover {
 .overlay2{
     height: 0;
     width: 100%;
-    background:linear-gradient(transparent, #1c1c1c 35%);
+    background:linear-gradient(transparent, #1c1c1c 38%);
     border-radius: 10px;
     position: absolute;
     left: 0;
@@ -1013,6 +1013,10 @@ button:hover {
         width: 250px;
         height: 400px;
     }
+
+    .overlay2{
+        background: linear-gradient(transparent, #1c1c1c 36%);
+    }
 }
 
 /* גודל קטן - טלפונים ניידים (למשל, 576px ומעלה) */
@@ -1026,6 +1030,10 @@ button:hover {
         width: 220px;
         height: 370px;
     }
+
+         .overlay2 {
+             background: linear-gradient(transparent, #1c1c1c 34%);
+         }
 }
 
 /* גודל קטן מאוד - מסכים קטנים מאוד (למשל, מתחת ל-576px) */
@@ -1038,6 +1046,10 @@ button:hover {
     .box {
         width: 100%;
     }
+
+         .overlay2 {
+             background: linear-gradient(transparent, #1c1c1c 42%);
+         }
 }
 
 
