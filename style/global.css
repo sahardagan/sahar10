@@ -914,8 +914,8 @@ button:hover {
 }
 
 .box{
-        width: 250px;
-    height: 400px;
+    width: 228px;
+        height: 493px;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
@@ -997,8 +997,8 @@ button:hover {
     }
 
     .box {
-        width: 280px;
-        height: 420px;
+            width: 280px;
+                height: 605px;
     }
 }
 
@@ -1010,8 +1010,8 @@ button:hover {
     }
 
     .box {
-        width: 250px;
-        height: 400px;
+            width: 250px;
+                height: 541px;
     }
 
     .overlay2{
@@ -1027,8 +1027,8 @@ button:hover {
     }
 
     .box {
-        width: 220px;
-        height: 370px;
+            width: 219px;
+                height: 474px;
     }
 
          .overlay2 {
@@ -1044,7 +1044,6 @@ button:hover {
     }
 
     .box {
-        width: 100%;
     }
 
          .overlay2 {
