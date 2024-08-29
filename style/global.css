@@ -1355,36 +1355,43 @@ button:hover {
 /* עיצוב עבור ה-navbar התחתון */
 /* עיצוב עבור ה-navbar התחתון */
 .bottom-navbar {
-    border-radius: 50%;
-position: fixed;
-    bottom: -46px;
+    position: fixed;
+    bottom: 0;
     left: 0;
     width: 100%;
+    height: 80px;
+    /* גובה ה-navbar, שנה לפי הצורך */
     display: flex;
-    justify-content:end;
+    justify-content: space-around;
     align-items: center;
-    /* background: url(/images/wood-texture.jpg) no-repeat center center; */
+    background: url('/images/wood-texture.jpg') no-repeat center center;
+    /* הוספת תמונת רקע של עץ */
     background-size: cover;
-    /* border-top: 2px solid #6c3f2a; */
-    box-shadow: 0 26px 56px rgba(0, 0, 0, 1);
+    /* מכסה את כל ה-navbar בתמונה */
+    border-top: 2px solid #6c3f2a;
+    /* גבול עץ כהה */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.4);
+    /* צל שיבדל את השידה */
     z-index: 1000;
-   /*  transform: rotateX(0deg); */
+    transform: rotateX(0deg);
+    /* אפס סיבוב כאן, אנחנו נוסיף סיבוב לתמונה עצמה */
     perspective: 500px;
-        padding-bottom: 36px;
+    /* מוסיף עומק לטרנספורמציות */
 }
-
 /* סובב את התמונה כלפי מעלה */
 .bottom-navbar::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url(/images/wood-texture.jpg) no-repeat center center;
-        /* background-size: cover; */
-        transform: rotateX(-116deg);
-        z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/images/wood-texture.jpg') no-repeat center center;
+    background-size: cover;
+    transform: rotateX(-10deg);
+    /* סובב את התמונה כלפי מעלה */
+    z-index: -1;
+    /* לוודא שהתמונה היא הרקע */
 }
 
 /* העיצוב של התמונה */
