@@ -1289,6 +1289,7 @@ button:hover {
 }
 
 .contact-form button {
+        margin: 0px;
     width: 100%;
     padding: 10px;
     background-color: #2C3E50;
@@ -1313,7 +1314,6 @@ button:hover {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-        padding: 176px 0 0 0;
     min-height: 200px;
     justify-content: center;
     align-items: center;
@@ -1322,7 +1322,6 @@ button:hover {
 .image-item {
     display: flex;
     margin: 15px;
-    width: 140px;
     flex-direction: column;
     align-items: center;
 }
@@ -1418,10 +1417,11 @@ button:hover {
 
     /* contact */
 
-    #contact-area {
+    #contact-area { 
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        box-shadow: 0px -1px 14px rgb(0, 0, 0, 1);
     }
 
     .image-contact {
@@ -1708,13 +1708,15 @@ padding-bottom: 20px;
 }
 
 #contact-area {
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 40px;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 1);
     max-width: 100%;
     margin: 0 auto;
     direction: rtl;
@@ -1796,9 +1798,7 @@ padding-bottom: 20px;
 
 @media (max-width: 768px) {
     #contact-area {
-        height: 650px;
         flex-direction: column;
-        padding: 20px;
     }
 
     .contact-info-area {
