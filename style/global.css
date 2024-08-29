@@ -1408,6 +1408,10 @@ position: fixed;
     /* גובה ה-navbar עם מרווח נוסף */
 }
 
+.forrest-img{
+    
+}
+
 /* MEDIA QUERIES */
 
 @media(max-width: 1536px) {
