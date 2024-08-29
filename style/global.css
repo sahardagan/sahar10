@@ -1321,7 +1321,7 @@ button:hover {
 
 .image-item {
     display: flex;
-    margin: 15px;
+        margin-bottom: 14px;
     flex-direction: column;
     align-items: center;
 }
@@ -1349,6 +1349,64 @@ button:hover {
 }
 
 
+/* Bottom Navbar */
+
+/* עיצוב עבור ה-navbar התחתון */
+/* עיצוב עבור ה-navbar התחתון */
+/* עיצוב עבור ה-navbar התחתון */
+.bottom-navbar {
+    border-radius: 50%;
+position: fixed;
+    bottom: -46px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content:end;
+    align-items: center;
+    /* background: url(/images/wood-texture.jpg) no-repeat center center; */
+    background-size: cover;
+    /* border-top: 2px solid #6c3f2a; */
+    box-shadow: 0 26px 56px rgba(0, 0, 0, 1);
+    z-index: 1000;
+   /*  transform: rotateX(0deg); */
+    perspective: 500px;
+        padding-bottom: 36px;
+}
+
+/* סובב את התמונה כלפי מעלה */
+.bottom-navbar::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(/images/wood-texture.jpg) no-repeat center center;
+        /* background-size: cover; */
+        transform: rotateX(-116deg);
+        z-index: -1;
+}
+
+/* העיצוב של התמונה */
+.image-item {
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.phone-button img,
+.image-item img {
+    width: 69px;
+    /* ניתן לשנות לפי הצורך */
+    height: auto;
+}
+
+/* מוסיף מרווח בחלק התחתון של התוכן כדי למנוע חפיפה עם ה-navbar */
+.section.image-area {
+    margin-bottom: 80px;
+    /* גובה ה-navbar עם מרווח נוסף */
+}
 
 /* MEDIA QUERIES */
 
