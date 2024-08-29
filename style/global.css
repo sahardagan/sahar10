@@ -1249,103 +1249,62 @@ button:hover {
 }
 
 /* contact area */
-#contact-area {
-    width: 100%;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-between;
-    height: 959px;
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-
-.image-container {
-    position: relative;
-}
-
-.image-contact {
-    position: absolute;
-    bottom: -191px;
-}
-
-
-.contact-container {
-    padding: 161px 304px 152px 0px;
-    width: 549px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.contact-title {
-    width: 135px;
-    text-align: centers;
-    color: var(--primary-color)
-}
-
-.contact-text {
-    width: 548px;
-    text-align: right;
-    color: var(--primary-color);
-    padding: 6px 0 47px 0;
-}
-
-.contact-info-area {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 47px 0 0 0;
-    align-items: flex-end;
-}
-
-.contact-input-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-.label-text {
-    color: black;
-    width: 74px;
-    height: 24px;
-    display: flex;
-    justify-content: end;
-    margin-top: 13px
-}
-
-.text-area {
-    width: 548px;
-    height: 50px;
-    border-bottom: 3px solid var(--third-color);
-    padding: 5px 10px;
-    outline: none;
-    font-size: 14px;
-}
-
-
-.text-message {
-    border-bottom: 3px solid var(--third-color);
-    width: 548px;
-    height: 100px;
-    padding: 5px 10px;
-    outline: none;
-    font-size: 14px;
-}
-
-.sending-btn {
-    background-color: var(--third-color);
-    color: var(--forth-color);
-    width: 166px;
-    border-radius: 25px;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
+.contact-form h2 {
+    color: #2C3E50;
     text-align: center;
-    padding: 9px 0;
-    font-weight: 600;
-    margin-top: 33px;
+    margin-bottom: 20px;
 }
+
+.contact-form label {
+    color: #2C3E50;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #2C3E50;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #3498DB;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2C3E50;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #3498DB;
+}
+
 
 
 /* footer area */
@@ -1939,44 +1898,88 @@ padding-bottom: 20px;
     align-items: center;
     padding: 150px 150px 0 0px;
 }
-
-.popupButton {
-    /* Custom styles if needed */
+/* עיצוב לפופאפ עצמו */
+.popup-modal {
+    display: none;
+    /* הסתרה ברירת מחדל */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* רקע חצי שקוף */
 }
 
-#contactPopup .popup-content form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    /* רווח בין שדות */
+.popup-content {
+    background-color: #FFFFFF;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #2C3E50;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
 
-#contactPopup .popup-content label {
+.close-button {
+    color: #2C3E50;
+    font-size: 28px;
     font-weight: bold;
-}
-
-#contactPopup .popup-content input,
-#contactPopup .popup-content textarea {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-#contactPopup .popup-content button {
-    background-color: #4CAF50;
-    /* צבע רקע של הכפתור */
-    color: white;
-    border: none;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 4px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
     cursor: pointer;
 }
 
-#contactPopup .popup-content button:hover {
-    background-color: #45a049;
-    /* צבע הרקע של הכפתור בעת ריחוף */
+.popup-content h2 {
+    color: #2C3E50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.popup-content label {
+    color: #2C3E50;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.popup-content input,
+.popup-content textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #2C3E50;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.popup-content input:focus,
+.popup-content textarea:focus {
+    border-color: #3498DB;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.popup-content button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2C3E50;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.popup-content button:hover {
+    background-color: #3498DB;
 }
 
 /* רספונסיביות למסכים בינוניים */
