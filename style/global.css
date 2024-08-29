@@ -1416,7 +1416,8 @@ button:hover {
 }
 
 .forrest-img{
-    
+    width: 100px;
+    margin-bottom: 50px;
 }
 
 /* MEDIA QUERIES */
