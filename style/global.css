@@ -1364,7 +1364,7 @@ button:hover {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background: url('/wood-texture.jpg') no-repeat center center;
+    /* background: url('/wood-texture.jpg') no-repeat center center; */
     /* הוספת תמונת רקע של עץ */
     background-size: cover;
     /* מכסה את כל ה-navbar בתמונה */
