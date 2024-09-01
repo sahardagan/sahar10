@@ -472,19 +472,20 @@ button:hover {
 
 
 .about-me-title {
+    padding: 15px 0;
     text-align: center;
      color: #333;
     font-size: 24px;
-    margin-bottom: 20px; /* ריווח תחתון לכותרת */
 }
+
 #about-me-p{
-    direction: rtl;
-    color: #555;
-    font-size: 16px;
-    line-height: 1.6;
-    /* גובה שורות נוח לקריאה */
-    margin-bottom: 15px;
-    /* ריווח בין פסקאות */
+        padding: 0 40px;
+            direction: rtl;
+            color: #555;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-align: center;
 }
 
 .content {
@@ -714,7 +715,6 @@ button:hover {
     width: 80%;
     max-width: 500px;
     background-color: white;
-    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -1732,54 +1732,8 @@ padding-bottom: 20px;
     }
 
 
-    .modal-content {
-        background-color: #000000c7;
-        margin: 5% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%;
-        height: 50%;
-    }
-
-    #about-me {
-        font-size: 13px;
-    }
-
-
 }
 
-@media (max-width: 768px) {
-    .about-me-title {
-        font-size: 20px;
-        /* כיווץ גודל הכותרת במסכים קטנים */
-        margin-bottom: 15px;
-        /* התאמת ריווח תחתון לכותרת */
-    }
-
-    #about-me-p {
-        font-size: 14px;
-        /* כיווץ גודל הטקסט במסכים קטנים */
-        margin-bottom: 10px;
-        /* התאמת ריווח בין פסקאות */
-    }
-}
-
-/* עיצוב רספונסיבי עבור מסכים קטנים מאוד (מובייל) */
-@media (max-width: 480px) {
-    .about-me-title {
-        font-size: 18px;
-        /* כיווץ נוסף של גודל הכותרת */
-        margin-bottom: 10px;
-        /* התאמת ריווח תחתון נוסף לכותרת */
-    }
-
-    #about-me-p {
-        font-size: 12px;
-        /* כיווץ נוסף של גודל הטקסט במסכים קטנים מאוד */
-        margin-bottom: 8px;
-        /* התאמת ריווח בין פסקאות */
-    }
-}
 
 #contact-area {
     height: 100%;
