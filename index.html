@@ -61,49 +61,132 @@
         <!-- אייקונים של תוכנות -->
         <div class="tools-section">
             <div class="tools-container">
-                <div class="tool-icon">
+                <div class="tool-icon" onclick="openToolPopup('wordpress')">
                     <img src="images/icons8-wordpress-96.png" alt="WordPress" />
                 </div>
-                <div class="tool-icon">
-                    <img class="elemntor-photo" src="images/icons8-elementor-the-wordpress-page-builder,-a-simple,-intuitive-drag-and-drop-interface.-96.png" alt="Elementor" />
+                <div class="tool-icon" onclick="openToolPopup('elementor')">
+                    <img class="elemntor-photo"
+                        src="images/icons8-elementor-the-wordpress-page-builder,-a-simple,-intuitive-drag-and-drop-interface.-96.png"
+                        alt="Elementor" />
                 </div>
-                <div class="tool-icon">
+                <div class="tool-icon" onclick="openToolPopup('javascript')">
                     <img src="images/icons8-javascript-96.png" alt="JavaScript" />
                 </div>
-                <div class="tool-icon">
+                <div class="tool-icon" onclick="openToolPopup('css')">
                     <img src="images/icons8-css-96.png" alt="CSS" />
                 </div>
-                <div class="tool-icon">
+                <div class="tool-icon" onclick="openToolPopup('html')">
                     <img src="images/icons8-html-96.png" alt="HTML" />
                 </div>
-                <div class="tool-icon">
-                    <img src="images/icons8-react-native-96.png" alt="React & Redux" />
+                <div class="tool-icon" onclick="openToolPopup('react')">
+                    <img src="images/icons8-react-native-96.png" alt="React" />
                 </div>
-                <div class="tool-icon">
-                    <img src="images/icons8-redux-an-open-source-javascript-library-for-managing-application-state-96.png" alt="React & Redux" />
+                <div class="tool-icon" onclick="openToolPopup('redux')">
+                    <img src="images/icons8-redux-an-open-source-javascript-library-for-managing-application-state-96.png"
+                        alt="Redux" />
                 </div>
-                <div class="tool-icon">
+                <div class="tool-icon" onclick="openToolPopup('sass')">
                     <img src="images/sass-icon.png" alt="Sass" />
                 </div>
-                <div class="tool-icon">
+                <div class="tool-icon" onclick="openToolPopup('bootstrap')">
                     <img src="images/icons8-bootstrap-96.png" alt="Bootstrap" />
                 </div>
-                <div class="tool-icon">
+                <div class="tool-icon" onclick="openToolPopup('mysql')">
                     <img src="images/mysql-icon.png" alt="MySQL" />
                 </div>
-                <div class="tool-icon">
+                <div class="tool-icon" onclick="openToolPopup('nodejs')">
                     <img src="images/icons8-nodejs-96.png" alt="Node.js" />
                 </div>
-                <div class="tool-icon">
+                <div class="tool-icon" onclick="openToolPopup('mongodb')">
                     <img src="images/mongodb.png" alt="MongoDB" />
                 </div>
-                <div class="tool-icon">
+                <div class="tool-icon" onclick="openToolPopup('typescript')">
                     <img class="typescript-photo" src="images/typescript.png" alt="TypeScript" />
                 </div>
+                
+                <!-- Popup חלון ייחודי לכלים -->
+                <div id="toolPopup" class="tool-popup">
+                    <div class="tool-popup-content">
+                        <span class="tool-close" onclick="closeToolPopup()">&times;</span>
+                        <h2 id="toolPopupTitle"></h2>
+                        <p id="toolPopupText"></p>
+                    </div>
+                </div>
+
                 <!-- הוסף אייקון נוסף לפי הצורך -->
             </div>
         </div>
     </div>
+    <script>
+        function openToolPopup(tool) {
+                var title = "";
+                var text = "";
+
+                switch (tool) {
+                    case 'wordpress':
+                        title = "מה זה WordPress?";
+                        text = "WordPress היא מערכת לניהול תוכן (CMS) המאפשרת ליצור אתרי אינטרנט ובלוגים בקלות.";
+                        break;
+                    case 'elementor':
+                        title = "מה זה Elementor?";
+                        text = "Elementor הוא עורך דפים לוורדפרס עם ממשק גרירה ושחרור שמאפשר ליצור עמודים מעוצבים ללא צורך בקוד.";
+                        break;
+                    case 'javascript':
+                        title = "מה זה JavaScript?";
+                        text = "JavaScript היא שפת תכנות שמאפשרת ליצר אינטראקטיביות בדפי אינטרנט.";
+                        break;
+                    case 'css':
+                        title = "מה זה CSS?";
+                        text = "CSS היא שפת עיצוב המאפשרת לקבוע את המראה והתחושה של דפי אינטרנט.";
+                        break;
+                    case 'html':
+                        title = "מה זה HTML?";
+                        text = "HTML היא שפת סימון בה משתמשים לבניית מבנה הבסיס של דפי אינטרנט.";
+                        break;
+                    case 'react':
+                        title = "מה זה React?";
+                        text = "React היא ספריית JavaScript לבניית ממשקי משתמש בצורה קומפוננטית.";
+                        break;
+                    case 'redux':
+                        title = "מה זה Redux?";
+                        text = "Redux היא ספרייה לניהול מצב באפליקציות JavaScript, במיוחד באפליקציות React.";
+                        break;
+                    case 'sass':
+                        title = "מה זה Sass?";
+                        text = "Sass היא הרחבה של CSS שמוסיפה יכולות כמו משתנים, קןדים, ופונקציות.";
+                        break;
+                    case 'bootstrap':
+                        title = "מה זה Bootstrap?";
+                        text = "Bootstrap היא מסגרת עבודה ל-CSS המציעה כלים ותבניות לבניית עיצובים רספונסיביים.";
+                        break;
+                    case 'mysql':
+                        title = "מה זה MySQL?";
+                        text = "MySQL היא מערכת לניהול מסדי נתונים מבוססת SQL.";
+                        break;
+                    case 'nodejs':
+                        title = "מה זה Node.js?";
+                        text = "Node.js היא סביבה להרצת JavaScript בצד השרת, המבוססת על מנוע V8 של גוגל.";
+                        break;
+                    case 'mongodb':
+                        title = "מה זה MongoDB?";
+                        text = "MongoDB היא מסד נתונים לא רלציוני המבוסס על מסמכים (Document-Oriented).";
+                        break;
+                    case 'typescript':
+                        title = "מה זה TypeScript?";
+                        text = "TypeScript היא שפת תכנות מבוססת JavaScript עם יכולות של טיפוסי נתונים.";
+                        break;
+                }
+
+                document.getElementById("toolPopupTitle").textContent = title;
+                document.getElementById("toolPopupText").textContent = text;
+                document.getElementById("toolPopup").style.display = "block";
+            }
+
+            function closeToolPopup() {
+                document.getElementById("toolPopup").style.display = "none";
+            }
+
+    </script>
     <h1 class="about-title">קצת עלי</h1>
     <div class="about-div">
     <h1 class="about-h1">
@@ -175,6 +258,7 @@
             אתכם להשאיר פרטים ואני אשמח ליצור קשר ולדבר על הפרויקט הבא שלכם.</p>
     </div>
 </div>
+
 
 <section id="types-of-sites">
     <div class="types-container">
