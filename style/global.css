@@ -685,7 +685,7 @@ button:hover {
 @media screen and (max-width: 480px) {
     .tools-container {
             grid-template-columns: repeat(5, 1fr);
-            gap: 15px;
+            gap: 10px;
         }
 
     .tool-icon {
@@ -1433,7 +1433,8 @@ button:hover {
             justify-content: space-around;
             align-items: center;
             background-size: cover;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.4);
+            background-color: rgba(128, 128, 128, 0.3);
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
             z-index: 1000;
             transform: rotateX(0deg);
             perspective: 500px;
@@ -2171,7 +2172,7 @@ display: flex;
 
 
 #types-of-sites{
-    margin: 40px;
+    margin: 50px;
     padding: 50px 0;
         display: flex;
     width: 100%;
