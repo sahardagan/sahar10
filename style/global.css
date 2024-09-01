@@ -1426,7 +1426,7 @@ button:hover {
             justify-content: space-around;
             align-items: center;
             background-size: cover;
-            background-color: rgba(128, 128, 128, 0.20);
+            background-color: rgba(128, 128, 128, 0.10);
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
             z-index: 1000;
             transform: rotateX(0deg);
