@@ -583,19 +583,11 @@ button:hover {
 
 .profile-image {
     width: 138px;
-    /* רוחב התמונה */
     height: 138px;
-    /* גובה התמונה */
     border-radius: 50%;
-    /* קצוות עגולים */
-    border: 4px solid #ffffff;
-    /* גבול לבן או צבע אחר שמתאים */
+    border: 4px solid #3967bc;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    /* צלליה בולטת */
     margin-bottom: 10px;
-    /* רווח בין התמונה לאייקונים */
-   /*  object-fit: cover; */
-    /* התמונה תכסה את התיבה מבלי להתעוות */
 }
 
 .tools-section {
@@ -626,7 +618,7 @@ button:hover {
 .tool-icon {
     width: 40px;
    /*  height: 38px; */
-        box-shadow: 0 -2px 2px rgba(227, 178, 91, 0.7);
+        box-shadow: 0 0px 10px rgba(227, 178, 91, 0.5);
     border-radius: 12px;
     /* קצוות מעוגלים לתחושת תג */
     background-color: #ffffff;
