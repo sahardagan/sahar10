@@ -1065,7 +1065,7 @@ text-align: center;
 
 .overlay2 p{
     padding: 8px 0;
-    font-size: 12px;
+    font-size: 10px;
 }
 
 /* גודל גדול מאוד - מסכים רחבים (למשל, 1200px ומעלה) */
@@ -1157,8 +1157,8 @@ text-align: center;
     }
 
     .box {
-            width: 175px;
-                height: 300px;
+                width: 165px;
+                    height: 290px;
     }
 
          .overlay2 {
@@ -1177,7 +1177,7 @@ text-align: center;
         }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 380px) {
     .box-area {
         grid-gap: 30px;
         row-gap: 100px;
