@@ -818,7 +818,6 @@ button:hover {
 .single-card {
     background-color: white;
         border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         overflow: hidden;
         transition: transform 0.3s ease;
 }
@@ -861,6 +860,27 @@ text-align: center;
 @media (max-width: 768px) {
     .cards-list {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+        .single-card:nth-child(odd) .card-image {
+            height: 127px;
+        }
+    
+        .single-card:nth-child(even) .card-image {
+            height: 127px;
+        }
+}
+@media (max-width: 400px) {
+    .cards-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .single-card:nth-child(odd) .card-image {
+        height: 110px;
+    }
+
+    .single-card:nth-child(even) .card-image {
+        height: 110px;
     }
 }
 
@@ -1195,7 +1215,7 @@ text-align: center;
 }
 
 .card-image-container {
-    width: 100%;
+    width: 98%;
     overflow: hidden;
     border-radius: 10px;
 }
