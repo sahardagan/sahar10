@@ -848,11 +848,13 @@ text-align: center;
 }
 /* סיבוב תמונות */
 .single-card:nth-child(odd) .card-image {
-    transform: rotate(5deg);
+        width: 100%;
+            height: auto;
 }
 
 .single-card:nth-child(even) .card-image {
-    transform: rotate(-5deg);
+    width: 100%;
+        height: auto;
 }
 
 /* התאמה לרזולוציות קטנות */
