@@ -1177,6 +1177,45 @@ text-align: center;
         }
 }
 
+@media screen and (max-width: 400px) {
+    .box-area {
+        grid-gap: 30px;
+        row-gap: 100px;
+        /* מרווח בין השורות (למעלה ולמטה) */
+        column-gap: 35px;
+        /* מרווח בין העמודות (מהצדדים) */
+    }
+
+    .box {
+            width: 130px;
+                height: 255px;
+    }
+
+    .overlay2 {}
+
+    .overlay2 h3 {
+        font-weight: 500;
+        margin-bottom: 5px;
+        margin-top: 80%;
+        font-family: bebas neue;
+        font-size: 20px;
+        letter-spacing: 0px;
+    }
+        .overlay2 p {
+            padding: 8px 0;
+            font-size: 8px;
+        }
+
+    .overlay2 a {
+        font-size: 12px;
+    }
+
+                .box.show-overlay .overlay2 {
+                    height: 100%;
+                }
+                                      
+}
+
 
 .popup-modal {
     display: none;
@@ -1791,6 +1830,12 @@ text-align: center;
     }
 
 
+}
+
+@media(max-width: 400px){
+    .bottom-btn {
+            font-size: 12px;
+        }
 }
 
 
