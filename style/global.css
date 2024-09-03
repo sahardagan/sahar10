@@ -645,6 +645,7 @@ align-items: center;
     /* מעבר חלק לשינויים */
 }
 
+
 .tool-icon:hover {
     background-color: #f0f0f0;
     /* צבע רקע בהובר */
@@ -682,10 +683,21 @@ align-items: center;
 }
 
 @media screen and (max-width: 480px) {
-    .tools-container {
-            grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
-        }
+.tools-container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+    }
+
+    .tool-icon {
+        /* עיצוב של הכלים */
+    }
+
+    .empty {
+        visibility: hidden;
+        /* אלמנטים ריקים כדי לשמור על המקום */
+    }
+        
 
     .tool-icon {
                /*  padding: 0px 5px; */
