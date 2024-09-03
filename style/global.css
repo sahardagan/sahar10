@@ -816,37 +816,50 @@ button:hover {
 }
 
 .single-card {
-    width: 340px;
-    height: 300px;
-    position: relative;
-    margin: 10px;
-    overflow: hidden;
-    /* Ensure the button container does not overflow */
+    background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease;
 }
 
 .card-image-container {
     position: relative;
+        overflow: hidden;
 }
 
 .card-image {
     width: 100%;
-    height: auto;
-    box-shadow: 0px 4px 6px rgb(0, 0, 0, 0.3);
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease;
 }
 
 .button-container {
-    position: absolute;
-    bottom: 7px;
-    /* Adjust this value to move the buttons up or down */
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    /* Space between buttons */
-    opacity: 0;
-    /* Make buttons invisible initially */
-    transition: opacity 0.3s ease-in-out;
-    /* Smooth transition for appearance */
+text-align: center;
+    padding: 10px;
+    background-color: #f8f8f8;
+}
+
+.bottom-btn {
+    text-decoration: none;
+    color: #3967bc;
+    font-weight: bold;
+}
+/* סיבוב תמונות */
+.single-card:nth-child(odd) .card-image {
+    transform: rotateY(-5deg);
+}
+
+.single-card:nth-child(even) .card-image {
+    transform: rotateY(5deg);
+}
+
+/* התאמה לרזולוציות קטנות */
+@media (max-width: 768px) {
+    .cards-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .button-container1 {
@@ -1174,11 +1187,10 @@ button:hover {
 }
 
 .cards-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 50px;
-    margin: 70px 0;
+ display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
 
 .card-image-container {
