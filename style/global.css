@@ -478,7 +478,7 @@ align-items: center;
 
 
 .about-me-title {
-    padding: 15px 0;
+    padding: 39px 0 15px 0;
     text-align: center;
      color: #333;
     font-size: 24px;
@@ -737,7 +737,7 @@ align-items: center;
 .modal .close {
     color: #aaa;
     float: right;
-    font-size: 28px;
+    font-size: 27px;
     font-weight: bold;
 }
 
