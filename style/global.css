@@ -842,8 +842,7 @@ align-items: center;
 
 .button-container {
 text-align: center;
-    padding: 10px;
-    background-color: #f8f8f8;
+    background-color: #fff;
 }
 
 .bottom-btn {
@@ -1159,7 +1158,7 @@ text-align: center;
 .bottom-btn {
     background-color: #1ABC9C;
     color: white;
-    padding: 12px 20px;
+    padding: 3px 20px;
     text-decoration: none;
     border-radius: 25px;
     text-align: center;
@@ -1192,8 +1191,12 @@ text-align: center;
 
 .card-image-container {
     width: 98%;
-    overflow: hidden;
-    border-radius: 10px;
+        display: flex;
+        overflow: hidden;
+        border-radius: 10px;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
 }
 
 .card-image {
@@ -1233,16 +1236,7 @@ text-align: center;
     margin-bottom: 25px;
 }
 
-.bottom-btn {
-    width: 153px;
-    border-radius: 15px;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-    padding: 3px 0;
-    font-weight: 600;
-}
+
 
 /* contact area */
 .contact-form {
@@ -1715,8 +1709,7 @@ padding-bottom: 20px;
 
 
            .bottom-btn {
-               font-size: 8px;
-               width: 100px;
+               font-size: 13px;
            }
 
     #bg-video {
