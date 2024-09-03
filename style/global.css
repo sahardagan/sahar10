@@ -1009,7 +1009,7 @@ text-align: center;
 }
 
 .box img{
-    height: 45%;
+    height: 40%;
     width: 100%;
     display: block;
     transition: transfrom 0.5s;
@@ -1149,15 +1149,15 @@ text-align: center;
 @media screen and (max-width: 575px) {
     .box-area {
         grid-gap: 30px;
-        row-gap: 170px;
+        row-gap: 100px;
             /* מרווח בין השורות (למעלה ולמטה) */
             column-gap: 35px;
             /* מרווח בין העמודות (מהצדדים) */
     }
 
     .box {
-            width: 180px;
-                height: 260px;
+            width: 175px;
+                height: 300px;
     }
 
          .overlay2 {
