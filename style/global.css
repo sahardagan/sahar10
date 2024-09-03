@@ -693,6 +693,10 @@ align-items: center;
                     height: 45px;
                            
     }
+
+        #about-me-p {
+            font-size: 14px;
+        }
 }
 
 @media screen and (max-width: 400px) {
