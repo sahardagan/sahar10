@@ -1064,6 +1064,7 @@ text-align: center;
 }
 
 .overlay2 p{
+    padding: 8px 0;
     font-size: 12px;
 }
 
@@ -1117,7 +1118,7 @@ text-align: center;
     }
 
     .box.show-overlay .overlay2 {
-        height: 110%;
+        height: 105%;
     }
 }
 
