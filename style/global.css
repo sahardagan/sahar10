@@ -1230,9 +1230,12 @@ text-align: center;
 }
 
 .bottom-btn:hover {
-    background-color: #45a049;
+    background-color: white;
+    color: #1ABC9C;
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    .fas {
+            color: #1ABC9C;
+        }
 }
 
 .bottom-btn:active {
