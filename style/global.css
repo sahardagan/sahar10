@@ -2196,6 +2196,7 @@ text-align: center;
     }
 
     .close-button {
+                margin: -10px;
         font-size: 24px;
         /* הקטנת גודל כפתור הסגירה למסכים קטנים */
     }
