@@ -848,11 +848,11 @@ text-align: center;
 }
 /* סיבוב תמונות */
 .single-card:nth-child(odd) .card-image {
-    transform: rotateY(-5deg);
+    transform: rotate(-5deg);
 }
 
 .single-card:nth-child(even) .card-image {
-    transform: rotateY(5deg);
+    transform: rotate(5deg);
 }
 
 /* התאמה לרזולוציות קטנות */
@@ -1185,12 +1185,11 @@ text-align: center;
     text-align: center;
     margin-top: 10px;
 }
-
 .cards-list {
- display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
 }
 
 .card-image-container {
