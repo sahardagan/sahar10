@@ -426,8 +426,12 @@ align-items: center;
     }
 
     .about-p2 {
-        font-size: 22px;
+                padding: 0 25px;
+        font-size: 16px;
     }
+        .button-container2 {
+            flex-direction: column;
+        }
 
     .about-p {
         font-size: 18px;
@@ -444,28 +448,25 @@ align-items: center;
 
     .about-h1 {
         font-size: 21px;
-        text-align: center;
     }
 
     .hand-wave {
         font-size: 1.5rem;
     }
 
-        @media screen and (max-width: 480px) {
-            .highlight {
-                font-size: 39px;
-            }
-        }
+    .highlight {
+        font-size: 39px;
+    }
+}
     
 
     .about-p2 {
-        font-size: 18px;
-        text-align: center;
+        font-size: 14px;
     }
 
     .about-p {
        display: none;
-    }
+    
 }
 
 .highlight2{
@@ -2034,8 +2035,9 @@ padding-bottom: 20px;
     width: 100%;
       margin: 0;
     display: flex;
+            align-items: baseline;
     flex-direction: column;
-    text-align: end;
+    text-align: center;
     direction: revert;
 }
 
