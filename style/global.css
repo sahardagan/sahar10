@@ -625,7 +625,7 @@ align-items: center;
 .tool-icon {
     width: 40px;
    /*  height: 38px; */
-        box-shadow: 0 0px 10px rgba(0, 0,0 , 0.5);
+        box-shadow: 0 0px 8px rgba(0, 0,0 , 0.5);
     border-radius: 12px;
     /* קצוות מעוגלים לתחושת תג */
     background-color: #ffffff;
