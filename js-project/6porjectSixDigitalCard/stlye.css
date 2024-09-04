@@ -10,6 +10,7 @@ body{
 
 .flip-container{
     perspective: 1000px;
+    -webkit-perspective: 1000px;
 }
 
 .front{
@@ -19,6 +20,7 @@ body{
     transform: rotateY(0deg);
     z-index: 2;
     -webkit-transform: rotateY(0deg);
+    
 }
 
 .back{
@@ -54,6 +56,8 @@ backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     /* הוספת תמיכה לספארי */
     position: absolute;
+    -webkit-backface-visibility: hidden;
+        /* תמיכה בספארי */
 }
 
 h1, p, .icons{
