@@ -18,7 +18,7 @@ body{
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
     transform: rotateY(0deg);
     z-index: 2;
-    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
 }
 
 .back{
@@ -27,6 +27,7 @@ body{
     background-color: #000;
     box-shadow: 0 15px 25px rgba(0, 0 ,0 , 0.5);
     transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
 }
 
 .flip-container, .front, .back{
@@ -36,16 +37,23 @@ body{
 .flip-container:hover .flipper{
     transform: rotateY(180deg);
     cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+        -webkit-transition: -webkit-transform 0.5s ease-in-out;
 }
 .flipper{
-    transition: .5s;
-    position: relative;
-    transform-style:preserve-3d ;
+    transition: transform 0.5s ease-in-out;
+        -webkit-transition: -webkit-transform 0.5s ease-in-out;
+        /* הוספת תמיכה לספארי */
+        position: relative;
+        transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
 }
 
 .front, .back{
-    backface-visibility: hidden;
-position: absolute;
+backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    /* הוספת תמיכה לספארי */
+    position: absolute;
 }
 
 h1, p, .icons{
