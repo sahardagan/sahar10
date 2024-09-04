@@ -68,6 +68,19 @@
                 <span>לפתוח</span></a>
         </div>
     </div>
+    <script>
+        // פונקציה לזיהוי אם הדפדפן הוא ספארי
+        function isSafari() {
+            return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        }
+
+        // אם הדפדפן הוא ספארי, הפוך את הכרטיס לאחר 3 שניות
+        if (isSafari()) {
+            setTimeout(function () {
+                document.querySelector('.flipper').style.transform = 'rotateY(180deg)';
+            }, 3000); // 3 שניות
+        }
+    </script>
     <div class="left-said">
         <img alt="תמונת פרופיל" class="profile-image" src="images/sahar-profile-photo.jpg" />
         <!-- אייקונים של תוכנות -->
