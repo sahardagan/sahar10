@@ -1,0 +1,225 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    color: #000;
+}
+
+.flip-container{
+    perspective: 1000px;
+}
+
+.front{
+    background-image: url(front.jpg);
+    background-size: cover;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    transform: rotateY(0deg);
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.back{
+    background-image: url(back.jpg);
+    background-size: cover;
+    background-color: #000;
+    box-shadow: 0 15px 25px rgba(0, 0 ,0 , 0.5);
+    transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back{
+    height: 350px;
+    width: 600px;
+}
+.flip-container:hover .flipper{
+    transform: rotateY(180deg);
+    cursor: pointer;
+}
+.flipper{
+    transition: .5s;
+    position: relative;
+    transform-style:preserve-3d ;
+}
+
+.front, .back{
+    backface-visibility: hidden;
+position: absolute;
+}
+
+h1, p, .icons{
+    color: #000;
+    font-family: 'Lato';
+    margin-left: 30%;
+    line-height: 90%;
+}
+
+h1{
+    margin-top: 5%;
+}
+
+p{
+    font-size: 16px;
+    padding-bottom: 15px;
+    width: 35%;
+    border-bottom: 2px solid #000;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.icons{
+    margin-top: 25px;
+}
+
+.icon-group{
+    margin-top: 8px;
+}
+
+.back .icons span,
+.back .icons a{
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.back .icons a:hover{
+    color: #3f3f3f;
+}
+
+.back .icon-box{
+    position: relative;
+    color: #000;
+    font-size: 24px;
+    height: 35px;
+    width: 35px;
+    padding: 5px;
+    top: 75px;
+    left: 30%;
+    display: inline-block;
+    border: 2px solid #000;
+    margin: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.back .icon-box:hover{
+box-shadow: inset 0 50px 0 0 #000;
+color: #fff;
+}
+
+.icon-box i{
+    margin-top: 5px;
+}
+
+@media (max-width: 700px){
+    .flip-container,
+        .front,
+        .back {
+            height: 300px;
+            width: 510px;
+        }
+
+    h1{
+                font-size: 28px;
+    }
+    p{
+                font-size: 14px;
+    }
+          h1,
+          p,
+          .icons {
+              line-height: 65%;
+          }
+
+        .back .icons span,
+        .back .icons a {
+     
+        }
+
+                .icons {
+                }
+
+                .back .icon-box {
+                            padding: 1px;
+                                top: 53px;
+}
+}
+
+@media (max-width: 460px) {
+
+    .flip-container,
+    .front,
+    .back {
+                        height: 233px;
+                            width: 400px;
+    }
+
+         h1 {
+                    font-size: 24px;
+         }
+               
+    
+         p {
+                    font-size: 11px;
+         }
+
+                 .back .icons span,
+                 .back .icons a {
+                     font-size: 13px;
+                     text-decoration: none;
+                 }
+    
+                .icons {
+                    margin-top: 10px;
+                }
+    
+         .back .icon-box {
+            padding: 0px;
+                top: 30px;
+                left: 27%;
+                width: 30px;
+                height: 30px;
+         }
+}
+
+@media (max-width: 420px) {
+
+    .flip-container,
+    .front,
+    .back {
+        height: 174px;
+        width: 300px;
+    }
+
+                         h1 {
+                             font-size: 20px;
+                         }
+            
+            
+                         p {
+                             font-size: 8px;
+                         }
+            
+                         .back .icons span,
+                         .back .icons a {
+                             font-size: 11px;
+                             text-decoration: none;
+                         }
+            
+                         .icons {
+                             margin-top: 9px;
+                         }
+            
+                         .back .icon-box {
+                            margin: 2px;
+                                    font-size: 12px;
+                                        padding: 0px;
+                                        top: 10px;
+                                        left: 29%;
+                                        width: 20px;
+                                        height: 20px;
+                         }
+}
