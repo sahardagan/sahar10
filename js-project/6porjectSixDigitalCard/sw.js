@@ -15,18 +15,21 @@ self.addEventListener('install', event => {
                 console.log('Opened cache');
                 return Promise.all(
                     urlsToCache.map(url => {
-                        return fetch(url)
-                            .then(response => {
-                                if (!response.ok) {
-                                    throw new Error('Network response was not ok for ' + url);
-                                }
-                                // Clone the response before caching it
-                                const responseToCache = response.clone();
-                                return cache.put(url, responseToCache);
-                            })
-                            .catch(error => {
-                                console.error('Failed to fetch and cache:', error);
-                            });
+                        // סינון URLים שאינם מתחילים עם HTTPS
+                        if (url.startsWith('https://')) {
+                            return fetch(url)
+                                .then(response => {
+                                    if (!response.ok) {
+                                        throw new Error('Network response was not ok for ' + url);
+                                    }
+                                    return cache.put(url, response);
+                                })
+                                .catch(error => {
+                                    console.error('Failed to fetch and cache:', error);
+                                });
+                        } else {
+                            console.warn('URL skipped:', url);
+                        }
                     })
                 );
             })
@@ -35,6 +38,7 @@ self.addEventListener('install', event => {
             })
     );
 });
+
 
 self.addEventListener('fetch', event => {
     event.respondWith(
