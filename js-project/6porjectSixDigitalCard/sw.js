@@ -14,13 +14,27 @@ self.addEventListener('install', event => {
         caches.open(CACHE_NAME)
             .then(cache => {
                 console.log('Opened cache');
-                return cache.addAll(urlsToCache);
+                return Promise.all(
+                    urlsToCache.map(url => {
+                        return fetch(url)
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error('Network response was not ok for ' + url);
+                                }
+                                return cache.put(url, response);
+                            })
+                            .catch(error => {
+                                console.error('Failed to fetch and cache:', error);
+                            });
+                    })
+                );
             })
             .catch(error => {
-                console.error('Failed to cache resources:', error);
+                console.error('Failed to open cache:', error);
             })
     );
 });
+
 
 // הפעלה - טיפול בבקשות מהדף
 self.addEventListener('fetch', event => {
