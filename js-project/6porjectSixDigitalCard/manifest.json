@@ -2,7 +2,7 @@
   "name": "App",
   "short_name": "App",
   "description": "A description of your app",
-  "start_url": "/js-project/6porjectSixDigitalCard/",
+  "start_url": "/js-project/6projectSixDigitalCard/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
