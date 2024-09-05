@@ -105,12 +105,14 @@
     const addBtn = document.getElementById('add-to-home');
 
     window.addEventListener('beforeinstallprompt', (e) => {
+        console.log('beforeinstallprompt event detected');
         e.preventDefault();
         deferredPrompt = e;
-        addBtn.style.display = 'block';
+        addBtn.style.display = 'block'; // ודא שהכפתור מופיע
     });
 
     addBtn.addEventListener('click', () => {
+        console.log('Add to Home button clicked');
         if (deferredPrompt) {
             deferredPrompt.prompt();
             deferredPrompt.userChoice.then((choiceResult) => {
@@ -123,6 +125,7 @@
             });
         }
     });
+
 </script>
 
 </body>
