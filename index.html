@@ -90,13 +90,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', function () {
-        // אם הדפדפן הוא ספארי, הפוך את הכרטיס לאחר 3 שניות
-        if (isSafari()) {
-            setTimeout(function () {
-                console.log('flipping the card');
-                document.querySelector('.box3').classList.add('flipped');
-            }, 3000);
-        }
+     
 
         document.querySelector('.box3').addEventListener('click', function () {
             this.classList.toggle('flipped');
