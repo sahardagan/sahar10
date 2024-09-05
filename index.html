@@ -68,25 +68,36 @@
                 <span>לפתוח</span></a>
         </div>
     </div>
-    <script>
-     // פונקציה לזיהוי אם הדפדפן הוא ספארי
-        function isSafari() {
-            return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const flipContainer = document.querySelector('.flip-container');
+        const flipper = document.querySelector('.flipper');
+
+        // בדוק אם זה מכשיר נייד
+        function isMobileDevice() {
+            return typeof window.orientation !== 'undefined' || navigator.userAgent.indexOf('IEMobile') !== -1;
         }
 
-        // אם הדפדפן הוא ספארי, הפוך את הכרטיס לאחר 3 שניות
-      if (isSafari()) {
-            setTimeout(function () {
-                console.log('flipping the card');
-                document.querySelector('.box3').classList.add('flipped');
-            }, 3000);
-        }
-
-        document.querySelector('.box3').addEventListener('click', function () {
-                this.classList.toggle('flipped');
+        if (isMobileDevice()) {
+            // הוסף אירוע של מגע עבור מכשירים ניידים
+            flipContainer.addEventListener('touchstart', function () {
+                flipper.style.transform = 'rotateY(180deg)';
             });
+            flipContainer.addEventListener('touchend', function () {
+                flipper.style.transform = 'rotateY(0deg)';
+            });
+        } else {
+            // הוספת אירוע hover לשימוש בדסקטופ
+            flipContainer.addEventListener('mouseenter', function () {
+                flipper.style.transform = 'rotateY(180deg)';
+            });
+            flipContainer.addEventListener('mouseleave', function () {
+                flipper.style.transform = 'rotateY(0deg)';
+            });
+        }
+    });
+</script>
 
-    </script>
     <div class="left-said">
         <img alt="תמונת פרופיל" class="profile-image" src="images/sahar-profile-photo.jpg" />
         <!-- אייקונים של תוכנות -->
