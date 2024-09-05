@@ -1503,7 +1503,7 @@ text-align: center;
     justify-content: end;
     align-items: center;
     background-size: cover;
-    background: linear-gradient(135deg, rgba(70, 130, 180, 1) 0%, rgba(70, 130, 180, 0.8) 50%, rgba(70, 130, 180, 1) 100%);
+    /* background: linear-gradient(135deg, rgba(70, 130, 180, 1) 0%, rgba(70, 130, 180, 0.8) 50%, rgba(70, 130, 180, 1) 100%); */
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.4);
     z-index: 1000;
     transform: rotateX(0deg);
