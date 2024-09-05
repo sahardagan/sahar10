@@ -71,11 +71,6 @@
       "src": "icon/favicon-16x16.png",
       "sizes": "16x16",
       "type": "image/png"
-    },
-    {
-      "src": "icon/ms-icon-144x144.png",
-      "sizes": "144x144",
-      "type": "image/png"
     }
   ]
 }

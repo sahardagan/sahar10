@@ -1,10 +1,9 @@
 const CACHE_NAME = 'my-cache-v1';
 const urlsToCache = [
-    'https://sahardagan.github.io/sahar10/js-project/6porjectSixDigitalCard/',
-    'https://sahardagan.github.io/sahar10/js-project/6porjectSixDigitalCard/index.html',
-    'https://sahardagan.github.io/sahar10/js-project/6porjectSixDigitalCard/style.css',
-    'https://sahardagan.github.io/sahar10/js-project/6porjectSixDigitalCard/sw.js',
-    'https://sahardagan.github.io/sahar10/js-project/6porjectSixDigitalCard/icon/apple-icon-57x57.png',
+    '/',
+    'index.html',
+    'style.css',
+    'icon/apple-icon-57x57.png',
     // הוסף כאן את כל קובצי המשאבים שברצונך לשמור במטמון
 ];
 
@@ -20,7 +19,6 @@ self.addEventListener('install', event => {
                                 if (!response.ok) {
                                     throw new Error('Network response was not ok for ' + url);
                                 }
-                                // שים לב שה-URL מצוין במדויק עם ה-Request
                                 return cache.put(url, response.clone());
                             })
                             .catch(error => {
@@ -35,7 +33,6 @@ self.addEventListener('install', event => {
     );
 });
 
-
 self.addEventListener('fetch', event => {
     event.respondWith(
         caches.match(event.request)
@@ -45,7 +42,6 @@ self.addEventListener('fetch', event => {
                 }
                 return fetch(event.request) // Otherwise fetch from network
                     .then(networkResponse => {
-                        // Check if the response is valid
                         if (networkResponse && networkResponse.status === 200) {
                             const responseToCache = networkResponse.clone();
                             caches.open(CACHE_NAME).then(cache => {
