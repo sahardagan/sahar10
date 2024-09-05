@@ -2425,6 +2425,7 @@ text-align: center;
         width: 300px;
         height: 200px;
         perspective: 1000px;
+        -webkit-perspective: 1000px;
 }
 
 .front-img,
@@ -2435,6 +2436,7 @@ text-align: center;
     height: 120%;
     backface-visibility: hidden;
     /* מונע את הצגת התמונה הפוכה */
+    -webkit-backface-visibility: hidden;
     transition: transform 0.6s;
     /* אפקטים לשינוי התמונה */
 }
