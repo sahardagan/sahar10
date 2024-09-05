@@ -2418,132 +2418,119 @@ text-align: center;
     cursor: pointer;
 }
 
-.box3 {
-    top: -50px;
-        position: relative;
-        right: 310px;
-        width: 300px;
-        height: 200px;
-        perspective: 1000px;
-        -webkit-perspective: 1000px;
-}
-
-.front-img,
-.back-img {
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
-        position: absolute;
-        width: 192%;
-        height: 120%;
-        backface-visibility: hidden;
-        -webkit-backface-visibility: hidden;
-        /* Prefix for Safari */
-        transition: transform 0.6s;
-        -webkit-transition: -webkit-transform 0.6s;
-        /* Prefix for Safari */
-}
-
-.front-img {
-    z-index: 2;
-        transform: rotateY(0deg);
-        -webkit-transform: rotateY(0deg);
-        /* Prefix for Safari */
-}
-
-.back-img {
-    transform: rotateY(180deg);
-        -webkit-transform: rotateY(180deg);
-        /* Prefix for Safari */
-}
-
-.box3:hover .front-img {
-    transform: rotateY(-180deg);
-        -webkit-transform: rotateY(-180deg);
-        /* Prefix for Safari */
-}
-
-.box3:hover .back-img {
-    transform: rotateY(0deg);
-        -webkit-transform: rotateY(0deg);
-        /* Prefix for Safari */
-}
-
-
-
-.overlay3 {
-    position: absolute;
-    top: 0;
-        left: 249px;
-    width: 100%;
-    height: 120%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    /* צבע טקסט לבן על רקע כהה */
-    background: rgba(0, 0, 0, 0.5);
-    /* רקע כהה חצי שקוף */
-    opacity: 0;
-    transition: opacity 0.6s;
-    text-align: center;
-    /* ממרכז את הטקסט בתוך ה-overlay */
-}
-
-.box3:hover .overlay3 {
-    opacity: 1;
-}
-
-.overlay3 h3,
-.overlay3 p,
-.overlay3 a {
-    margin: 0;
-    padding: 0.5em;
-}
-
-.overlay3 a {
-    text-decoration: none;
-    color: #fff;
-    background: #333;
-    /* צבע רקע של הקישור */
-    padding: 0.5em 1em;
-    border-radius: 5px;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5em;
-}
-
-.overlay3 i {
-    font-size: 1.2em;
-}
-
-@media screen and (max-width: 480px){
-    .box3 {
-        display: flex;
-        justify-content: center;
-            margin: 0px 0 32px 0px;
-            position: relative;
-            width: 185px;
-            height: 115px;
-            perspective: 1000px;
-            top: 0;
-            right: 0;
-        }
+                .box3 {
+                    top: -50px;
+                    position: relative;
+                    right: 310px;
+                    width: 300px;
+                    height: 200px;
+                    perspective: 1000px;
+                    -webkit-perspective: 1000px;
+                }
+        
+                .front-img,
+                .back-img {
+                    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
+                    position: absolute;
+                    width: 192%;
+                    height: 120%;
+                    backface-visibility: hidden;
+                    -webkit-backface-visibility: hidden;
+                    transition: transform 0.6s;
+                    -webkit-transition: -webkit-transform 0.6s;
+                }
+        
                 .front-img {
+                    z-index: 2;
+                    transform: rotateY(0deg);
+                    -webkit-transform: rotateY(0deg);
+                }
+        
+                .back-img {
+                    transform: rotateY(180deg);
+                    -webkit-transform: rotateY(180deg);
+                }
+        
+                .box3.flipped .front-img {
+                    transform: rotateY(-180deg);
+                    -webkit-transform: rotateY(-180deg);
+                }
+        
+                .box3.flipped .back-img {
+                    transform: rotateY(0deg);
+                    -webkit-transform: rotateY(0deg);
+                }
+        
+                .overlay3 {
+                    position: absolute;
+                    top: 0;
+                    left: 249px;
+                    width: 100%;
+                    height: 120%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #fff;
+                    background: rgba(0, 0, 0, 0.5);
+                    opacity: 0;
+                    transition: opacity 0.6s;
+                    text-align: center;
+                }
+        
+                .box3:hover .overlay3 {
+                    opacity: 1;
+                }
+        
+                .overlay3 h3,
+                .overlay3 p,
+                .overlay3 a {
+                    margin: 0;
+                    padding: 0.5em;
+                }
+        
+                .overlay3 a {
+                    text-decoration: none;
+                    color: #fff;
+                    background: #333;
+                    padding: 0.5em 1em;
+                    border-radius: 5px;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.5em;
+                }
+        
+                .overlay3 i {
+                    font-size: 1.2em;
+                }
+        
+                @media screen and (max-width: 480px) {
+                    .box3 {
+                        display: flex;
+                        justify-content: center;
+                        margin: 0px 0 32px 0px;
+                        position: relative;
+                        width: 185px;
+                        height: 115px;
+                        top: 0;
+                        right: 0;
+                    }
+        
+                    .front-img {
                         width: 193%;
-                        margin: 0 0 0 0px;
+                        margin: 0;
                         z-index: 2;
                         transform: rotateY(0deg);
-                }
-                
+                    }
+        
                     .overlay3 {
-        padding: 0 13px;
-        margin-left: -246px;
-        width: 144%;
-    }
-
-                                .overlay3 h3,
-                                .overlay3 p,
-                                .overlay3 a {
-                                    font-size: 11px;
-                                }
-                                
-}
+                        padding: 0 13px;
+                        margin-left: -246px;
+                        width: 144%;
+                    }
+        
+                    .overlay3 h3,
+                    .overlay3 p,
+                    .overlay3 a {
+                        font-size: 11px;
+                    }
+                }
