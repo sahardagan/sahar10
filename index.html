@@ -69,41 +69,26 @@
     </div>
 </div>
 <script>
-    // פונקציה לזיהוי אם הדפדפן הוא ספארי
-    function isSafari() {
-        return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-    }
-
     function handleClickOutside(event) {
         if (!document.querySelector('.box3').contains(event.target)) {
             document.querySelector('.box3').classList.remove('flipped');
         }
     }
 
-    function handleTouchStart() {
-        document.querySelector('.box3').classList.add('flipped');
-    }
-
-    function handleTouchEnd() {
-        // נועל את מצב ההיפוך במגע
+    function handleCardClick(event) {
+        event.stopPropagation(); // למנוע את התפשטות האירוע
         document.querySelector('.box3').classList.toggle('flipped');
     }
 
     document.addEventListener('DOMContentLoaded', function () {
-     
-
-        document.querySelector('.box3').addEventListener('click', function () {
-            this.classList.toggle('flipped');
-        });
-
-        // הוספת אירועי מגע למכשירים ניידים
-        document.querySelector('.box3').addEventListener('touchstart', handleTouchStart);
-        document.querySelector('.box3').addEventListener('touchend', handleTouchEnd);
+        // הוספת אירוע קליק לכרטיס
+        document.querySelector('.box3').addEventListener('click', handleCardClick);
 
         // הוספת אירוע קליק לדף כדי להחזיר את הכרטיס למצב הרגיל
         document.addEventListener('click', handleClickOutside);
     });
 </script>
+
     <div class="left-said">
         <img alt="תמונת פרופיל" class="profile-image" src="images/sahar-profile-photo.jpg" />
         <!-- אייקונים של תוכנות -->
