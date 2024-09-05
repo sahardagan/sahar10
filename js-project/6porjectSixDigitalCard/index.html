@@ -37,5 +37,34 @@
                 </div>
         </div>
     </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const flipContainer = document.querySelector('.flip-container');
+        const flipper = document.querySelector('.flipper');
+
+        let isFlipped = false;
+
+        // בדוק אם זה מכשיר נייד
+        function isMobileDevice() {
+            return typeof window.orientation !== 'undefined' || navigator.userAgent.indexOf('IEMobile') !== -1;
+        }
+
+        if (isMobileDevice()) {
+            flipContainer.addEventListener('touchstart', function () {
+                isFlipped = !isFlipped;
+                flipper.style.transform = isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
+            });
+        } else {
+            flipContainer.addEventListener('mouseenter', function () {
+                flipper.style.transform = 'rotateY(180deg)';
+            });
+            flipContainer.addEventListener('mouseleave', function () {
+                flipper.style.transform = 'rotateY(0deg)';
+            });
+        }
+    });
+
+    </script>
+
 </body>
 </html>

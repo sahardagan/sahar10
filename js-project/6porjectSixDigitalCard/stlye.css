@@ -35,6 +35,8 @@ body{
 .flip-container, .front, .back{
     height: 350px;
     width: 600px;
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
 }
 .flip-container:hover .flipper{
     transform: rotateY(180deg);
@@ -43,12 +45,11 @@ body{
         -webkit-transition: -webkit-transform 0.5s ease-in-out;
 }
 .flipper{
-    transition: transform 0.5s ease-in-out;
-        -webkit-transition: -webkit-transform 0.5s ease-in-out;
-        /* הוספת תמיכה לספארי */
         position: relative;
         transform-style: preserve-3d;
-        -webkit-transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+            transition: transform 0.5s ease-in-out;
+            -webkit-transition: -webkit-transform 0.5s ease-in-out;
 }
 
 .front, .back{
