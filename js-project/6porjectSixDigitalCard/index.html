@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Card</title>
-    <link rel="stylesheet" href="stlye.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
     <script src="https://kit.fontawesome.com/cd34643dc0.js" crossorigin="anonymous"></script>
 </head>
@@ -37,7 +37,9 @@
                 </div>
         </div>
     </div>
-    <script>
+    <button id="add-to-home">הוסף למסך הבית</button>
+
+<script>
     document.addEventListener('DOMContentLoaded', function () {
         const flipContainer = document.querySelector('.flip-container');
         const flipper = document.querySelector('.flipper');
@@ -64,48 +66,39 @@
         }
     });
 
-      if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js')
-                .then(function (registration) {
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                })
-                .catch(function (error) {
-                    console.log('ServiceWorker registration failed: ', error);
-                });
-        }
-
-        let deferredPrompt;
-            const addBtn = document.createElement('button');
-            addBtn.innerText = 'הוסף למסך הבית';
-            addBtn.style.display = 'none'; // התחלה מוסתרת
-
-            window.addEventListener('beforeinstallprompt', (e) => {
-                // מנע את ההודעה האוטומטית
-                e.preventDefault();
-                deferredPrompt = e;
-
-                // הצג את הכפתור למשתמש
-                addBtn.style.display = 'block';
-
-                // הקש על הכפתור להציג את דיאלוג ההתקנה
-                addBtn.addEventListener('click', () => {
-                    addBtn.style.display = 'none'; // הסתר את הכפתור אחרי שלחצו עליו
-                    deferredPrompt.prompt();
-                    deferredPrompt.userChoice.then((result) => {
-                        if (result.outcome === 'accepted') {
-                            console.log('המשתמש התקין את ה-PWA');
-                        } else {
-                            console.log('המשתמש דחה את ההתקנה');
-                        }
-                        deferredPrompt = null;
-                    });
-                });
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+            .then(function (registration) {
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            })
+            .catch(function (error) {
+                console.log('ServiceWorker registration failed: ', error);
             });
+    }
 
-            document.body.appendChild(addBtn);
+    let deferredPrompt;
+    const addBtn = document.getElementById('add-to-home');
 
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        addBtn.style.display = 'block';
+    });
 
-    </script>
+    addBtn.addEventListener('click', () => {
+        if (deferredPrompt) {
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    console.log('User accepted the A2HS prompt');
+                } else {
+                    console.log('User dismissed the A2HS prompt');
+                }
+                deferredPrompt = null;
+            });
+        }
+    });
+</script>
 
 </body>
 </html>
