@@ -1,5 +1,4 @@
 
-
 self.addEventListener('activate', (event) => {
   const cacheWhitelist = [CACHE_NAME];
 
