@@ -1,14 +1,13 @@
 const CACHE_NAME = 'my-cache-v1';
 const urlsToCache = [
-    '/',
-    '/index.html',
-    '/style.css',
-    '/sw.js',
-    '/icon/apple-icon-57x57.png',
+    'https://sahardagan.github.io/sahar10/js-project/6porjectSixDigitalCard/',
+    'https://sahardagan.github.io/sahar10/js-project/6porjectSixDigitalCard/index.html',
+    'https://sahardagan.github.io/sahar10/js-project/6porjectSixDigitalCard/style.css',
+    'https://sahardagan.github.io/sahar10/js-project/6porjectSixDigitalCard/sw.js',
+    'https://sahardagan.github.io/sahar10/js-project/6porjectSixDigitalCard/icon/apple-icon-57x57.png',
     // הוסף כאן את כל קובצי המשאבים שברצונך לשמור במטמון
 ];
 
-// התקנה - שמירה של המשאבים במטמון
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
@@ -35,17 +34,13 @@ self.addEventListener('install', event => {
     );
 });
 
-
-// הפעלה - טיפול בבקשות מהדף
 self.addEventListener('fetch', event => {
     event.respondWith(
         caches.match(event.request)
             .then(response => {
-                // אם הקובץ קיים במטמון, השתמש בו
                 if (response) {
                     return response;
                 }
-                // אחרת, בצע את הבקשה לשרת
                 return fetch(event.request);
             })
             .catch(error => {
@@ -54,7 +49,6 @@ self.addEventListener('fetch', event => {
     );
 });
 
-// הפעלת מטמון ישן
 self.addEventListener('activate', event => {
     const cacheWhitelist = [CACHE_NAME];
 
