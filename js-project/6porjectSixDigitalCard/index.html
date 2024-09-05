@@ -115,8 +115,10 @@
     addBtn.addEventListener('click', () => {
         console.log('Add to Home button clicked');
         if (deferredPrompt) {
-            deferredPrompt.prompt();
+            console.log('prompt about to be shown');
+            deferredPrompt.prompt();  // מציג את ה־prompt
             deferredPrompt.userChoice.then((choiceResult) => {
+                console.log('userChoice:', choiceResult);
                 if (choiceResult.outcome === 'accepted') {
                     console.log('User accepted the A2HS prompt');
                 } else {
@@ -124,6 +126,8 @@
                 }
                 deferredPrompt = null;
             });
+        } else {
+            console.log('No deferredPrompt available');
         }
     });
 
