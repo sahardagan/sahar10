@@ -115,17 +115,14 @@
         console.log('beforeinstallprompt event detected');
         e.preventDefault();
         deferredPrompt = e;
-            console.log('האירוע נורה והכפתור יוצג כעת');
         addBtn.style.display = 'block'; // ודא שהכפתור מופיע
     });
 
     addBtn.addEventListener('click', () => {
         console.log('Add to Home button clicked');
         if (deferredPrompt) {
-            console.log('prompt about to be shown');
-            deferredPrompt.prompt();  // מציג את ה־prompt
+            deferredPrompt.prompt();
             deferredPrompt.userChoice.then((choiceResult) => {
-                console.log('userChoice:', choiceResult);
                 if (choiceResult.outcome === 'accepted') {
                     console.log('User accepted the A2HS prompt');
                 } else {
@@ -133,10 +130,9 @@
                 }
                 deferredPrompt = null;
             });
-        } else {
-            console.log('No deferredPrompt available');
         }
     });
+
 
 </script>
 
