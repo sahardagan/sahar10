@@ -20,7 +20,9 @@ self.addEventListener('install', event => {
                                 if (!response.ok) {
                                     throw new Error('Network response was not ok for ' + url);
                                 }
-                                return cache.put(url, response);
+                                // Clone the response before caching it
+                                const responseToCache = response.clone();
+                                return cache.put(url, responseToCache);
                             })
                             .catch(error => {
                                 console.error('Failed to fetch and cache:', error);
@@ -39,12 +41,23 @@ self.addEventListener('fetch', event => {
         caches.match(event.request)
             .then(response => {
                 if (response) {
-                    return response;
+                    return response; // Return cached response if available
                 }
-                return fetch(event.request);
-            })
-            .catch(error => {
-                console.error('Fetch failed:', error);
+                return fetch(event.request) // Otherwise fetch from network
+                    .then(networkResponse => {
+                        // Check if the response is valid
+                        if (networkResponse && networkResponse.status === 200) {
+                            const responseToCache = networkResponse.clone();
+                            caches.open(CACHE_NAME).then(cache => {
+                                cache.put(event.request, responseToCache);
+                            });
+                        }
+                        return networkResponse;
+                    })
+                    .catch(error => {
+                        console.error('Fetch failed:', error);
+                        throw error; // Re-throw the error for handling
+                    });
             })
     );
 });
