@@ -15,21 +15,17 @@ self.addEventListener('install', event => {
                 console.log('Opened cache');
                 return Promise.all(
                     urlsToCache.map(url => {
-                        // סינון URLים שאינם מתחילים עם HTTPS
-                        if (url.startsWith('https://')) {
-                            return fetch(url)
-                                .then(response => {
-                                    if (!response.ok) {
-                                        throw new Error('Network response was not ok for ' + url);
-                                    }
-                                    return cache.put(url, response);
-                                })
-                                .catch(error => {
-                                    console.error('Failed to fetch and cache:', error);
-                                });
-                        } else {
-                            console.warn('URL skipped:', url);
-                        }
+                        return fetch(url)
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error('Network response was not ok for ' + url);
+                                }
+                                // שים לב שה-URL מצוין במדויק עם ה-Request
+                                return cache.put(url, response.clone());
+                            })
+                            .catch(error => {
+                                console.error('Failed to fetch and cache:', error);
+                            });
                     })
                 );
             })
