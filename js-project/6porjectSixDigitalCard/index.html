@@ -61,6 +61,7 @@
     <button id="add-to-home">הוסף למסך הבית</button>
 
 <script>
+    navigator.serviceWorker.register('./js-project/6projectSixDigitalCard/sw.js')
     document.addEventListener('DOMContentLoaded', function () {
         const flipContainer = document.querySelector('.flip-container');
         const flipper = document.querySelector('.flipper');
