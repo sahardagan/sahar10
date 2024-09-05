@@ -2431,36 +2431,43 @@ text-align: center;
 .front-img,
 .back-img {
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
-    position: absolute;
-    width: 134%;
-    height: 120%;
-    backface-visibility: hidden;
-    /* מונע את הצגת התמונה הפוכה */
-    -webkit-backface-visibility: hidden;
-    transition: transform 0.6s;
-    /* אפקטים לשינוי התמונה */
+        position: absolute;
+        width: 134%;
+        height: 120%;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        /* Prefix for Safari */
+        transition: transform 0.6s;
+        -webkit-transition: -webkit-transform 0.6s;
+        /* Prefix for Safari */
 }
 
 .front-img {
     z-index: 2;
-    transform: rotateY(0deg);
-    -webkit-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+        -webkit-transform: rotateY(0deg);
+        /* Prefix for Safari */
 }
 
 .back-img {
     transform: rotateY(180deg);
-    -webkit-transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+        /* Prefix for Safari */
 }
 
 .box3:hover .front-img {
     transform: rotateY(-180deg);
-    
+        -webkit-transform: rotateY(-180deg);
+        /* Prefix for Safari */
 }
 
 .box3:hover .back-img {
     transform: rotateY(0deg);
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+        -webkit-transform: rotateY(0deg);
+        /* Prefix for Safari */
 }
+
+
 
 .overlay3 {
     position: absolute;
