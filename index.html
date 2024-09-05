@@ -75,10 +75,11 @@
         }
 
         // אם הדפדפן הוא ספארי, הפוך את הכרטיס לאחר 3 שניות
-        if (isSafari()) {
+      if (isSafari()) {
             setTimeout(function () {
+                console.log('flipping the card');
                 document.querySelector('.box3').classList.add('flipped');
-            }, 3000); // 3 שניות
+            }, 3000);
         }
 
     </script>
