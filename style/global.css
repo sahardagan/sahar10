@@ -2430,7 +2430,6 @@ text-align: center;
         
                 .front-img,
                 .back-img {
-                    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
                     position: absolute;
                     width: 192%;
                     height: 120%;
@@ -2509,14 +2508,14 @@ text-align: center;
                         justify-content: center;
                         margin: 0px 0 32px 0px;
                         position: relative;
-                        width: 185px;
-                        height: 115px;
+                                width: 150px;
+                                    height: 115px;
                         top: 0;
                         right: 0;
                     }
         
                     .front-img {
-                        width: 193%;
+                        width: 192%;
                         margin: 0;
                         z-index: 2;
                         transform: rotateY(0deg);
