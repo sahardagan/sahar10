@@ -1,77 +1,55 @@
-const CACHE_NAME = 'my-cache-v1';
+// sw.js
+
+const CACHE_NAME = 'v1'; // שם של המטמון
 const urlsToCache = [
-    '/',
-    'index.html',
-    'style.css',
-    'icon/apple-icon-57x57.png',
-    // הוסף כאן את כל קובצי המשאבים שברצונך לשמור במטמון
+  '/',
+  '/index.html',
+  '/style.css',
+  '/icon/192x192.png',
+  '/icon/512x512.png',
+  '/front.jpg',
+  '/back.jpg',
+  // הוסף כאן את כל הנתיבים שאתה רוצה למטמון
 ];
 
-self.addEventListener('install', event => {
-    event.waitUntil(
-        caches.open(CACHE_NAME)
-            .then(cache => {
-                console.log('Opened cache');
-                return Promise.all(
-                    urlsToCache.map(url => {
-                        return fetch(url)
-                            .then(response => {
-                                if (!response.ok) {
-                                    throw new Error('Network response was not ok for ' + url);
-                                }
-                                return cache.put(url, response.clone());
-                            })
-                            .catch(error => {
-                                console.error('Failed to fetch and cache:', error);
-                            });
-                    })
-                );
-            })
-            .catch(error => {
-                console.error('Failed to open cache:', error);
-            })
-    );
+// Event to install service worker and cache necessary files
+self.addEventListener('install', (event) => {
+  console.log('Service Worker installing.');
+
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then((cache) => {
+        console.log('Caching app shell');
+        return cache.addAll(urlsToCache);
+      })
+  );
 });
 
-self.addEventListener('fetch', event => {
-    event.respondWith(
-        caches.match(event.request)
-            .then(response => {
-                if (response) {
-                    return response; // Return cached response if available
-                }
-                return fetch(event.request) // Otherwise fetch from network
-                    .then(networkResponse => {
-                        if (networkResponse && networkResponse.status === 200) {
-                            const responseToCache = networkResponse.clone();
-                            caches.open(CACHE_NAME).then(cache => {
-                                cache.put(event.request, responseToCache);
-                            });
-                        }
-                        return networkResponse;
-                    })
-                    .catch(error => {
-                        console.error('Fetch failed:', error);
-                        throw error; // Re-throw the error for handling
-                    });
-            })
-    );
-});
+// Event to activate service worker
+self.addEventListener('activate', (event) => {
+  console.log('Service Worker activating.');
 
-self.addEventListener('activate', event => {
-    const cacheWhitelist = [CACHE_NAME];
-
-    event.waitUntil(
-        caches.keys().then(cacheNames => {
-            return Promise.all(
-                cacheNames.map(cacheName => {
-                    if (cacheWhitelist.indexOf(cacheName) === -1) {
-                        return caches.delete(cacheName);
-                    }
-                })
-            );
-        }).then(() => {
-            return self.clients.claim();
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (cacheName !== CACHE_NAME) {
+            console.log('Clearing old cache:', cacheName);
+            return caches.delete(cacheName);
+          }
         })
-    );
+      );
+    })
+  );
+});
+
+// Fetch event to serve cached files
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request)
+      .then((response) => {
+        // Return cached response if found, else fetch from network
+        return response || fetch(event.request);
+      })
+  );
 });

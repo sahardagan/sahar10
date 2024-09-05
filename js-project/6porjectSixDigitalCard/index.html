@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,121 +16,111 @@
     <link rel="apple-touch-icon" sizes="144x144" href="icon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="icon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-icon-180x180.png">
-
+    
     <!-- Icons for different platforms -->
     <link rel="icon" type="image/png" sizes="192x192" href="icon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="icon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
-
+    
     <!-- Meta Tags -->
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="icon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <script src="https://kit.fontawesome.com/cd34643dc0.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
     <div class="flip-container" aria-label="Card flip">
         <div class="flipper">
             <div class="front"></div>
-            <div class="back">
-                <h1>Sahar Dagan</h1>
-                <p>Web Design & Development</p>
-                <div class="icons">
-                    <div class="icon-group">
-                        <span class="bold"><i class="fa-solid fa-phone"></i></span>
-                        <span class="contact">052-2025012</span>
+                <div class="back">
+                    <h1>Sahar dagan</h1>
+                    <p>Web Design & Development</p>
+                    <div class="icons">
                         <div class="icon-group">
-                            <span class="bold"><i class="fa-solid fa-envelope"></i></span>
-                            <a class="contact" href="mailto:sahardagannn@gmail.com">sahardagannn@gmail.com</a>
-                        </div>
-                        <div class="icon-group">
-                            <span class="bold"><i class="fa-solid fa-globe"></i></span>
-                            <a class="contact" href="http://www.sahrdagan.com" target="_blank">www.sahrdagan.com</a>
+                            <span class="bold"><i class="fa-solid fa-phone"></i></span>
+                            <span class="contact"> 052-2025012</span>
+                            <div class="icon-group">
+                                    <span class="bold"><i class="fa-solid fa-envelope"></i></span>
+                                    <a class="contact"> sahardagannn@gmail.com</a>
+                            </div>
+                            <div class="icon-group">
+                                <span class="bold"><i class="fa-solid fa-globe"></i></span>
+                                <a class="contact">www.sahrdagan.com</a>
+                            </div>
                         </div>
                     </div>
+                    <a href="" class="icon-box"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="" class="icon-box"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="" class="icon-box"><i class="fa-brands fa-google-plus"></i></a>
+                    <a href="" class="icon-box"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="" class="icon-box"><i class="fa-brands fa-github"></i></a>
                 </div>
-                <a href="#" class="icon-box"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#" class="icon-box"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#" class="icon-box"><i class="fa-brands fa-google-plus"></i></a>
-                <a href="#" class="icon-box"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#" class="icon-box"><i class="fa-brands fa-github"></i></a>
-            </div>
         </div>
     </div>
     <button id="add-to-home">הוסף למסך הבית</button>
 
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js')
-                    .then(function (registration) {
-                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+<script>
+    navigator.serviceWorker.register('./js-project/6projectSixDigitalCard/sw.js')
+    document.addEventListener('DOMContentLoaded', function () {
+        const flipContainer = document.querySelector('.flip-container');
+        const flipper = document.querySelector('.flipper');
 
-                        // בדיקת עדכונים אוטומטית כל שעה
-                        setInterval(() => {
-                            registration.update();
-                        }, 3600000); // כל שעה
-                    })
-                    .catch(function (error) {
-                        console.log('ServiceWorker registration failed: ', error);
-                    });
-            });
+        let isFlipped = false;
+
+        // בדוק אם זה מכשיר נייד
+        function isMobileDevice() {
+            return typeof window.orientation !== 'undefined' || navigator.userAgent.indexOf('IEMobile') !== -1;
         }
 
-        document.addEventListener('DOMContentLoaded', function () {
-            const flipContainer = document.querySelector('.flip-container');
-            const flipper = document.querySelector('.flipper');
+        if (isMobileDevice()) {
+            flipContainer.addEventListener('touchstart', function () {
+                isFlipped = !isFlipped;
+                flipper.style.transform = isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
+            });
+        } else {
+            flipContainer.addEventListener('mouseenter', function () {
+                flipper.style.transform = 'rotateY(180deg)';
+            });
+            flipContainer.addEventListener('mouseleave', function () {
+                flipper.style.transform = 'rotateY(0deg)';
+            });
+        }
+    });
 
-            let isFlipped = false;
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js')
+            .then(function (registration) {
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            })
+            .catch(function (error) {
+                console.log('ServiceWorker registration failed: ', error);
+            });
+    }
 
-            function isMobileDevice() {
-                return typeof window.orientation !== 'undefined' || navigator.userAgent.indexOf('IEMobile') !== -1;
-            }
+    let deferredPrompt;
+    const addBtn = document.getElementById('add-to-home');
 
-            if (isMobileDevice()) {
-                flipContainer.addEventListener('touchstart', function () {
-                    isFlipped = !isFlipped;
-                    flipper.style.transform = isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
-                });
-            } else {
-                flipContainer.addEventListener('mouseenter', function () {
-                    flipper.style.transform = 'rotateY(180deg)';
-                });
-                flipContainer.addEventListener('mouseleave', function () {
-                    flipper.style.transform = 'rotateY(0deg)';
-                });
-            }
-        });
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        addBtn.style.display = 'block';
+    });
 
-        // ניהול הוספת היישום למסך הבית
-        let deferredPrompt;
-        const addBtn = document.getElementById('add-to-home');
-
-        window.addEventListener('beforeinstallprompt', (e) => {
-            console.log('beforeinstallprompt event detected');
-            e.preventDefault();
-            deferredPrompt = e;
-            addBtn.style.display = 'block'; // ודא שהכפתור מופיע
-        });
-
-        addBtn.addEventListener('click', () => {
-            console.log('Add to Home button clicked');
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                deferredPrompt.userChoice.then((choiceResult) => {
-                    if (choiceResult.outcome === 'accepted') {
-                        console.log('User accepted the A2HS prompt');
-                    } else {
-                        console.log('User dismissed the A2HS prompt');
-                    }
-                    deferredPrompt = null;
-                });
-            }
-        });
-    </script>
+    addBtn.addEventListener('click', () => {
+        if (deferredPrompt) {
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    console.log('User accepted the A2HS prompt');
+                } else {
+                    console.log('User dismissed the A2HS prompt');
+                }
+                deferredPrompt = null;
+            });
+        }
+    });
+</script>
 
 </body>
-
 </html>
