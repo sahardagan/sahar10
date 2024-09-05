@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Card</title>
     <link rel="stylesheet" href="stlye.css">
+    <link rel="manifest" href="manifest.json">
     <script src="https://kit.fontawesome.com/cd34643dc0.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -32,7 +33,6 @@
                     <a href="" class="icon-box"><i class="fa-brands fa-twitter"></i></a>
                     <a href="" class="icon-box"><i class="fa-brands fa-google-plus"></i></a>
                     <a href="" class="icon-box"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="" class="icon-box"><i class="fa-brands fa-dribbble"></i></a>
                     <a href="" class="icon-box"><i class="fa-brands fa-github"></i></a>
                 </div>
         </div>
@@ -63,6 +63,16 @@
             });
         }
     });
+
+      if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(function (registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                })
+                .catch(function (error) {
+                    console.log('ServiceWorker registration failed: ', error);
+                });
+        }
 
     </script>
 
