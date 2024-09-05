@@ -2432,7 +2432,7 @@ text-align: center;
 .back-img {
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
         position: absolute;
-        width: 134%;
+        width: 192%;
         height: 120%;
         backface-visibility: hidden;
         -webkit-backface-visibility: hidden;
@@ -2519,7 +2519,7 @@ text-align: center;
     .box3 {
         display: flex;
         justify-content: center;
-            margin: 0px 0 36px -50px;
+            margin: 0px 0 32px 0px;
             position: relative;
             width: 185px;
             height: 115px;
@@ -2528,16 +2528,17 @@ text-align: center;
             right: 0;
         }
                 .front-img {
-                        width: 163%;
-                            margin: 0 0 0 55px;
-                    z-index: 2;
-                    transform: rotateY(0deg);
+                        width: 193%;
+                        margin: 0 0 0 0px;
+                        z-index: 2;
+                        transform: rotateY(0deg);
                 }
                 
-                .overlay3{
-                                    margin-left: -218px;
-                    width: 130%;
-                }
+                    .overlay3 {
+        padding: 0 13px;
+        margin-left: -246px;
+        width: 144%;
+    }
 
                                 .overlay3 h3,
                                 .overlay3 p,
