@@ -3,7 +3,7 @@ const urlsToCache = [
     '/',
     '/index.html',
     '/style.css',
-    '/js-project/6projectSixDigitalCard/sw.js',
+    '/sw.js',
     '/icon/apple-icon-57x57.png',
     // הוסף כאן את כל קובצי המשאבים שברצונך לשמור במטמון
 ];
