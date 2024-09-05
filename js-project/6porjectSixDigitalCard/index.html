@@ -70,7 +70,7 @@
                     // בדיקת עדכונים אוטומטית כל שעה
                     setInterval(() => {
                         registration.update();
-                    }, 1000); // כל שעה
+                    }, 30000); // כל שעה
                 })
                 .catch(function (error) {
                     console.log('ServiceWorker registration failed: ', error);
