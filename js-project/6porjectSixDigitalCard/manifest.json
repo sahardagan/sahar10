@@ -2,7 +2,7 @@
   "name": "App",
   "short_name": "App",
   "description": "A description of your app",
-  "start_url": "/js-project/6projectSixDigitalCard/index.html",
+  "start_url": "/js-project/6porjectSixDigitalCard/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
@@ -70,6 +70,11 @@
     {
       "src": "icon/favicon-16x16.png",
       "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "icon/ms-icon-144x144.png",
+      "sizes": "144x144",
       "type": "image/png"
     }
   ]
