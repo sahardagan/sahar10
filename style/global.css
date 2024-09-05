@@ -2510,10 +2510,10 @@ text-align: center;
     .box3 {
         display: flex;
         justify-content: center;
-                                margin: 0px 0 0 -50px;
+            margin: 0px 0 36px -50px;
             position: relative;
             width: 185px;
-                height: 115px;
+            height: 115px;
             perspective: 1000px;
             top: 0;
             right: 0;
