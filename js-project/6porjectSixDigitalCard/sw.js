@@ -12,7 +12,11 @@ self.addEventListener('install', function (event) {
         './icon/android-icon-256x256.png',
         './icon/ms-icon-384x384.png',
         './icon/ms-icon-512x512.png'
-      ]);
+      ]).catch(function (error) {
+        console.error('Cache addAll failed:', error);
+      });
+    }).catch(function (error) {
+      console.error('Cache open failed:', error);
     })
   );
 });
@@ -20,7 +24,11 @@ self.addEventListener('install', function (event) {
 self.addEventListener('fetch', function (event) {
   event.respondWith(
     caches.match(event.request).then(function (response) {
-      return response || fetch(event.request);
+      return response || fetch(event.request).catch(function (error) {
+        console.error('Fetch failed:', error);
+      });
+    }).catch(function (error) {
+      console.error('Cache match failed:', error);
     })
   );
 });
