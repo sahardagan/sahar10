@@ -8,7 +8,7 @@
   "theme_color": "#2C3E50",
   "icons": [
     {
-      "src": "/icon/android-icon-48x48.png",
+      "src": "./icon/android-icon-48x48.png",
       "sizes": "48x48",
       "type": "image/png"
     },
