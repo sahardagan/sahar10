@@ -10,8 +10,7 @@
 </head>
 
 <body>
-
-    <div class="flip-container" aria-label="הפוך כרטיס">
+    <div class="flip-container box3" aria-label="הפוך כרטיס">
         <div class="flipper">
             <div class="front"></div>
             <div class="back">
@@ -41,36 +40,25 @@
     </div>
 
     <script>
-        // פונקציה לבדוק אם מדובר במכשיר נייד
-        function isMobileDevice() {
-            return typeof window.orientation !== 'undefined' || navigator.userAgent.indexOf('IEMobile') !== -1;
+        function handleClickOutside(event) {
+            if (!document.querySelector('.box3').contains(event.target)) {
+                document.querySelector('.box3').classList.remove('flipped');
+            }
         }
 
-        const flipContainer = document.querySelector('.flip-container');
-        const flipper = document.querySelector('.flipper');
-        let isFlipped = false;
-
-        if (isMobileDevice()) {
-            flipContainer.addEventListener('touchstart', function () {
-                isFlipped = !isFlipped;
-                flipper.style.transform = isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
-            });
-        } else {
-            flipContainer.addEventListener('mouseenter', function () {
-                flipper.style.transform = 'rotateY(180deg)';
-            });
-            flipContainer.addEventListener('mouseleave', function () {
-                flipper.style.transform = 'rotateY(0deg)';
-            });
+        function handleCardClick(event) {
+            event.stopPropagation(); // למנוע את התפשטות האירוע
+            document.querySelector('.box3').classList.toggle('flipped');
         }
 
-        flipContainer.addEventListener('touchend', function () {
-                isFlipped = !isFlipped;
-                flipper.style.transform = isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
-            });
+        document.addEventListener('DOMContentLoaded', function () {
+            // הוספת אירוע קליק לכרטיס
+            document.querySelector('.box3').addEventListener('click', handleCardClick);
 
+            // הוספת אירוע קליק לדף כדי להחזיר את הכרטיס למצב הרגיל
+            document.addEventListener('click', handleClickOutside);
+        });
     </script>
-
 </body>
 
 </html>
