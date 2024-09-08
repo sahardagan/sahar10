@@ -7,7 +7,6 @@
     <title>כרטיס ביקור</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
-
     <script src="https://kit.fontawesome.com/cd34643dc0.js" crossorigin="anonymous"></script>
 </head>
 
@@ -17,7 +16,7 @@
             <div class="front"></div>
             <div class="back">
                 <h1>סהר דגן</h1>
-                <p>עיצוב ופיתוח אתריםd</p>
+                <p>עיצוב ופיתוח אתרים</p>
                 <div class="icons">
                     <div class="icon-group">
                         <span class="bold"><i class="fa-solid fa-phone"></i></span>
@@ -61,18 +60,17 @@
             document.addEventListener('click', handleClickOutside);
         });
 
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('./sw.js').then(function (registration) {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                }, function (error) {
+                    console.log('Service Worker registration failed:', error);
+                });
+            });
+        }
 
-                if ('serviceWorker' in navigator) {
-                    window.addEventListener('load', function () {
-                        navigator.serviceWorker.register('./sw.js').then(function (registration) {
-                            console.log('Service Worker registered with scope:', registration.scope);
-                        }, function (error) {
-                            console.log('Service Worker registration failed:', error);
-                        });
-                    });
-  }
-
-    let deferredPrompt;
+        let deferredPrompt;
         const addBtn = document.createElement('button');
         addBtn.textContent = 'הוסף למסך הבית';
         addBtn.style.display = 'none'; // נסתר ברירת מחדל

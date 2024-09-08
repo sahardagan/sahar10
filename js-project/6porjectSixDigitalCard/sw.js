@@ -4,8 +4,14 @@ self.addEventListener('install', function (event) {
       return cache.addAll([
         '/',
         './style.css',
+        './icon/android-icon-48x48.png',
+        './icon/android-icon-72x72.png',
+        './icon/android-icon-96x96.png',
+        './icon/android-icon-144x144.png',
         './icon/android-icon-192x192.png',
-        './icon/ms-icon-310x310.png'
+        './icon/android-icon-256x256.png',
+        './icon/ms-icon-384x384.png',
+        './icon/ms-icon-512x512.png'
       ]);
     })
   );
