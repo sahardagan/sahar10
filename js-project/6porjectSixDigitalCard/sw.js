@@ -1,5 +1,3 @@
-// sw.js
-
 const CACHE_NAME = 'v1'; // שם של המטמון
 const urlsToCache = [
   '/',
@@ -43,13 +41,23 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Fetch event to serve cached files
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request)
-      .then((response) => {
-        // Return cached response if found, else fetch from network
-        return response || fetch(event.request);
+// Fetch event to serve cached files and cache new requests
+self.addEventListener('fetch', function(event) {
+  const requestURL = new URL(event.request.url);
+
+  // וודא שרק בקשות http או https נשמרות ב-Cache
+  if (requestURL.protocol === 'http:' || requestURL.protocol === 'https:') {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(function(cache) { // שימוש ב-CACHE_NAME
+        return cache.match(event.request).then(function(response) {
+          // אם יש תגובה מהמטמון, החזר אותה
+          return response || fetch(event.request).then(function(networkResponse) {
+            // שמור את הבקשה ב-Cache
+            cache.put(event.request, networkResponse.clone()); // שורה 48
+            return networkResponse;
+          });
+        });
       })
-  );
+    );
+  }
 });
