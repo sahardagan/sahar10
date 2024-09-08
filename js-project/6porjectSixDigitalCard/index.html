@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>כרטיס ביקור</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="manifest.json">
     <script src="https://kit.fontawesome.com/cd34643dc0.js" crossorigin="anonymous"></script>
 </head>
 
@@ -62,7 +62,7 @@
 
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function () {
-                navigator.serviceWorker.register('/sw.js').then(function (registration) {
+                navigator.serviceWorker.register('./sw.js').then(function (registration) {
                     console.log('Service Worker registered with scope:', registration.scope);
                 }).catch(function (error) {
                     console.log('Service Worker registration failed:', error);
