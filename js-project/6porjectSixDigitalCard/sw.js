@@ -4,14 +4,14 @@ self.addEventListener('install', function (event) {
       return cache.addAll([
         '/',
         './style.css',
-        './icon/android-icon-48x48.png',
-        './icon/android-icon-72x72.png',
-        './icon/android-icon-96x96.png',
-        './icon/android-icon-144x144.png',
-        './icon/android-icon-192x192.png',
-        './icon/android-icon-256x256.png',
-        './icon/ms-icon-384x384.png',
-        './icon/ms-icon-512x512.png'
+        '/js-project/6porjectSixDigitalCard/icon/android-icon-48x48.png',
+        '/js-project/6porjectSixDigitalCard/icon/android-icon-72x72.png',
+        '/js-project/6porjectSixDigitalCard/icon/android-icon-96x96.png',
+        '/js-project/6porjectSixDigitalCard/icon/android-icon-144x144.png',
+        '/js-project/6porjectSixDigitalCard/icon/android-icon-192x192.png',
+        '/js-project/6porjectSixDigitalCard/icon/android-icon-256x256.png',
+        '/js-project/6porjectSixDigitalCard/icon/ms-icon-384x384.png',
+        '/js-project/6porjectSixDigitalCard/icon/ms-icon-512x512.png'
       ]).catch(function (error) {
         console.error('Cache addAll failed:', error);
       });
