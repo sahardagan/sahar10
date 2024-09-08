@@ -24,11 +24,7 @@ self.addEventListener('install', function (event) {
 self.addEventListener('fetch', function (event) {
   event.respondWith(
     caches.match(event.request).then(function (response) {
-      return response || fetch(event.request).catch(function (error) {
-        console.error('Fetch failed:', error);
-      });
-    }).catch(function (error) {
-      console.error('Cache match failed:', error);
+      return response || fetch(event.request);
     })
   );
 });
