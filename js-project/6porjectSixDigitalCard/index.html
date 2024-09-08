@@ -63,6 +63,12 @@
                 flipper.style.transform = 'rotateY(0deg)';
             });
         }
+
+        flipContainer.addEventListener('touchend', function () {
+                isFlipped = !isFlipped;
+                flipper.style.transform = isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
+            });
+
     </script>
 
 </body>
