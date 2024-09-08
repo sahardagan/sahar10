@@ -3,9 +3,9 @@ self.addEventListener('install', function (event) {
     caches.open('my-cache').then(function (cache) {
       return cache.addAll([
         '/',
-        '/style.css',
-        '/icon-192x192.png',
-        '/icon-512x512.png'
+        './style.css',
+        './icon/android-icon-192x192.png',
+        './icon/ms-icon-310x310.png'
       ]);
     })
   );
