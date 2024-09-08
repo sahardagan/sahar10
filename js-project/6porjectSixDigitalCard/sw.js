@@ -4,7 +4,7 @@ self.addEventListener('install', function (event) {
       return cache.addAll([
         '/',
         './style.css',
-        './icon/android-icon-48x48.png',
+        '/js-project/6porjectSixDigitalCard/icon/android-icon-48x48.png',
         './icon/android-icon-72x72.png',
         './icon/android-icon-96x96.png',
         './icon/android-icon-144x144.png',
