@@ -147,3 +147,67 @@ input {
 .none {
     display: none;
 }
+
+
+
+.accessibility-button1 {
+    box-shadow: none !important;
+    width: 45px;
+    height: 45px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.accessibility-button1 button {
+    position: fixed;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    left: -7%;
+    top: 16%;
+}
+
+.accessibility-button1 img {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    position: fixed;
+    left: 2.5%;
+    top: 20.5%;
+    animation: pulse 2s infinite;
+    /* נוסיף את האנימציה */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        /* מצב התחלתי */
+    }
+
+    50% {
+        transform: scale(1.2);
+        /* מצב הגדלה */
+    }
+
+    100% {
+        transform: scale(1);
+        /* מצב סיום (אותו מצב התחלתי) */
+    }
+}
+
+#accessibility-options {
+    position: fixed;
+    bottom: 60px;
+    right: 10px;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+    display: none;
+}
