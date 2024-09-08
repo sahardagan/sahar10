@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>כרטיס ביקור</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="/manifest.json">
     <script src="https://kit.fontawesome.com/cd34643dc0.js" crossorigin="anonymous"></script>
 </head>
 
@@ -57,6 +58,43 @@
 
             // הוספת אירוע קליק לדף כדי להחזיר את הכרטיס למצב הרגיל
             document.addEventListener('click', handleClickOutside);
+        });
+
+
+                if ('serviceWorker' in navigator) {
+                    window.addEventListener('load', function () {
+                        navigator.serviceWorker.register('/sw.js').then(function (registration) {
+                            console.log('Service Worker registered with scope:', registration.scope);
+                        }, function (error) {
+                            console.log('Service Worker registration failed:', error);
+                        });
+                    });
+  }
+
+    let deferredPrompt;
+        const addBtn = document.createElement('button');
+        addBtn.textContent = 'הוסף למסך הבית';
+        addBtn.style.display = 'none'; // נסתר ברירת מחדל
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            addBtn.style.display = 'block'; // הצג את הכפתור
+            document.body.appendChild(addBtn);
+        });
+
+        addBtn.addEventListener('click', () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((result) => {
+                    if (result.outcome === 'accepted') {
+                        console.log('User accepted the A2HS prompt');
+                    } else {
+                        console.log('User dismissed the A2HS prompt');
+                    }
+                    deferredPrompt = null;
+                });
+            }
         });
     </script>
 </body>

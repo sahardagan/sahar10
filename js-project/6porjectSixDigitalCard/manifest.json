@@ -1,0 +1,21 @@
+{
+  "name": "כרטיס ביקור",
+  "short_name": "כרטיס",
+  "description": "כרטיס ביקור דיגיטלי של סהר דגן",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2C3E50",
+  "icons": [
+    {
+      "src": "icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
