@@ -12,6 +12,42 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <script src="https://kit.fontawesome.com/cd34643dc0.js" crossorigin="anonymous"></script>
+    <style>
+        /* עיצוב כפתור הוספה למסך הבית */
+        #add-to-home {
+            position: fixed;
+            /* מקבע את הכפתור בתחתית המסך */
+            bottom: 20px;
+            /* מרחק מהקצה התחתון של המסך */
+            right: 20px;
+            /* מרחק מהקצה הימני של המסך */
+            background-color: #007bff;
+            /* צבע הרקע של הכפתור */
+            color: #fff;
+            /* צבע הטקסט של הכפתור */
+            border: none;
+            /* מסיר את גבול הכפתור */
+            border-radius: 5px;
+            /* פינות מעוגלות */
+            padding: 10px 20px;
+            /* ריפוד פנימי */
+            font-size: 16px;
+            /* גודל הפונט */
+            cursor: pointer;
+            /* הופך את הסמן ליד בעת ריחוף */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* צל למראה טוב יותר */
+            transition: background-color 0.3s;
+            /* אנימציה לשינוי צבע הרקע */
+            display: none;
+            /* נסתר ברירת מחדל */
+        }
+
+        #add-to-home:hover {
+            background-color: #0056b3;
+            /* צבע הרקע בעת ריחוף מעל הכפתור */
+        }
+    </style>
 </head>
 
 <body>
@@ -44,6 +80,8 @@
         </div>
     </div>
 
+    <button id="add-to-home" class="add-to-home">הוסף למסך הבית</button>
+
     <script>
         function handleClickOutside(event) {
             if (!document.querySelector('.box3').contains(event.target)) {
@@ -57,45 +95,46 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
+            // בדוק אם יש כפתור עם ID 'add-to-home'
+            const addBtn = document.getElementById('add-to-home');
+
+            if (addBtn) {
+                let deferredPrompt;
+
+                window.addEventListener('beforeinstallprompt', (e) => {
+                    e.preventDefault();
+                    deferredPrompt = e;
+                    addBtn.style.display = 'block'; // הצג את הכפתור
+                });
+
+                addBtn.addEventListener('click', () => {
+                    if (deferredPrompt) {
+                        deferredPrompt.prompt();
+                        deferredPrompt.userChoice.then((result) => {
+                            if (result.outcome === 'accepted') {
+                                console.log('User accepted the A2HS prompt');
+                            } else {
+                                console.log('User dismissed the A2HS prompt');
+                            }
+                            deferredPrompt = null;
+                        });
+                    }
+                });
+            }
+
             // הוספת אירוע קליק לכרטיס
             document.querySelector('.box3').addEventListener('click', handleCardClick);
 
             // הוספת אירוע קליק לדף כדי להחזיר את הכרטיס למצב הרגיל
             document.addEventListener('click', handleClickOutside);
-        });
 
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function () {
-                navigator.serviceWorker.register('sw.js').then(function (registration) {
-                    console.log('Service Worker registered with scope:', registration.scope);
-                }).catch(function (error) {
-                    console.log('Service Worker registration failed:', error);
-                });
-            });
-        }
-
-        let deferredPrompt;
-        const addBtn = document.createElement('button');
-        addBtn.textContent = 'הוסף למסך הבית';
-        addBtn.style.display = 'none'; // נסתר ברירת מחדל
-
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            addBtn.style.display = 'block'; // הצג את הכפתור
-            document.body.appendChild(addBtn);
-        });
-
-        addBtn.addEventListener('click', () => {
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                deferredPrompt.userChoice.then((result) => {
-                    if (result.outcome === 'accepted') {
-                        console.log('User accepted the A2HS prompt');
-                    } else {
-                        console.log('User dismissed the A2HS prompt');
-                    }
-                    deferredPrompt = null;
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function () {
+                    navigator.serviceWorker.register('sw.js').then(function (registration) {
+                        console.log('Service Worker registered with scope:', registration.scope);
+                    }).catch(function (error) {
+                        console.log('Service Worker registration failed:', error);
+                    });
                 });
             }
         });
