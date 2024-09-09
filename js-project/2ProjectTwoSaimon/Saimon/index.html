@@ -10,6 +10,81 @@
 </head>
 
 <body>
+<!-- Navbar -->
+<nav class="nav-container">
+    <div class="logo-container">
+        <h3 class="logo-title">סהר דגן</h3>
+        <button class="contact-button" onclick="openPopup()">דברו איתי</button>
+        <!-- פופאפ ליצירת קשר -->
+        <div id="contactPopup" class="popup-modal">
+            <div class="popup-content">
+                <span class="close-button">&times;</span>
+                <h2>📞 צור קשר</h2>
+                <form id="contactForm">
+                    <label for="name">👤 שם</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">📧 אימייל</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">💬 הודעה</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit">🚀 שלח</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <ul class="nav-items">
+        <li class="nav-item"><a href="#contact-area">צור קשר</a></li>
+        <li class="nav-item"><a href="#projects-section">שירותים</a></li>
+        <li class="nav-item"><a href="#about-section">אודות</a></li>
+        <li class="nav-item"><a href="#main-section">ראשי</a></li>
+    </ul>
+
+    <div class="nav-burger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <ul class="sidebar-list">
+        <li class="sidebar-item"><a href="#main-section">ראשי</a></li>
+        <li class="sidebar-item"><a href="#about-section">אודות</a></li>
+        <li class="sidebar-item"><a href="#projects-section">שירותים</a></li>
+        <li class="sidebar-item"><a href="#contact-area">צור קשר</a></li>
+    </ul>
+</nav>
+
+<script>
+    function openPopup() {
+        document.getElementById("contactPopup").style.display = "block";
+    }
+
+    const closeBtn = document.querySelector(".close-button");
+    const popup = document.getElementById("contactPopup");
+
+    closeBtn.addEventListener("click", () => {
+        popup.style.display = "none";
+    });
+
+    window.addEventListener("click", (e) => {
+        if (e.target == popup) {
+            popup.style.display = "none";
+        }
+    });
+
+    const navBurger = document.querySelector(".nav-burger");
+    const sideBar = document.querySelector(".sidebar-list");
+
+    navBurger.addEventListener("click", function () {
+        navBurger.classList.toggle("open");
+        sideBar.classList.toggle("open");
+    });
+</script>
+
+    
     <!-- כפתור נגישות -->
     <div class="accessibility-button1">
         <button id="accessibility-toggle"><img src="/images/icons8-web-accessibility-48.png" alt="כפתור נגישות"></button>
