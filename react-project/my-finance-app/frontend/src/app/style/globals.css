@@ -25,3 +25,15 @@ body {
     text-wrap: balance;
   }
 }
+
+html {
+  direction: rtl;
+  text-align: right;
+}
+
+
+.text-white {
+  direction: ltr;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
