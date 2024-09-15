@@ -16,7 +16,8 @@ const SignUp: React.FC = () => {
         email,
         password,
       });
-      // Handle successful registration (e.g., redirect to sign-in page)
+      // Handle successful registration
+      // Navigate to sign-in or display a success message
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       setError("Registration failed. Please try again.");

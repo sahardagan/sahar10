@@ -20,13 +20,13 @@ const TransactionList: React.FC = () => {
       setTransactions(response.data);
     } catch (error) {
       console.error("Error fetching transactions:", error);
-      // טיפול בשגיאה
+      // Handle error appropriately
     }
   };
 
   useEffect(() => {
     fetchTransactions();
-  }, []); // התעדכן רק פעם אחת עם רכיב טוען
+  }, []);
 
   const filteredTransactions = transactions.filter(
     (transaction) => filter === "all" || transaction.type === filter
@@ -45,22 +45,22 @@ const TransactionList: React.FC = () => {
   return (
     <div>
       <label>
-        סנן לפי סוג:
+        Filter by type:
         <select
           onChange={(e) =>
             setFilter(e.target.value as "all" | "income" | "expense")
           }
         >
-          <option value="all">הכל</option>
-          <option value="income">הכנסות</option>
-          <option value="expense">הוצאות</option>
+          <option value="all">All</option>
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
         </select>
       </label>
-      <h2>סיכום כספי</h2>
-      <p>סך ההכנסות: {totalIncome}</p>
-      <p>סך ההוצאות: {totalExpense}</p>
-      <p>יתרה נוכחית: {balance}</p>
-      <h2>רשימת תנועות</h2>
+      <h2>Financial Summary</h2>
+      <p>Total Income: {totalIncome}</p>
+      <p>Total Expenses: {totalExpense}</p>
+      <p>Current Balance: {balance}</p>
+      <h2>Transaction List</h2>
       <ul>
         {filteredTransactions.map((transaction) => (
           <li key={transaction.id}>

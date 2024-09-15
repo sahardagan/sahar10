@@ -8,33 +8,29 @@ const SignIn: React.FC<{ setIsAuthenticated: (auth: boolean) => void }> = ({
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
-  const [showPassword, setShowPassword] = useState(false); // מצב חדש כדי לעקוב אם הסיסמה מוצגת
   const navigate = useNavigate();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
     try {
-      // ניסיון להתחבר עם נתוני המשתמש
       const response = await axios.post(
         "http://localhost:5000/api/users/login",
-        {
-          email,
-          password,
-        }
+        { email, password }
       );
 
-      // הנחה שהטוקן מגיע בתשובה מהשרת
-      const token: string = response.data.token; // שנה את זה בהתאם למבנה התשובה שלך
+      const token: string = response.data.token;
       localStorage.setItem("authToken", token);
 
-      // עדכון ה-state עם הצלחה והפניית המשתמש
       setIsAuthenticated(true);
-      navigate("/"); // הפנייה לדף הבית
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      console.log("working");
+      navigate("/");
     } catch (err) {
-      // טיפול בשגיאות והצגת הודעת שגיאה למשתמש
-      setError("Invalid email or password.");
+      if (axios.isAxiosError(err)) {
+        setError(err.response?.data.message || "An unexpected error occurred.");
+      } else {
+        setError("An unexpected error occurred.");
+      }
     }
   };
 
@@ -53,30 +49,12 @@ const SignIn: React.FC<{ setIsAuthenticated: (auth: boolean) => void }> = ({
         </div>
         <div>
           <label>Password:</label>
-          <div style={{ position: "relative" }}>
-            <input
-              type={showPassword ? "text" : "password"} // שינוי סוג הקלט בהתאם למצב
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            <button
-              type="button"
-              onClick={() => setShowPassword(!showPassword)} // החלפת מצב הצגת הסיסמה
-              style={{
-                position: "absolute",
-                right: "10px",
-                top: "50%",
-                transform: "translateY(-50%)",
-                background: "none",
-                border: "none",
-                cursor: "pointer",
-              }}
-            >
-              {showPassword ? "Hide" : "Show"}{" "}
-              {/* כפתור שכתוב את המצב הנוכחי */}
-            </button>
-          </div>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
         </div>
         {error && <p style={{ color: "red" }}>{error}</p>}
         <button type="submit">Sign In</button>
