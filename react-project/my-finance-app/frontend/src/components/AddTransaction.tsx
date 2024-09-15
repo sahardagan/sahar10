@@ -1,57 +1,76 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AddTransaction: React.FC = () => {
-  const [type, setType] = useState("expense");
-  const [amount, setAmount] = useState("");
-  const [description, setDescription] = useState("");
-  const navigate = useNavigate();
+  const [amount, setAmount] = useState<number>(0);
+  const [description, setDescription] = useState<string>("");
+  const [type, setType] = useState<"income" | "expense">("income");
 
-  const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
     try {
-      await axios.post("http://localhost:5000/api/transactions", {
-        type,
-        amount: parseFloat(amount),
-        description,
-      });
-      // הפניה לרשימת התנועות
-      navigate("/transactions");
+      const token = localStorage.getItem("authToken"); // קבלת ה-Token
+      const response = await axios.post(
+        "http://localhost:5000/api/transactions",
+        {
+          amount,
+          description,
+          type,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`, // הוספת ה-Token לכותרת הבקשה
+          },
+        }
+      );
+
+      console.log("Transaction added successfully:", response.data);
+      toast.success("Transaction added successfully!");
     } catch (error) {
       console.error("Error adding transaction:", error);
-      // טיפול בשגיאה
+      toast.error("Error adding transaction.");
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        סוג:
-        <select value={type} onChange={(e) => setType(e.target.value)}>
-          <option value="expense">הוצאה</option>
-          <option value="income">הכנסה</option>
-        </select>
-      </label>
-      <label>
-        סכום:
-        <input
-          type="number"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        תיאור:
-        <input
-          type="text"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-      </label>
-      <button type="submit">הוסף תנועה</button>
-    </form>
+    <div className="add-transaction">
+      <h2>Add New Transaction</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>Amount:</label>
+          <input
+            type="number"
+            value={amount}
+            onChange={(e) => setAmount(Number(e.target.value))}
+            required
+          />
+        </div>
+        <div>
+          <label>Description:</label>
+          <input
+            type="text"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label>Type:</label>
+          <select
+            value={type}
+            onChange={(e) => setType(e.target.value as "income" | "expense")}
+          >
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+        </div>
+        <button type="submit">Add Transaction</button>
+      </form>
+      <ToastContainer />
+    </div>
   );
 };
 

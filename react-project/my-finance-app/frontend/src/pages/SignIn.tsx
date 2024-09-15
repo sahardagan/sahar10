@@ -1,8 +1,10 @@
+// src/components/SignIn.tsx
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { setAuthToken } from "../../utils/auth"; // Importing the function
 
 interface SignInProps {
   setIsAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
@@ -27,7 +29,7 @@ const SignIn: React.FC<SignInProps> = ({ setIsAuthenticated }) => {
         }
       );
 
-      localStorage.setItem("authToken", response.data.token);
+      setAuthToken(response.data.token); // Using the function
       setIsAuthenticated(true);
       toast.success("Sign-in successful!");
       navigate("/profile");

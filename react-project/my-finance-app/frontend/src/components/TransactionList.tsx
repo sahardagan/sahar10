@@ -15,13 +15,29 @@ const TransactionList: React.FC = () => {
 
   const fetchTransactions = async () => {
     try {
-      const response = await axios.get<Transaction[]>(
-        "http://localhost:5000/api/transactions"
+      // Get the token from localStorage or other storage
+      const token = localStorage.getItem("authToken");
+
+      if (!token) {
+        setError("Authorization token is missing");
+        return;
+      }
+
+      // Add the token to the request headers
+      const response = await axios.get(
+        "http://localhost:5000/api/transactions",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`, // Add token to the Authorization header
+          },
+        }
       );
-      setTransactions(response.data);
+
+      setTransactions(response.data); // Update state with the fetched transactions
+      console.log("Transactions fetched successfully:", response.data);
     } catch (error) {
       console.error("Error fetching transactions:", error);
-      setError("Error fetching transactions");
+      setError("Failed to fetch transactions. Please try again.");
     }
   };
 
@@ -45,10 +61,11 @@ const TransactionList: React.FC = () => {
 
   return (
     <div>
-      {error && <div>{error}</div>}
+      {error && <div style={{ color: "red" }}>{error}</div>}
       <label>
         Filter by type:
         <select
+          value={filter}
           onChange={(e) =>
             setFilter(e.target.value as "all" | "income" | "expense")
           }
