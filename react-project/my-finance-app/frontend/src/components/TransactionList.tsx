@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 interface Transaction {
-  id: string;
+  _id: string; // שדה מזהה התנועה
   type: "income" | "expense";
   amount: number;
   description: string;
@@ -11,6 +11,7 @@ interface Transaction {
 const TransactionList: React.FC = () => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [filter, setFilter] = useState<"all" | "income" | "expense">("all");
+  const [error, setError] = useState<string | null>(null);
 
   const fetchTransactions = async () => {
     try {
@@ -20,7 +21,7 @@ const TransactionList: React.FC = () => {
       setTransactions(response.data);
     } catch (error) {
       console.error("Error fetching transactions:", error);
-      // Handle error appropriately
+      setError("Error fetching transactions");
     }
   };
 
@@ -44,6 +45,7 @@ const TransactionList: React.FC = () => {
 
   return (
     <div>
+      {error && <div>{error}</div>}
       <label>
         Filter by type:
         <select
@@ -57,13 +59,13 @@ const TransactionList: React.FC = () => {
         </select>
       </label>
       <h2>Financial Summary</h2>
-      <p>Total Income: {totalIncome}</p>
-      <p>Total Expenses: {totalExpense}</p>
-      <p>Current Balance: {balance}</p>
+      <p>Total Income: {totalIncome.toFixed(2)}</p>
+      <p>Total Expenses: {totalExpense.toFixed(2)}</p>
+      <p>Current Balance: {balance.toFixed(2)}</p>
       <h2>Transaction List</h2>
       <ul>
         {filteredTransactions.map((transaction) => (
-          <li key={transaction.id}>
+          <li key={transaction._id}>
             {transaction.type} - {transaction.amount} -{" "}
             {transaction.description}
           </li>

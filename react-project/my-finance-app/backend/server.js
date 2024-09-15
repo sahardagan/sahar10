@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-
+const Transaction = require('./models/Transaction');
 // צור מופע של Express
 const app = express();
 
@@ -59,6 +59,15 @@ app.post('/api/users/login', async (req, res) => {
   }
 });
 
+app.get('/api/transactions', async (req, res) => {
+  try {
+    const transactions = await Transaction.find();
+    res.status(200).json(transactions);
+  } catch (error) {
+    console.error('Error fetching transactions:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
 
 // הגדרת השרת
 const PORT = process.env.PORT || 5000;
