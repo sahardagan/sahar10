@@ -2,6 +2,17 @@ import React, { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {
+  TextField,
+  Button,
+  MenuItem,
+  Select,
+  InputLabel,
+  FormControl,
+  InputAdornment,
+} from "@mui/material";
+import { AttachMoney, Description, Category } from "@mui/icons-material";
+import "../style/Global.css"; // ייבוא קובץ ה-CSS
 
 const AddTransaction: React.FC = () => {
   const [amount, setAmount] = useState<number>(0);
@@ -28,46 +39,71 @@ const AddTransaction: React.FC = () => {
       );
 
       console.log("Transaction added successfully:", response.data);
-      toast.success("Transaction added successfully!");
+      toast.success("התנועה נוספה בהצלחה!");
     } catch (error) {
       console.error("Error adding transaction:", error);
-      toast.error("Error adding transaction.");
+      toast.error("שגיאה בהוספת התנועה.");
     }
   };
 
   return (
     <div className="add-transaction">
-      <h2>Add New Transaction</h2>
+      <h2>הוסף תנועה חדשה</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>Amount:</label>
-          <input
+        <FormControl fullWidth margin="normal">
+          <InputLabel htmlFor="amount">סכום</InputLabel>
+          <TextField
+            id="amount"
             type="number"
             value={amount}
             onChange={(e) => setAmount(Number(e.target.value))}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <AttachMoney />
+                </InputAdornment>
+              ),
+            }}
             required
           />
-        </div>
-        <div>
-          <label>Description:</label>
-          <input
+        </FormControl>
+        <FormControl fullWidth margin="normal">
+          <InputLabel htmlFor="description">תיאור</InputLabel>
+          <TextField
+            id="description"
             type="text"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <Description />
+                </InputAdornment>
+              ),
+            }}
             required
           />
-        </div>
-        <div>
-          <label>Type:</label>
-          <select
+        </FormControl>
+        <FormControl fullWidth margin="normal">
+          <InputLabel id="type-label">סוג</InputLabel>
+          <Select
+            labelId="type-label"
+            id="type"
             value={type}
             onChange={(e) => setType(e.target.value as "income" | "expense")}
+            startAdornment={
+              <InputAdornment position="start">
+                <Category />
+              </InputAdornment>
+            }
           >
-            <option value="income">Income</option>
-            <option value="expense">Expense</option>
-          </select>
-        </div>
-        <button type="submit">Add Transaction</button>
+            <MenuItem value="income">הכנסה</MenuItem>
+            <MenuItem value="expense">הוצאה</MenuItem>
+          </Select>
+        </FormControl>
+        <Button variant="contained" color="primary" type="submit">
+          הוסף תנועה
+        </Button>
       </form>
       <ToastContainer />
     </div>

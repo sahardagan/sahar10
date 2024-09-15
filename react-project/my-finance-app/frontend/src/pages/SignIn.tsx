@@ -32,7 +32,7 @@ const SignIn: React.FC<SignInProps> = ({ setIsAuthenticated }) => {
       setAuthToken(response.data.token); // Using the function
       setIsAuthenticated(true);
       toast.success("Sign-in successful!");
-      navigate("/profile");
+      navigate("/");
     } catch (error) {
       toast.error("Sign-in failed. Please check your credentials.");
       console.error(error);
