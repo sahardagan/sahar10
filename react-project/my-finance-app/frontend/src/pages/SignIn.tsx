@@ -8,6 +8,7 @@ const SignIn: React.FC<{ setIsAuthenticated: (auth: boolean) => void }> = ({
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [showPassword, setShowPassword] = useState(false); // מצב חדש כדי לעקוב אם הסיסמה מוצגת
   const navigate = useNavigate();
 
   const handleSubmit = async (event: React.FormEvent) => {
@@ -52,12 +53,30 @@ const SignIn: React.FC<{ setIsAuthenticated: (auth: boolean) => void }> = ({
         </div>
         <div>
           <label>Password:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+          <div style={{ position: "relative" }}>
+            <input
+              type={showPassword ? "text" : "password"} // שינוי סוג הקלט בהתאם למצב
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)} // החלפת מצב הצגת הסיסמה
+              style={{
+                position: "absolute",
+                right: "10px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+              }}
+            >
+              {showPassword ? "Hide" : "Show"}{" "}
+              {/* כפתור שכתוב את המצב הנוכחי */}
+            </button>
+          </div>
         </div>
         {error && <p style={{ color: "red" }}>{error}</p>}
         <button type="submit">Sign In</button>
