@@ -1,68 +1,105 @@
+// Signup.tsx
 import React, { useState } from "react";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Import the CSS for Toastify
 
-const SignUp: React.FC = () => {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+// Define the types for form state
+interface FormState {
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
 
-  const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
+const Signup: React.FC = () => {
+  // Initialize form state
+  const [form, setForm] = useState<FormState>({
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  // Handle form input change
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, value } = e.target;
+    setForm((prevForm) => ({
+      ...prevForm,
+      [id]: value,
+    }));
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // Validate the form
+    if (form.password !== form.confirmPassword) {
+      toast.error("Passwords do not match.");
+      return;
+    }
 
     try {
-      await axios.post("http://localhost:5000/api/users/register", {
-        username,
-        email,
-        password,
-      });
+      // Send registration request to the server
+      const response = await axios.post(
+        "http://localhost:5000/api/users/register",
+        {
+          email: form.email,
+          password: form.password,
+        }
+      );
+
       // Handle successful registration
-      // Navigate to sign-in or display a success message
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    } catch (err) {
-      setError("Registration failed. Please try again.");
+      toast.success("Registration successful!");
+      console.log(response.data);
+
+      // Example of redirecting (if using React Router)
+      // history.push('/signin'); // Uncomment if using react-router-dom
+    } catch (error) {
+      // Handle errors (e.g., user already exists)
+      toast.error("Registration failed. Please try again.");
+      console.error(error);
     }
   };
 
   return (
-    <div>
-      <h1>Sign Up</h1>
+    <div className="signup-container">
+      <h2>Sign Up</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input
             type="email"
             id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={form.email}
+            onChange={handleChange}
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="password">Password:</label>
           <input
             type="password"
             id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={form.password}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="confirmPassword">Confirm Password:</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            value={form.confirmPassword}
+            onChange={handleChange}
             required
           />
         </div>
         <button type="submit">Sign Up</button>
-        {error && <p>{error}</p>}
       </form>
+      <ToastContainer />
     </div>
   );
 };
 
-export default SignUp;
+export default Signup;

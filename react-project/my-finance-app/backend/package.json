@@ -3,28 +3,20 @@
   "version": "1.0.0",
   "main": "server.ts",
   "scripts": {
-  "start": "ts-node src/server.ts",
-  "dev": "nodemon src/server.ts",
-  "build": "tsc"
-},
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "build": "tsc"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
     "express": "^4.21.0",
-    "jsonwebtoken": "^9.0.0",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.8.1"
   },
   "devDependencies": {
-    "@types/bcryptjs": "^2.4.6",
-    "@types/body-parser": "^1.19.5",
-    "@types/cors": "^2.8.17",
-    "@types/express": "^4.17.21",
-    "@types/mongoose": "^5.11.97",
-    "@types/node": "^22.5.5",
-    "nodemon": "^2.0.22",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.6.2"
+    "nodemon": "^3.1.4"
   },
   "keywords": [],
   "author": "",
