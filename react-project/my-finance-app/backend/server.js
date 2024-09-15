@@ -45,6 +45,21 @@ app.post('/api/users/register', async (req, res) => {
   }
 });
 
+app.post('/api/users/login', async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const user = await User.findOne({ email });
+    if (!user || user.password !== password) {
+      return res.status(401).send('Invalid credentials');
+    }
+    // יצירת טוקן או פעולה אחרת
+    res.status(200).send({ token: 'fake-jwt-token' });
+  } catch (error) {
+    res.status(500).send('Server error');
+  }
+});
+
+
 // הגדרת השרת
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

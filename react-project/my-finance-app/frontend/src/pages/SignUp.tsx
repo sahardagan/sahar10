@@ -1,10 +1,8 @@
-// Signup.tsx
 import React, { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"; // Import the CSS for Toastify
+import "react-toastify/dist/ReactToastify.css";
 
-// Define the types for form state
 interface FormState {
   email: string;
   password: string;
@@ -12,14 +10,16 @@ interface FormState {
 }
 
 const Signup: React.FC = () => {
-  // Initialize form state
   const [form, setForm] = useState<FormState>({
     email: "",
     password: "",
     confirmPassword: "",
   });
 
-  // Handle form input change
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [showConfirmPassword, setShowConfirmPassword] =
+    useState<boolean>(false);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
     setForm((prevForm) => ({
@@ -28,18 +28,15 @@ const Signup: React.FC = () => {
     }));
   };
 
-  // Handle form submission
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Validate the form
     if (form.password !== form.confirmPassword) {
       toast.error("Passwords do not match.");
       return;
     }
 
     try {
-      // Send registration request to the server
       const response = await axios.post(
         "http://localhost:5000/api/users/register",
         {
@@ -48,14 +45,9 @@ const Signup: React.FC = () => {
         }
       );
 
-      // Handle successful registration
       toast.success("Registration successful!");
       console.log(response.data);
-
-      // Example of redirecting (if using React Router)
-      // history.push('/signin'); // Uncomment if using react-router-dom
     } catch (error) {
-      // Handle errors (e.g., user already exists)
       toast.error("Registration failed. Please try again.");
       console.error(error);
     }
@@ -78,22 +70,31 @@ const Signup: React.FC = () => {
         <div className="form-group">
           <label htmlFor="password">Password:</label>
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             id="password"
             value={form.password}
             onChange={handleChange}
             required
           />
+          <button type="button" onClick={() => setShowPassword(!showPassword)}>
+            {showPassword ? "Hide" : "Show"}
+          </button>
         </div>
         <div className="form-group">
           <label htmlFor="confirmPassword">Confirm Password:</label>
           <input
-            type="password"
+            type={showConfirmPassword ? "text" : "password"}
             id="confirmPassword"
             value={form.confirmPassword}
             onChange={handleChange}
             required
           />
+          <button
+            type="button"
+            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+          >
+            {showConfirmPassword ? "Hide" : "Show"}
+          </button>
         </div>
         <button type="submit">Sign Up</button>
       </form>
