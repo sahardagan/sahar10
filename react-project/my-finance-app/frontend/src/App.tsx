@@ -8,6 +8,7 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Profile from "./pages/Profile";
 import Logout from "./pages/Logout";
+import AddTransaction from "./components/AddTransaction";
 
 const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
@@ -48,6 +49,7 @@ const App: React.FC = () => {
           }
         />
         <Route path="/logout" element={<Logout onLogout={handleLogout} />} />
+        <Route path="/add-transaction" element={<AddTransaction />} />
       </Routes>
       <BottomNavbar isAuthenticated={isAuthenticated} onLogout={handleLogout} />
     </Router>
