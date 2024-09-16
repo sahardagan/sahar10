@@ -12,14 +12,15 @@ plugins:
 
 paginate: 10
 
-exclude: node_modules
-  .git
-  .github
-  build
-  dist
-  .vscode
-  tmp
-  temp
-  .DS_Store
-  .env
-  *.log
+exclude:
+  - node_modules
+  - .git
+  - .github
+  - build
+  - dist
+  - .vscode
+  - tmp
+  - temp
+  - .DS_Store
+  - .env
+  - *.log
