@@ -1,0 +1,17 @@
+# שם האתר שלך
+title: TopMarket
+
+# תיאור קצר של האתר
+description: חנות אונליין ל-Fashion ו-Jewelry עם מגוון רחב של מוצרים איכותיים.
+
+# URL בסיסי של האתר שלך. במקרה שלך, מאחר והאתר שלך נמצא בשורש הדומיין, השאר את השדה ריק
+baseurl: ""
+
+# ה-URL המלא של האתר שלך
+url: "http://www.topmarket10.com"
+
+# הגדרת נושא האתר שלך
+theme: minima
+
+# הגדרות נוספות, כמו ספק Markdown
+markdown: kramdown
