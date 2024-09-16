@@ -11,3 +11,6 @@ plugins:
   - jekyll-sitemap
 
 paginate: 10
+
+exclude:
+  - node_modules
