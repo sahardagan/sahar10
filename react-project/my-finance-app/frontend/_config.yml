@@ -1,17 +1,17 @@
-# שם האתר שלך
-title: TopMarket
+# הגדרות בסיסיות
+title: My Awesome Site
+description: A description of my awesome site.
+baseurl: "" # תשאיר ריק אם האתר הוא ברמת הדומיין הראשי
+url: "https://www.topmarket10.com" # כתובת האתר שלך
 
-# תיאור קצר של האתר
-description: חנות אונליין ל-Fashion ו-Jewelry עם מגוון רחב של מוצרים איכותיים.
+# תבניות
+theme: jekyll-theme-primer
 
-# URL בסיסי של האתר שלך. במקרה שלך, מאחר והאתר שלך נמצא בשורש הדומיין, השאר את השדה ריק
-baseurl: ""
+# תוספים
+plugins:
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-sitemap
 
-# ה-URL המלא של האתר שלך
-url: "http://www.topmarket10.com"
-
-# הגדרת נושא האתר שלך
-theme: minima
-
-# הגדרות נוספות, כמו ספק Markdown
-markdown: kramdown
+# הגדרות נוספות
+paginate: 10
