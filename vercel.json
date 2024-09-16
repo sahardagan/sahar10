@@ -1,17 +1,17 @@
 {
   "builds": [
     {
-      "src": "frontend/package.json",
+      "src": "react-project/my-finance-app/frontend/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "frontend/dist"
+        "distDir": "react-project/my-finance-app/frontend/dist"
       }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/frontend/dist/$1"
+      "dest": "react-project/my-finance-app/frontend/dist/$1"
     }
   ]
 }
