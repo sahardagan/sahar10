@@ -1,17 +1,13 @@
-# הגדרות בסיסיות
 title: My Awesome Site
 description: A description of my awesome site.
-baseurl: "" # תשאיר ריק אם האתר הוא ברמת הדומיין הראשי
-url: "https://www.topmarket10.com" # כתובת האתר שלך
+baseurl: ""
+url: "https://www.topmarket10.com"
 
-# תבניות
 theme: jekyll-theme-primer
 
-# תוספים
 plugins:
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-sitemap
 
-# הגדרות נוספות
 paginate: 10
