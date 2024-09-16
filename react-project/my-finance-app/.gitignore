@@ -1,0 +1,48 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+
+# Environment files
+.env
+.env.production
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.vscode/
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Temporary files
+*.tmp
+*.temp
+
+# Vite cache
+.vite/
+
+# Public assets
+public/
+
+# Typescript build output
+*.tsbuildinfo
+
+# Miscellaneous
+*.local
+
+# Exclude package lock files (optional, usually included)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
