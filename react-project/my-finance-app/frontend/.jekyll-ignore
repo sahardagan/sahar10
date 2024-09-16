@@ -1,11 +1,42 @@
-# Ignoring node_modules directory
-node_modules/
+# התעלם מתיקיות ומבנים לא רלוונטיים
 
-# Ignoring build artifacts
-build/
+node_modules
+vendor
+tmp
+.cache
+dist
+build
+public
 
-# Ignoring local configuration files
-config.local.yml
+# התעלם מקבצים ספציפיים
 
-# Ignoring temporary files
-*.tmp
+_.log
+_.tmp
+_.swp
+_.swo
+_.bak
+_.orig
+
+# התעלם מקבצי מערכת ותיקיות
+
+.DS_Store
+Thumbs.db
+
+# התעלם מקבצים שהיו חלק מהתהליך (כגון קבצי בנייה)
+
+_.gem
+_.lock
+_.yml.bak
+_.md.tmp
+
+# התעלם מקבצי קונפיגורציה או נתונים זמניים שאינם נחוצים
+
+_.json
+_.xml
+_.yaml
+_.csv
+
+# התעלם מקבצים בתיקיות שמכילות פרויקטים נוספים
+
+project1/
+project2/
