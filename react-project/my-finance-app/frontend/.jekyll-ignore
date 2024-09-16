@@ -1,0 +1,11 @@
+# Ignoring node_modules directory
+node_modules/
+
+# Ignoring build artifacts
+build/
+
+# Ignoring local configuration files
+config.local.yml
+
+# Ignoring temporary files
+*.tmp
