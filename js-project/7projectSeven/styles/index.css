@@ -1,0 +1,135 @@
+body {
+  background-color: #1d1d1d;
+  color: #f1f1f1;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+}
+
+.squareRow {
+  display: flex;
+}
+
+.square {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.white {
+  background: linear-gradient(45deg, #f0e3d8, #d9c2a1);
+  /* צבע עץ בהיר */
+  border: 1px solid #b79b63;
+  /* גבול כהה לעץ בהיר */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  /* צל פנימי */
+}
+
+.black {
+  background: linear-gradient(45deg, #6f4f28, #3e2a16);
+  /* צבע עץ כהה */
+  border: 1px solid #4a3b1f;
+  /* גבול כהה לעץ כהה */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  /* צל פנימי */
+}
+
+.highlightYellow {
+  background: rgba(247, 247, 105, 0.7);
+  /* צבע הצהוב להדגשה עם שקיפות */
+  box-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
+  /* צל זוהר צהוב */
+}
+
+.piece {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.piece:hover {
+  transform: scale(1.1);
+}
+
+.captureColor {
+  background-color: #d9534f;
+}
+
+.highlight {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 215, 0, 0.7);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #2e2e2e;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  max-width: 90%;
+  width: 400px;
+}
+
+.modal p {
+  font-size: 24px;
+  padding: 10px;
+  background-color: #e74c3c;
+  color: white;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.modal img {
+  max-width: 100%;
+  border: 3px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.modal img:hover {
+  border-color: #f1c40f;
+  cursor: pointer;
+}
+
+/* גבול עץ ללוח */
+.chessboard {
+  display: grid;
+  grid-template-columns: repeat(8, 80px);
+  grid-template-rows: repeat(8, 80px);
+  border: 10px solid #8b572a;
+  /* גבול עץ כהה */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  /* צל חיצוני */
+  background: #b58963;
+  /* צבע רקע של העץ */
+}
