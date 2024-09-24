@@ -599,8 +599,8 @@
 </section>
 
 <div class="accessibility-button1">
-    <button id="accessibility-toggle">
-        <img src="/images/icons8-web-accessibility-48.png" alt="כפתור נגישות">
+    <button id="accessibility-toggle" aria-expanded="false" aria-controls="accessibility-options">
+        <img src="/images/icons8-web-accessibility-48.png" alt="Toggle Accessibility Options">
     </button>
 </div>
 
@@ -611,9 +611,14 @@
     <button id="decrease-font-size">הקטן גודל גופן</button>
     <button id="toggle-contrast">הפוך ניגודיות</button>
     <button id="highlight-links">הדגש קישורים</button>
+    <button id="underline-links">קו תחתון לקישורים</button>
+    <button id="increase-text-width">הגדל רוחב טקסט</button>
+    <button id="decrease-text-width">הקטן רוחב טקסט</button>
+    <button id="screen-reader">Enable/Disable Screen Reader</button>
 </div>
 
 <script src="accessibility.js"></script>
+
 
 <nav class="bottom-navbar">
     <div class="image-item">

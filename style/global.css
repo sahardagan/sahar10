@@ -2440,7 +2440,11 @@ text-align: center;
                 }
         
                 .front-img {
-                    z-index: 2;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4),
+            0 20px 40px rgba(0, 0, 0, 0.19);
+        /* צל כפול להדגשה */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* אנימציה בזמן ריחוף */                    z-index: 2;
                     transform: rotateY(0deg);
                     -webkit-transform: rotateY(0deg);
                 }
@@ -2504,8 +2508,9 @@ text-align: center;
         
                 @media screen and (max-width: 480px) {
                     .box3 {
-                        display: flex;
-                        justify-content: center;
+                        display: none;
+/*                         display: flex;
+ */                        justify-content: center;
                         margin: 0px 0 32px 0px;
                         position: relative;
                                 width: 150px;
