@@ -644,9 +644,83 @@
     </div>
 </nav>
 <section id="Copyright-area">
-<p class="left-copyright">sahar dagan</p>
-<p class="right-copyright">כל הזכויות שמורות</p>
+    <p class="left-copyright">sahar dagan</p>
+    <p class="right-copyright">כל הזכויות שמורות</p>
+    <div class="policy-buttons">
+        <a href="#" class="policy-button" id="privacy-policy-button">מדיניות פרטיות</a>
+    </div>
 </section>
+
+<!-- פופאפ -->
+<div id="popup" class="popup hidden">
+    <div class="popup-content">
+        <span class="close-button" id="close-popup">&times;</span>
+        <h2>מדיניות פרטיות 🛡️</h2>
+        <p>תאריך עדכון: [24/09/2024]</p>
+        <p>ברוך הבא לאתר שלנו www.topmarket10.com. אנו מחויבים להגן על פרטיותך ולשמור על המידע שלך בטוח. מדיניות פרטיות
+            זו
+            מתארת כיצד אנו אוספים, משתמשים, מאחסנים ומגנים על המידע שלך באתר שלנו.</p>
+
+        <h3>1. מידע שאנו אוספים</h3>
+        <p>באתר שלנו אין מערכת משתמשים ואין מידע אישי שנאסף במהלך הביקור שלך. עם זאת, אנו עשויים לאסוף את המידע הבא:</p>
+        <p>מידע אוטומטי: אנו עשויים לאסוף מידע אוטומטי כאשר אתה מבקר באתר, כגון כתובת IP, סוג דפדפן, מערכת הפעלה ודפי
+            אינטרנט שביקרת בהם. מידע זה משמש לשיפור האתר שלנו ולניתוח התנהגות המשתמשים.</p>
+
+        <h3>2. שימוש במידע</h3>
+        <p>אנו משתמשים במידע שאנו אוספים למטרות הבאות:</p>
+        <p>✅ כדי לשפר את חווית המשתמש באתר.</p>
+        <p>✅ כדי לנתח את התנועה לאתר ולהבין את התנהגות המשתמשים.</p>
+
+        <h3>3. שיתוף במידע</h3>
+        <p>אנו לא נמכור, לא נשכיר ולא נחלוק את המידע שלך עם צדדים שלישיים. המידע האוטומטי שנאסף עשוי להיות משותף עם ספקי
+            שירותי ניתוח (כגון Google Analytics) כדי להבין את השימוש באתר.</p>
+
+        <h3>4. אבטחת מידע</h3>
+        <p>אנו עושים כל מאמץ להגן על המידע שלך מפני גישה לא מורשית, אובדן או השחתה. עם זאת, אין שום שיטה להעברת מידע דרך
+            האינטרנט או דרך אחסון אלקטרוני שהיא 100% בטוחה.</p>
+
+        <h3>5. האתר בפיתוח</h3>
+        <p>חשוב לציין שהאתר נמצא עדיין בפיתוח. אני מתכנת מתחיל, ולכן ייתכן שהכפתור נגישות או פונקציות אחרות לא יעבדו
+            כראוי. אם אתה נתקל בבעיות, אנא ידיע אותי, ואני אעשה כמיטב יכולתי לתקן את הבעיות. כל המידע והפונקציות המוצגות
+            באתר נועדו למטרות מידע בלבד ואינן מהוות התחייבות לשירותים.</p>
+
+        <h3>6. זכויותיך</h3>
+        <p>כמשתמש, אתה זכאי לבקש מידע על המידע שאנו אוספים עליך, אם יש לך שאלות או חששות.</p>
+
+        <h3>7. שינויים במדיניות</h3>
+        <p>אנו שומרים לעצמנו את הזכות לעדכן מדיניות זו בכל עת. כל שינוי ייכנס לתוקף ברגע שיפורסם באתר.</p>
+
+        <h3>8. יצירת קשר</h3>
+        <p>אם יש לך שאלות או חששות בנוגע למדיניות פרטיות זו, אנא פנה אלינו בכתובת [sahardagannn@gmail.com] או דרך טופס
+            יצירת קשר
+            באתר.</p>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const privacyButton = document.getElementById('privacy-policy-button');
+        const popup = document.getElementById('popup');
+        const closeButton = document.getElementById('close-popup');
+
+        privacyButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            popup.classList.remove('hidden');
+        });
+
+        closeButton.addEventListener('click', () => {
+            popup.classList.add('hidden');
+        });
+
+        // סגירת הפופאפ כאשר לוחצים מחוץ לו
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) {
+                popup.classList.add('hidden');
+            }
+        });
+    });
+</script>
+
 <script>
         const navBurger = document.querySelector(".nav-burger");
         const sideBar = document.querySelector(".sidebar-list");
