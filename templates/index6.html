@@ -16,6 +16,7 @@
         }
 
         header {
+            width: 100%;
             background: linear-gradient(135deg, #ff6b6b, #ffcc70);
             color: white;
             text-align: center;
@@ -249,6 +250,7 @@
         }
 
         footer {
+            width: 100%;
             background-color: #333;
             color: white;
             text-align: center;
@@ -280,16 +282,97 @@
             }
         }
 
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 2.5rem;
-            }
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem; /* גודל כותרת קטן יותר */
+    }
 
-            .cta-button {
-                font-size: 0.9rem;
-                padding: 10px 25px;
-            }
-        }
+    header p {
+        font-size: 1.2rem; /* גודל טקסט קטן יותר */
+    }
+
+    .cta-button {
+        font-size: 0.9rem; /* גודל כפתור קטן יותר */
+        padding: 10px 25px; /* ריווח קטן יותר */
+    }
+
+    .about h2,
+    .programs h2,
+    .workshops h2,
+    .testimonials h2,
+    .contact-form h2 {
+        font-size: 2rem; /* גודל כותרות משניות קטן יותר */
+    }
+
+    .about p,
+    .program-card p,
+    .workshop-card p,
+    .testimonial-item p {
+        font-size: 1rem; /* גודל טקסט לפסקאות קטן יותר */
+    }
+
+    .program-card,
+    .workshop-card {
+        padding: 20px; /* ריווח קטן יותר בכרטיסים */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        padding: 10px; /* ריווח קטן יותר בתיבות קלט */
+    }
+
+    input[type="submit"] {
+        padding: 12px 20px; /* ריווח קטן יותר בכפתור שליחת טופס */
+    }
+}
+/* מדיה סקרין עבור מסכים קטנים מאוד (עד 360 פיקסלים) */
+@media (max-width: 360px) {
+    header h1 {
+        font-size: 2rem; /* גודל כותרת קטן יותר */
+    }
+
+    header p {
+        font-size: 1.1rem; /* גודל טקסט קטן יותר */
+    }
+
+    .cta-button {
+        font-size: 0.8rem; /* גודל כפתור קטן יותר */
+        padding: 8px 20px; /* ריווח קטן יותר */
+    }
+
+    .about h2,
+    .programs h2,
+    .workshops h2,
+    .testimonials h2,
+    .contact-form h2 {
+        font-size: 1.8rem; /* גודל כותרות משניות קטן יותר */
+    }
+
+    .about p,
+    .program-card p,
+    .workshop-card p,
+    .testimonial-item p {
+        font-size: 0.9rem; /* גודל טקסט לפסקאות קטן יותר */
+    }
+
+    .program-card,
+    .workshop-card {
+        padding: 15px; /* ריווח קטן יותר בכרטיסים */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        padding: 8px; /* ריווח קטן יותר בתיבות קלט */
+    }
+
+    input[type="submit"] {
+        padding: 10px 15px; /* ריווח קטן יותר בכפתור שליחת טופס */
+    }
+}
+
+
     </style>
 </head>
 
