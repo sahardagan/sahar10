@@ -917,8 +917,8 @@ align-items: center;
 }
 
 .card-image {
-    width: 100%;
-        height: auto;
+/*     width: 100%;
+ */        height: auto;
         display: block;
         transition: transform 0.3s ease;
 }
@@ -1351,8 +1351,8 @@ text-align: center;
 }
 
 .card-image {
-    width: 405px;
-    height: 224px;
+/*     width: 405px;
+    height: 224px; */
     max-width: 100%;
 }
 
@@ -2419,6 +2419,7 @@ text-align: center;
 }
 
                 .box3 {
+                        display: none;
                     top: -50px;
                     position: relative;
                     right: 310px;

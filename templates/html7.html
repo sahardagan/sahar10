@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>קונדיטוריה ביתית - הטעמים של דינה</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            overflow-x: hidden;
+            direction: rtl;
+        }
+
+        header {
+            background-color: #ff6f61;
+            /* צבע חם */
+            color: white;
+            text-align: center;
+            padding: 150px 20px;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        p.header-subtitle {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #ff6f61;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #ffcccc;
+        }
+
+        .container {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .products {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 0;
+            gap: 30px;
+        }
+
+        .product {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        .product h3 {
+            font-size: 1.8rem;
+            color: #333;
+        }
+
+        .product p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 40px auto;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            background-color: #ff6f61;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff3b30;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>הטעמים של דינה</h1>
+        <p class="header-subtitle">קונדיטוריה ביתית - עוגות שמותחות את החיך</p>
+        <a href="#contact" class="cta-button">הזמן עכשיו</a>
+    </header>
+
+    <div class="container">
+        <section class="products">
+            <div class="product">
+                <img src="https://via.placeholder.com/300" alt="עוגת שוקולד">
+                <h3>עוגת שוקולד</h3>
+                <p>עוגת שוקולד רכה עם קרם שוקולד מפנק.</p>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/300" alt="עוגיות חמאה">
+                <h3>עוגיות חמאה</h3>
+                <p>עוגיות חמאה קלאסיות עם טעמים מיוחדים.</p>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/300" alt="עוגת גבינה">
+                <h3>עוגת גבינה</h3>
+                <p>עוגת גבינה קלה ואוורירית עם תוספות טעימות.</p>
+            </div>
+        </section>
+
+        <section class="contact-form" id="contact">
+            <h2>צור קשר</h2>
+            <form action="#">
+                <input type="text" name="name" placeholder="שם מלא" required>
+                <input type="email" name="email" placeholder="אימייל" required>
+                <textarea name="message" rows="4" placeholder="הודעה" required></textarea>
+                <input type="submit" value="שלח">
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 כל הזכויות שמורות. <a href="#" style="color: #ff6f61;">מדיניות פרטיות</a></p>
+    </footer>
+
+</body>
+
+</html>

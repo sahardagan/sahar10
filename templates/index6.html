@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מאמן אישי להצלחה</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f0f0f0;
+            direction: rtl;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff6b6b, #ffcc70);
+            color: white;
+            text-align: center;
+            padding: 150px 20px;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        header p {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6b6b;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ff4e4e;
+        }
+
+        /* אודות */
+        .about {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .about h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* תוכניות אימון */
+        .programs {
+            padding: 60px 20px;
+            background-color: #f1f1f1;
+        }
+
+        .programs h2 {
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .program-cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .program-card {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+        }
+
+        .program-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .program-card p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .program-card a {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .program-card a:hover {
+            background-color: #ff4e4e;
+        }
+
+        /* סדנאות */
+        .workshops {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .workshops h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .workshops-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .workshop-card {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+        }
+
+        .workshop-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .workshop-card p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .workshop-card a {
+            background-color: #4ecdc4;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .workshop-card a:hover {
+            background-color: #3eb0a8;
+        }
+
+        /* המלצות */
+        .testimonials {
+            background-color: #f0f0f0;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+        }
+
+        .testimonial-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .testimonial-item p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-item span {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        /* צור קשר */
+        .contact-form {
+            background-color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .contact-form h2 {
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+        }
+
+        .contact-form form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff4e4e;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer a {
+            color: #ff6b6b;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 3rem;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+            }
+
+            .program-cards,
+            .workshops-cards {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .cta-button {
+                font-size: 0.9rem;
+                padding: 10px 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>מאמן אישי להצלחה בחיים ובכושר</h1>
+        <p>מלווה אתכם בתהליך להגשמת היעדים האישיים שלכם</p>
+        <a href="#contact" class="cta-button">התחל עכשיו</a>
+    </header>
+
+    <section class="about">
+        <h2>אודות</h2>
+        <p>הגישה האישית שלי למאמנים ולקוחות מבוססת על עבודה ישירה וממוקדת תוצאה. יחד ניצור תוכניות מותאמות אישית,
+            סדנאות העשרה, ייעוץ והכוונה לכל תחום בו אתם רוצים להצליח – בין אם מדובר בשיפור הבריאות, שדרוג הקריירה או
+            התפתחות אישית.</p>
+    </section>
+
+    <section class="programs">
+        <h2>תוכניות האימון שלנו</h2>
+        <div class="program-cards">
+            <div class="program-card">
+                <h3>תוכנית אימון אישי</h3>
+                <p>תוכנית מותאמת אישית הכוללת ליווי אחד על אחד להגעה ליעדים האישיים שלכם.</p>
+                <a href="#">גלה עוד</a>
+            </div>
+            <div class="program-card">
+                <h3>תוכנית אימון עסקי</h3>
+                <p>ליווי אישי לצמיחה והתפתחות עסקית עם כלים שמובילים להצלחה אמיתית.</p>
+                <a href="#">גלה עוד</a>
+            </div>
+            <div class="program-card">
+                <h3>תוכנית אימון כושר</h3>
+                <p>תוכנית כושר מקצועית לשיפור הבריאות הכללית והגעה לכושר אופטימלי.</p>
+                <a href="#">גלה עוד</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="workshops">
+        <h2>סדנאות קרובות</h2>
+        <div class="workshops-cards">
+            <div class="workshop-card">
+                <h3>סדנת העצמה אישית</h3>
+                <p>הצטרפו לסדנה ייחודית לפיתוח והעצמה אישית והגעה ליכולות גבוהות יותר.</p>
+                <a href="#">הירשמו עכשיו</a>
+            </div>
+            <div class="workshop-card">
+                <h3>סדנת תכנון קריירה</h3>
+                <p>כלים והכוונה לבניית הקריירה המתאימה לכם ולשיפור קבלת ההחלטות המקצועיות.</p>
+                <a href="#">הירשמו עכשיו</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>המלצות</h2>
+        <div class="testimonial-item">
+            <p>"המאמן האישי הזה שינה לי את כל צורת החשיבה, בזכותו הגעתי להישגים שמעולם לא חשבתי שאצליח!"</p>
+            <span>- יעל, תל אביב</span>
+        </div>
+        <div class="testimonial-item">
+            <p>"התוכנית העסקית קידמה את העסק שלי בצורה משמעותית, ממליץ בחום לכל מי שמחפש להתפתח."</p>
+            <span>- דוד, חיפה</span>
+        </div>
+    </section>
+
+    <section class="contact-form" id="contact">
+        <h2>צור קשר</h2>
+        <p>מלאו את הפרטים הבאים ונחזור אליכם לתיאום ייעוץ אישי</p>
+        <form>
+            <input type="text" name="name" placeholder="שם מלא" required>
+            <input type="email" name="email" placeholder="אימייל" required>
+            <textarea name="message" rows="4" placeholder="הודעה"></textarea>
+            <input type="submit" value="שלח">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 כל הזכויות שמורות למאמן האישי</p>
+        <p><a href="#">מדיניות פרטיות</a></p>
+    </footer>
+
+</body>
+
+</html>
