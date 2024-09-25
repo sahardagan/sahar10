@@ -327,8 +327,8 @@
         <div id="popupModal" class="popup-modal">
             <div class="popup-content2">
                 <span class="close-button">&times;</span>
-                <p class="popup-p">העלות להקמת דף נחיתה משתנה בהתאם למספר גורמים חשובים כמו אורך הדף, מורכבות התוכן, ניסיון בונה הדף,
-                    והאם נבחר להשתמש בתבניות או בעיצוב מאפס. טווח המחירים: עבור דף נחיתה בסיסי, המחיר נע בין 750 ל-3,000
+                <p class="popup-p">
+                    עבור דף נחיתה בסיסי, המחיר נע בין 750 ל-3,000
                     ש"ח. ברוב המקרים, המחיר לדף נחיתה סטנדרטי עומד סביב 2,000 ש"ח. אם מדובר בדף מורכב יותר, המחירים
                     יכולים להגיע ל-4,000 ש"ח ואף יותר, במיוחד כאשר יש צורך בעיצוב ייחודי מאפס.</p>
             </div>
@@ -650,9 +650,9 @@
 </section>
 
 <!-- פופאפ -->
-<div id="popup" class="popup hidden">
-    <div class="popup-content">
-        <span class="close-button" id="close-popup">&times;</span>
+<div id="popup-privacy" class="popup-privacy hidden-privacy">
+    <div class="popup-content-privacy">
+        <span class="close-button-privacy" id="close-popup-privacy">&times;</span>
         <h2>מדיניות פרטיות 🛡️</h2>
         <p>תאריך עדכון: [24/09/2024]</p>
         <p>ברוך הבא לאתר שלנו www.topmarket10.com. אנו מחויבים להגן על פרטיותך ולשמור על המידע שלך בטוח. מדיניות פרטיות
@@ -698,22 +698,22 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const privacyButton = document.getElementById('privacy-policy-button');
-        const popup = document.getElementById('popup');
-        const closeButton = document.getElementById('close-popup');
+        const popup = document.getElementById('popup-privacy');
+        const closeButton = document.getElementById('close-popup-privacy');
 
         privacyButton.addEventListener('click', (e) => {
             e.preventDefault();
-            popup.classList.remove('hidden');
+            popup.classList.remove('hidden-privacy');
         });
 
         closeButton.addEventListener('click', () => {
-            popup.classList.add('hidden');
+            popup.classList.add('hidden-privacy');
         });
 
         // סגירת הפופאפ כאשר לוחצים מחוץ לו
         popup.addEventListener('click', (e) => {
             if (e.target === popup) {
-                popup.classList.add('hidden');
+                popup.classList.add('hidden-privacy');
             }
         });
     });
