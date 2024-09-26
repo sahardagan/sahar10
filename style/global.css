@@ -196,7 +196,7 @@ align-items: center;
 
 @media (max-width: 480px) {
     button {
-                margin: 33px 0px;
+                margin: 33px 10px;
         padding: 6px 12px;
         font-size: 12px;
     }
