@@ -213,15 +213,20 @@ align-items: center;
 }
 }
 @media (max-width: 365px) {
+        button {
+                padding: 6px 12px;
+                font-size: 11px;
+            }
     .button-container2 button {
         width: 131px;
-        font-size: 13px;
+        font-size: 11px;
     }
 }
 
 @media (max-width: 350px) {
 
     .button-container2 button {
+        height: 30px;
         width: 115px; 
     }
 }
@@ -725,6 +730,13 @@ align-items: center;
 #about-me-p {
         font-size: 9px;
     }
+
+                .tool-icon {
+                    /*  padding: 0px 5px; */
+                    width: 35px;
+                    height: 35px;
+        
+                }
 }
 /* סגנון כללי לפופאפ */
 .modal {
@@ -2240,7 +2252,7 @@ text-align: center;
 @media screen and (max-width: 480px) {
 
     .types {
-                        height: 108px;
+                height: 114px;
         padding: 50px 50px 0 0px;
         /* הקטנת המרווחים במסכים קטנים מאוד */
     }
@@ -2360,7 +2372,9 @@ text-align: center;
         font-size: 10px;
     }
 .types button {
-        align-items: center;
+        height: 20px;
+            width: 70px;
+            align-items: center;
             font-size: 9px;
             margin: 10px;
 }
@@ -2692,6 +2706,12 @@ text-align: center;
 }
 
 @media (max-width: 480px) {
+
+    .phone-button img,
+        .image-item img {
+            width: 55px;
+            height: auto;
+        }
     .popup-content-privacy {
         padding: 10px;
         font-size: 11px;
