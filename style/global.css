@@ -139,7 +139,7 @@ header {
 
 button {
     padding: 10px 20px;
-    margin: 40px;
+        margin: 0px 15px;
     cursor: pointer;
     background-color: #1ABC9C;
     color: white;
@@ -196,6 +196,7 @@ align-items: center;
 
 @media (max-width: 480px) {
     button {
+                margin: 10px;
         padding: 6px 12px;
         font-size: 12px;
     }
@@ -1485,7 +1486,7 @@ text-align: center;
 #Copyright-area {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     height: 50px;
     padding: 0 35px;
     background-color: black;
@@ -1494,6 +1495,7 @@ text-align: center;
 }
 
 .left-copyright {
+    margin: 0 25px;
     color: #ECF0F1;
 }
 
@@ -2620,9 +2622,10 @@ text-align: center;
 }
 
 #accessibility-options {
+    text-align: center;
     position: fixed;
-    bottom: 60px;
-    right: 10px;
+    bottom: 86px;
+    right: 0px;
     background: white;
     border: 1px solid #ddd;
     padding: 10px;
@@ -2677,7 +2680,7 @@ text-align: center;
     font-size: 13px;
     background-color: black;
     color: white;
-    padding: 20px;
+    padding: 35px;
     border-radius: 10px;
     position: relative;
     max-width: 600px;
@@ -2700,11 +2703,27 @@ text-align: center;
 /* Responsive Design */
 @media (max-width: 768px) {
     .popup-content-privacy {
-        padding: 15px;
+        padding: 35px;
     }
 }
 
 @media (max-width: 480px) {
+
+    .policy-button {
+          font-family: 'Assistant', sans-serif;
+            font-size: 12px;
+            letter-spacing: 2px;
+    }
+
+                        .left-copyright {
+                            font-size: 12px;
+                            color: #ECF0F1;
+                        }
+            
+                        .right-copyright {
+                            font-size: 12px;
+                            color: #ECF0F1;
+                        }
 
 
     .phone-button img,
@@ -2713,8 +2732,9 @@ text-align: center;
             height: auto;
         }
     .popup-content-privacy {
-        padding: 10px;
+        padding: 35px;
         font-size: 11px;
+        letter-spacing: 1px;
     }
 
     .close-button-privacy {
@@ -2724,8 +2744,8 @@ text-align: center;
 
 @media (max-width: 350px) {
     .popup-content-privacy {
-        padding: 8px;
-        font-size: 10px;
+            padding: 35px;
+                font-size: 8px;
     }
 
         .left-copyright {
