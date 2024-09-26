@@ -2648,8 +2648,7 @@ text-align: center;
 }
 
 .policy-button {
-    background-color: #4CAF50;
-    color: white;
+    color: red;
     padding: 10px 15px;
     border-radius: 5px;
     text-decoration: none;
@@ -2707,6 +2706,7 @@ text-align: center;
 
 @media (max-width: 480px) {
 
+
     .phone-button img,
         .image-item img {
             width: 55px;
@@ -2722,9 +2722,27 @@ text-align: center;
     }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 350px) {
     .popup-content-privacy {
         padding: 8px;
-        font-size: 12px;
+        font-size: 10px;
     }
+
+        .left-copyright {
+            font-size: 12px;
+            color: #ECF0F1;
+        }
+    
+        .right-copyright {
+            font-size: 12px;
+            color: #ECF0F1;
+        }
+    
+        .policy-button {
+            font-size: 12px;
+            padding: 0;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
 }
