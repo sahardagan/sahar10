@@ -793,6 +793,7 @@ h3.my-profesison
     }
     .section
     {
+        padding-bottom: 40px;
         left: 0;
     }
     .section.open
