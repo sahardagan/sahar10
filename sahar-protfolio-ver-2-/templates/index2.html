@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>דף נחיתה עסקי משודרג</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f4f4f4, #e0e0e0);
+            direction: rtl;
+        }
+
+        header {
+            background: linear-gradient(135deg, #007bff, #00aaff);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 2.5rem;
+        }
+
+        .services {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            gap: 20px;
+        }
+
+        .service {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 30%;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .service img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .cta-button {
+            display: block;
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+
+        .cta-button:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* אנימציה כשגוללים לעבר השירותים */
+        .service.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service {
+                width: 80%;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service {
+                width: 90%;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .cta-button {
+                font-size: 0.9rem;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>שירותים עסקיים מותאמים אישית</h1>
+        <p>אנו מציעים פתרונות מתקדמים לכל עסק, קטנים כגדולים.</p>
+    </header>
+
+    <div class="container">
+        <section class="services">
+            <div class="service">
+                <img src="https://via.placeholder.com/50" alt="שירות 1">
+                <h3>פתרונות מותאמים אישית</h3>
+                <p>התאמה אישית של פתרונות לפי הצורך הספציפי של העסק שלך.</p>
+            </div>
+            <div class="service">
+                <img src="https://via.placeholder.com/50" alt="שירות 2">
+                <h3>שירותי ייעוץ</h3>
+                <p>ייעוץ והכוונה אסטרטגית לצמיחת העסק שלך.</p>
+            </div>
+            <div class="service">
+                <img src="https://via.placeholder.com/50" alt="שירות 3">
+                <h3>טכנולוגיות מתקדמות</h3>
+                <p>שימוש בכלים המתקדמים ביותר להצלחת העסק.</p>
+            </div>
+        </section>
+
+        <a href="#" class="cta-button">קבע שיחת ייעוץ חינם</a>
+
+        <section class="contact-form">
+            <h2>צור קשר</h2>
+            <form action="#">
+                <input type="text" name="name" placeholder="שם מלא" required>
+                <input type="email" name="email" placeholder="אימייל" required>
+                <textarea name="message" rows="4" placeholder="הודעה" required></textarea>
+                <input type="submit" value="שלח">
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 כל הזכויות שמורות</p>
+    </footer>
+
+    <script>
+        // פונקציה לבדוק את המיקום של האלמנטים
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // הוספת האנימציה כשמגוללים לעבר האלמנטים
+        function handleScroll() {
+            const services = document.querySelectorAll('.service');
+            services.forEach(service => {
+                if (isElementInViewport(service)) {
+                    service.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll);
+    </script>
+
+</body>
+
+</html>

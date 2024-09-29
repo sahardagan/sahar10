@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אמן - יצירות ייחודיות</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            overflow-x: hidden;
+            direction: rtl;
+        }
+
+        header {
+            width: 100%;
+            background: linear-gradient(135deg, #6a0dad, #ff6347);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: url('https://via.placeholder.com/1920x600') center center no-repeat;
+            background-size: cover;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        p.header-subtitle {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6347;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #e03e29;
+        }
+
+        .container {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 0;
+            gap: 20px;
+        }
+
+        .art-piece {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            flex: 1;
+            min-width: 280px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .art-piece:hover {
+            transform: scale(1.05);
+        }
+
+        .art-piece img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .art-piece h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .art-piece p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .about-us {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 40px 0;
+        }
+
+        .about-us h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .about-us p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        footer {
+                        width: 100%;
+            background-color: #6a0dad;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer a {
+            color: #ff6347;
+            text-decoration: none;
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 40px auto;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            background-color: #6a0dad;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #5e0c9e;
+        }
+
+        /* אנימציות */
+        .art-piece {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .art-piece.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+            }
+
+            .portfolio {
+                flex-direction: column;
+            }
+
+            .art-piece {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .cta-button {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .art-piece h3 {
+                font-size: 1.2rem;
+            }
+
+            .about-us h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>ברוך הבא לגלריה שלי</h1>
+        <p class="header-subtitle">יצירות אמנות ייחודיות המיועדות להשראה</p>
+        <a href="#contact" class="cta-button">צור קשר</a>
+    </header>
+
+    <div class="container">
+        <section class="portfolio">
+            <div class="art-piece">
+                <img src="https://via.placeholder.com/300" alt="יצירה 1">
+                <h3>יצירה ראשונה</h3>
+                <p>תיאור קצר של היצירה הראשונה שלי.</p>
+            </div>
+            <div class="art-piece">
+                <img src="https://via.placeholder.com/300" alt="יצירה 2">
+                <h3>יצירה שנייה</h3>
+                <p>תיאור קצר של היצירה השנייה שלי.</p>
+            </div>
+            <div class="art-piece">
+                <img src="https://via.placeholder.com/300" alt="יצירה 3">
+                <h3>יצירה שלישית</h3>
+                <p>תיאור קצר של היצירה השלישית שלי.</p>
+            </div>
+        </section>
+
+        <section class="about-us">
+            <h2>אודות האמן</h2>
+            <p>אני אמן המתמחה ביצירות אמנות ייחודיות ואישיות. כל יצירה משקפת את עולמי הפנימי ואת ההשראה שסביבי.
+                אני אוהב לחקור טכניקות שונות וליצור חיבורים בין עולמות שונים באמנות.</p>
+        </section>
+
+        <section class="contact-form" id="contact">
+            <h2>צור קשר</h2>
+            <form action="#">
+                <input type="text" name="name" placeholder="שם מלא" required>
+                <input type="email" name="email" placeholder="אימייל" required>
+                <textarea name="message" rows="4" placeholder="הודעה" required></textarea>
+                <input type="submit" value="שלח">
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 כל הזכויות שמורות. <a href="#">מדיניות פרטיות</a></p>
+    </footer>
+
+    <script>
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function handleScroll() {
+            const artPieces = document.querySelectorAll('.art-piece');
+            artPieces.forEach(piece => {
+                if (isElementInViewport(piece)) {
+                    piece.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מעצב פנים יוקרתי</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            overflow-x: hidden;
+            direction: rtl;
+        }
+
+        header {
+            background: url('../images/interior-design.jpg') center center no-repeat;
+            background-size: cover;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        header p {
+            font-size: 1.8rem;
+            margin: 10px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #e63946;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #d62839;
+        }
+
+        .container {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* תיק עבודות */
+        .portfolio {
+            margin: 40px 0;
+        }
+
+        .portfolio h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .portfolio-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-item h3 {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* שירותים */
+        .services {
+            background-color: #f1faee;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .services h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .services-list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .service-item {
+            flex: 1;
+            min-width: 280px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .service-item img {
+            width: 70px;
+            margin-bottom: 20px;
+        }
+
+        .service-item h3 {
+            font-size: 1.8rem;
+            color: #333;
+        }
+
+        /* המלצות */
+        .testimonials {
+            padding: 40px 20px;
+            background-color: #1d3557;
+            color: white;
+        }
+
+        .testimonials h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-item {
+            background-color: white;
+            color: #333;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .testimonial-item p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-item span {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        /* צור קשר */
+        .contact-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            background-color: #e63946;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #d62839;
+        }
+
+        footer {
+            background-color: #1b1b1b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer a {
+            color: #e63946;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+            }
+
+            .portfolio-items {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .cta-button {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>הפכו את הבית שלכם ליצירת אמנות</h1>
+        <p>מעצב פנים מנוסה שילווה אתכם בכל תהליך העיצוב</p>
+        <a href="#contact" class="cta-button">לקביעת פגישת ייעוץ</a>
+    </header>
+
+    <div class="container">
+        <!-- תיק עבודות -->
+        <section class="portfolio">
+            <h2>תיק עבודות</h2>
+            <div class="portfolio-items">
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/600x400" alt="פרויקט עיצוב פנים 1">
+                    <h3>עיצוב סלון יוקרתי</h3>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/600x400" alt="פרויקט עיצוב פנים 2">
+                    <h3>חדר שינה מודרני</h3>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/600x400" alt="פרויקט עיצוב פנים 3">
+                    <h3>מטבח בעיצוב פתוח</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- שירותים -->
+        <section class="services">
+            <h2>השירותים שלנו</h2>
+            <div class="services-list">
+                <div class="service-item">
+                    <img src="https://via.placeholder.com/70" alt="תכנון חללים">
+                    <h3>תכנון חללים</h3>
+                    <p>תכנון חללים מותאם אישית לכל בית או עסק.</p>
+                </div>
+                <div class="service-item">
+                    <img src="https://via.placeholder.com/70" alt="עיצוב פנים כולל">
+                    <h3>עיצוב פנים כולל</h3>
+                    <p>עיצוב פנים לכל הבית, מהמטבח ועד לחדרי השינה.</p>
+                </div>
+                <div class="service-item">
+                    <img src="https://via.placeholder.com/70" alt="ייעוץ עיצובי">
+                    <h3>ייעוץ עיצובי</h3>
+                    <p>פגישות ייעוץ אישיות להתאמת עיצוב הבית לסגנון הלקוח.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- המלצות -->
+        <section class="testimonials">
+            <h2>המלצות מלקוחות</h2>
+            <div class="testimonial-item">
+                <p>"המעצב עזר לנו ליצור בית בדיוק כמו שחלמנו. החל מהרעיון ועד הפרטים הקטנים."</p>
+                <span>- מיכל, תל אביב</span>
+            </div>
+            <div class="testimonial-item">
+                <p>"העיצוב החדש של הסלון שינה לנו את כל הבית, אנחנו מקבלים המון מחמאות!"</p>
+                <span>- רותם, חיפה</span>
+            </div>
+        </section>
+
+        <!-- צור קשר -->
+        <section class="contact-form" id="contact">
+            <h2>צור קשר</h2>
+            <p>מלאו את הפרטים הבאים ונחזור אליכם לתיאום פגישת ייעוץ</p>
+            <form>
+                <input type="text" name="name" placeholder="שם מלא" required>
+                <input type="email" name="email" placeholder="אימייל" required>
+                <textarea name="message" rows="4" placeholder="הודעה"></textarea>
+                <input type="submit" value="שלח">
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 כל הזכויות שמורות למעצב הפנים</p>
+        <p><a href="#">מדיניות פרטיות</a></p>
+    </footer>
+
+</body>
+
+</html>
