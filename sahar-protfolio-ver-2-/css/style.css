@@ -770,10 +770,10 @@ h3.my-profesison
 }
 @media (max-width:1199px)
 {
-    /* .section .container
+    .section .container
     {
-        padding-top: 70px;
-    } */
+        padding-top: -70px;
+    }
     .aside
     {
         left: -270px;
