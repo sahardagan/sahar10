@@ -90,3 +90,21 @@ const nav = document.querySelector(".nav"),
                 allSection[i].classList.toggle("open");
             }
         }
+                // סקריפט לתמיכה בטאצ' עבור מכשירים ניידים
+document.addEventListener('DOMContentLoaded', function () {
+    // פונקציה להוספת אירוע טאצ' לכל אלמנט עם מחלקת 'service-item'
+    const serviceItems = document.querySelectorAll('.service-item');
+
+    serviceItems.forEach(item => {
+        item.addEventListener('touchstart', function () {
+            this.classList.toggle('active'); // ניתן לשנות את המחלקה או להוסיף אפקטים שונים
+        });
+    });
+
+    // פונקציה להוספת אירוע טאצ' לכל כפתור שליחת הודעה
+    const sendMessageButton = document.querySelector('.contact-form button[type="submit"]');
+
+    sendMessageButton.addEventListener('touchstart', function () {
+        alert("Message Sent!"); // ניתן להחליף עם פונקציה לשליחת הודעה
+    });
+});
